@@ -14,7 +14,7 @@ export default function Home() {
       <Gallery />
       <Spacer height={100} />
       <Contact />
-      <Spacer height={75} />
+      <Spacer height={50} />
     </>
   )
 }

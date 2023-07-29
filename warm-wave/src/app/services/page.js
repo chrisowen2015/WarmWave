@@ -29,7 +29,7 @@ const services = [
         title: "Production Session Musicians",
         description: "Whether you need captivating guitar riffs, soulful keyboard melodies, or dynamic drum grooves, our talented team adds a touch of brilliance to every recording. With their extensive experience across genres, they bring versatility and precision to your music, ensuring that every track becomes an extraordinary masterpiece.",
         imgSrc: "/images/session-musicians-cropped.jpg",
-        id: "session-musicians",
+        id: "production-session-musicians",
         alt: "Production Session Musicians Image"
     },
 ];
@@ -49,6 +49,7 @@ export default function Services() {
             <Spacer height={50} />
 
             <Paper sx={{ width: "100%", padding: '2em' }}>
+                <Spacer height={25} />
                 <Typography variant="h6" component="h6">
                     Our services include hi-fi recording, precise mixing, and masterful mastering.
                     We provide comprehensive support to artists, from songcrafting to sound refinement across genres like indie rock,
@@ -58,87 +59,33 @@ export default function Services() {
                 </Typography>
 
                 <Spacer height={50} />
+                {
+                    services.map((service, index) => (
 
-                <div id={"audio-recording"}>
-                    <Box sx={{ display: 'flex', padding: "2em 0 2em 0" }}>
-                        <Image src={services[0].imgSrc} width={600} height={450} alt={services[0].alt} />
-                        <Box sx={{ marginLeft: '2em' }}>
-                            <Typography variant="h4" component="h4">
-                                {services[0].title}
-                            </Typography>
+                        <div id={service.id} key={service.id}>
+                            <Box sx={{ display: 'flex', padding: "2em 0 2em 0" }}>
+                                <Image src={service.imgSrc} width={600} height={450} alt={service.alt} />
+                                <Box sx={{ marginLeft: '2em' }}>
+                                    <Typography variant="h4" component="h4">
+                                        {service.title}
+                                    </Typography>
 
-                            <Spacer height={25} />
+                                    <Spacer height={25} />
 
-                            <Typography variant="p" component="p">
-                                {services[0].description}
-                            </Typography>
-                        </Box>
-                    </Box>
+                                    <Typography variant="p" component="p">
+                                        {service.description}
+                                    </Typography>
+                                </Box>
+                            </Box>
 
-                    <Divider />
-                </div>
+                            {
+                                index !== services.length - 1 && <Divider />
+                            }
+                        </div>
+                    ))
+                }
 
-
-                <div id={"audio-mixing-mastering"}>
-                    <Box sx={{ display: 'flex', padding: "2em 0 2em 0" }}>
-                        <Image src={services[1].imgSrc} width={600} height={450} alt={services[1].alt} />
-                        <Box sx={{ marginLeft: '2em' }}>
-                            <Typography variant="h4" component="h4">
-                                {services[1].title}
-                            </Typography>
-
-                            <Spacer height={25} />
-
-                            <Typography variant="p" component="p">
-                                {services[1].description}
-                            </Typography>
-                        </Box>
-                    </Box>
-
-                    <Divider />
-                </div>
-
-
-                <div >
-                    <Box sx={{ display: 'flex', padding: "2em 0 2em 0" }}>
-                        <Image src={services[2].imgSrc} width={600} height={450} alt={services[2].alt} />
-                        <Box sx={{ marginLeft: '2em' }}>
-                            <Typography variant="h4" component="h4">
-                                {services[2].title}
-                            </Typography>
-
-                            <Spacer height={25} />
-
-                            <Typography variant="p" component="p">
-                                {services[2].description}
-                            </Typography>
-                        </Box>
-                    </Box>
-
-                    <Divider />
-                </div>
-
-
-                <div id="production-session-musicians">
-                    <Box sx={{ display: 'flex', padding: "2em 0 2em 0" }}>
-                        <Image src={services[3].imgSrc} width={600} height={450} alt={services[3].alt} />
-                        <Box sx={{ marginLeft: '2em' }}>
-                            <Typography variant="h4" component="h4">
-                                {services[3].title}
-                            </Typography>
-
-                            <Spacer height={25} />
-
-                            <Typography variant="p" component="p">
-                                {services[3].description}
-                            </Typography>
-                        </Box>
-                    </Box>
-
-                    <Divider />
-                </div>
-
-                <Spacer height={50} />
+                <Spacer height={25} />
             </Paper>
             <Spacer height={75} />
         </>

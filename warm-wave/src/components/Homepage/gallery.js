@@ -30,7 +30,7 @@ export default function Gallery() {
                 Gallery
             </Typography>
             <Spacer height={60} />
-            <Box>
+            <Box sx={{minHeight: 720}}>
                 <Carousel navButtonsAlwaysVisible animation='fade'
                     activeIndicatorIconButtonProps={{
                         style: {
