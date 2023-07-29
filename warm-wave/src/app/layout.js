@@ -1,6 +1,11 @@
 import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { Typography, Box, Stack } from '@mui/material';
+import Image from 'next/image';
+import Footer from '@/components/footer';
+
+import Link from '@mui/material/Link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,7 +19,69 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ThemeRegistry>
-          {children}
+          <Box sx={{
+            position: "fixed",
+            width: "100%",
+            padding: "10px 10px 10px 10px",
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+            zIndex: 1000
+          }}>
+            <div>
+              <Stack direction="row" spacing={4} style={{ justifyContent: "center", alignItems: "center" }}>
+                <Typography>
+                  <Link color="inherit" underline="hover" href="/" >
+                    Home
+                  </Link>
+                </Typography>
+                <Typography>
+                  <Link color="inherit" underline="hover" href="#about">
+                    About
+                  </Link>
+                </Typography>
+                <Typography>
+                  <Link color="inherit" underline="hover" href="#gallery">
+                    Gallery
+                  </Link>
+                </Typography>
+                <Typography>
+                  <Link color="inherit" underline="hover" href="/team">
+                    Our Team
+                  </Link>
+                </Typography>
+
+                <Image
+                  priority
+                  src="/images/WarmWaveRecords-logo.png"
+                  height={80}
+                  width={80}
+                  alt="Warm Wave"
+                  title="Warm Wave"
+                />
+                <Typography>
+                  <Link color="inherit" underline="hover" href="#gear">
+                    Gear
+                  </Link>
+                </Typography>
+                <Typography>
+                  <Link color="inherit" underline="hover" href="/services">
+                    Services
+                  </Link>
+                </Typography>
+                <Typography>
+                  <Link color="inherit" underline="hover" href="/news">
+                    News
+                  </Link>
+                </Typography>
+                <Typography>
+                  <Link color="inherit" underline="hover" href="#contact">
+                    Contact
+                  </Link>
+                </Typography>
+              </Stack>
+            </div>
+          </Box>
+          <main>{children}</main>
+          <Footer />
         </ThemeRegistry>
       </body>
     </html>
