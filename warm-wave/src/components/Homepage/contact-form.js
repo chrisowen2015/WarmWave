@@ -20,7 +20,7 @@ export default function ContactForm() {
             </div>
 
             <div style={{paddingTop: "1em"}}> 
-                <TextField label="Message" fullWidth variant="outlined" minRows={4} />
+                <TextField label="Message" fullWidth variant="outlined" minRows={6} multiline />
             </div>
         </Box>
     );

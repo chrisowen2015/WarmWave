@@ -14,7 +14,7 @@ export default function Contact() {
 
             <Box sx={{ width: "100%", display: 'flex', justifyContent: 'center' }}>
 
-                <Box sx={{ width: "50%" }}>
+                <Box sx={{ width: "50%", minWidth: '800px' }}>
                     <Paper sx={{ padding: '2em' }}>
                         <ContactForm />
                     </Paper>

@@ -12,9 +12,9 @@ export default function Home() {
       <About />
       <Spacer height={60} />
       <Gallery />
-            <Spacer height={100} />
+      <Spacer height={100} />
       <Contact />
-      <Spacer height={150} />
+      <Spacer height={75} />
     </>
   )
 }
