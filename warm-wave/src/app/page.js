@@ -7,6 +7,7 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
+    // Adding a comment for push and redeploy
     <>
       <Header />
       <About />
