@@ -39,7 +39,7 @@ export default function Services() {
     return (
         <>
             <Spacer height={100} />
-            <Spacer height={50} />
+            <Spacer height={100} />
             <Box sx={{ width: "100%" }}>
                 <Typography variant="h1" component="h1" sx={{ textAlign: "center" }}>
                     Services
