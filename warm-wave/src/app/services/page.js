@@ -28,7 +28,7 @@ const services = [
     {
         title: "Production Session Musicians",
         description: "Whether you need captivating guitar riffs, soulful keyboard melodies, or dynamic drum grooves, our talented team adds a touch of brilliance to every recording. With their extensive experience across genres, they bring versatility and precision to your music, ensuring that every track becomes an extraordinary masterpiece.",
-        imgSrc: "/images/session-musicians-cropped.jpg",
+        imgSrc: "/images/session-andrew-cropped.jpg",
         id: "production-session-musicians",
         alt: "Production Session Musicians Image"
     },
@@ -48,7 +48,7 @@ export default function Services() {
 
             <Spacer height={50} />
 
-            <Paper sx={{ width: "100%", padding: '2em' }}>
+            <Paper sx={{ padding: '2em', margin: '2em' }}>
                 <Spacer height={25} />
                 <Typography variant="h6" component="h6">
                     Our services include hi-fi recording, precise mixing, and masterful mastering.
