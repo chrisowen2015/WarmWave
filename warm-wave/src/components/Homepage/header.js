@@ -7,7 +7,7 @@ export default function Header() {
             <Spacer height={200} />
 
             <Typography variant="h1" component="h1" align="center">
-                Warm Wave Studios
+                Warm Wave Studio
             </Typography>
 
             <Spacer height={300} />

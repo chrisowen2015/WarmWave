@@ -6,14 +6,14 @@ import Link from '@mui/material/Link';
 
 export default function About() {
     return (
-        <>
+        <div id="about">
             <Typography variant="h1" component="h1" align="center">
                 About Us
             </Typography>
-            
+
             <Spacer height={60} />
 
-            <Box id="about" sx={{ width: "100%", backgroundImage: "url(/images/Andrew-Beach-Guitar-2.jpeg)", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover", minWidth: "1024px" }}>
+            <Box sx={{ width: "100%", backgroundImage: "url(/images/Andrew-Beach-Guitar-2.jpeg)", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover", minWidth: "1024px" }}>
                 <Spacer height={200} />
 
                 <Box sx={{
@@ -65,6 +65,6 @@ export default function About() {
 
                 <Spacer height={200} />
             </Box>
-        </>
+        </div>
     );
 }
