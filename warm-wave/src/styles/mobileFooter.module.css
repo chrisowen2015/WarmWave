@@ -1,0 +1,11 @@
+div.socials {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+div.contactRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
