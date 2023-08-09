@@ -1,11 +1,9 @@
 "use client";
 import { Box, Button, Divider, IconButton, Typography, Link, SvgIcon, useTheme, createSvgIcon } from "@mui/material";
-import Spacer from "./spacer";
+import Spacer from "../spacer";
 import { Facebook, Instagram, Mail, Phone, YouTube } from "@mui/icons-material";
 
 export default function Footer() {
-    const theme = useTheme();
-
     const SpotifyIcon = createSvgIcon(
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +18,13 @@ export default function Footer() {
     )
 
     return (
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{ width: '100%', display: {
+            xs: 'none',
+            sm: 'none',
+            md: 'block',
+            lg: 'block',
+            xl: 'block',
+        } }}>
             <Divider />
             <Spacer height={75} />
             <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>

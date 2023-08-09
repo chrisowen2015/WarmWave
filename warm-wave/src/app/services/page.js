@@ -38,64 +38,170 @@ export default function Services() {
 
     return (
         <>
-            <Spacer height={100} />
-            <Spacer height={50} />
-            <Box sx={{ width: "100%" }}>
-                <Typography variant="h1" component="h1" sx={{ textAlign: "center" }}>
-                    Services
-                </Typography>
-            </Box>
-
-            <Spacer height={50} />
-
-            <Paper sx={{ width: "100%", padding: '2em' }}>
-                <Spacer height={25} />
-                <Typography variant="h6" component="h6">
-                    Our services include hi-fi recording, precise mixing, and masterful mastering.
-                    We provide comprehensive support to artists, from songcrafting to sound refinement across genres like indie rock,
-                    EDM, and rap. With a dedicated team, top-tier equipment, and an unwavering commitment to excellence,
-                    we elevate your artistic vision to new heights. Join us on this transformative journey,
-                    where innovation and creativity converge to bring your musical dreams to reality.
-                </Typography>
+            {
+                /*
+                    This is the Services page to be displayed on Desktop, and larger devices.
+                */
+            }
+            <Box sx={{
+                display: {
+                    xs: 'none',
+                    sm: 'none',
+                    md: 'block',
+                    lg: 'block',
+                    xl: 'block',
+                }
+            }}>
+                <Spacer height={100} />
+                <Spacer height={50} />
+                <Box sx={{ width: "100%" }}>
+                    <Typography variant="h1" component="h1" sx={{ textAlign: "center" }}>
+                        Services
+                    </Typography>
+                </Box>
 
                 <Spacer height={50} />
-                {
-                    services.map((service, index) => (
 
-                        <div id={service.id} key={service.id}>
-                            <Box sx={{ display: 'flex', padding: "2em 0 2em 0" }}>
-                                <Image src={service.imgSrc} width={600} height={450} alt={service.alt} />
-                                <Box sx={{ marginLeft: '2em' }}>
-                                    <Typography variant="h4" component="h4">
-                                        {service.title}
-                                    </Typography>
+                <Paper sx={{ width: "100%", padding: '2em' }}>
+                    <Spacer height={25} />
+                    <Typography variant="h6" component="h6">
+                        Our services include hi-fi recording, precise mixing, and masterful mastering.
+                        We provide comprehensive support to artists, from songcrafting to sound refinement across genres like indie rock,
+                        EDM, and rap. With a dedicated team, top-tier equipment, and an unwavering commitment to excellence,
+                        we elevate your artistic vision to new heights. Join us on this transformative journey,
+                        where innovation and creativity converge to bring your musical dreams to reality.
+                    </Typography>
 
-                                    <Spacer height={25} />
+                    <Spacer height={50} />
+                    {
+                        services.map((service, index) => (
 
-                                    <Typography variant="p" component="p">
-                                        {service.description}
-                                    </Typography>
+                            <div id={service.id} key={service.id}>
+                                <Box sx={{ display: 'flex', padding: "2em 0 2em 0" }}>
+                                    <Image src={service.imgSrc} width={600} height={450} alt={service.alt} />
+                                    <Box sx={{ marginLeft: '2em' }}>
+                                        <Typography variant="h4" component="h4">
+                                            {service.title}
+                                        </Typography>
 
-                                    <Spacer height={50} />
+                                        <Spacer height={25} />
 
-                                    <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                        <Button href={'/?quote=' + service.id} variant='contained' >
-                                            Request a quote
-                                        </Button>
-                                    </div>
+                                        <Typography variant="p" component="p">
+                                            {service.description}
+                                        </Typography>
+
+                                        <Spacer height={50} />
+
+                                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                            <Button href={'/?quote=' + service.id} variant='contained' >
+                                                Request a quote
+                                            </Button>
+                                        </div>
+                                    </Box>
                                 </Box>
-                            </Box>
 
+                                {
+                                    index !== services.length - 1 && <Divider />
+                                }
+                            </div>
+                        ))
+                    }
+
+                    <Spacer height={25} />
+                </Paper>
+                <Spacer height={75} />
+            </Box>
+
+            {
+                /*
+                    This is the Services page to be displayed on mobile, and smaller devices.
+                */
+            }
+
+            <Box sx={{display: {
+                xs: 'block',
+                sm: 'block',
+                md: 'none',
+                lg: 'none',
+                xl: 'none',
+            }}}>
+                <Spacer height={100} />
+                <Box sx={{ width: "100%" }}>
+                    <Typography variant="h2" component="h2" sx={{ textAlign: "center" }}>
+                        Services
+                    </Typography>
+
+                    <Spacer height={20} />
+
+                    <Box>
+                        <Box sx={{ padding: '15px' }}>
+                            <Paper sx={{ width: "100%", padding: '2em' }} >
+                                <Spacer height={25} />
+                                <Typography variant="h6" component="h6">
+                                    Our services include hi-fi recording, precise mixing, and masterful mastering.
+                                    We provide comprehensive support to artists, from songcrafting to sound refinement across genres like indie rock,
+                                    EDM, and rap. With a dedicated team, top-tier equipment, and an unwavering commitment to excellence,
+                                    we elevate your artistic vision to new heights. Join us on this transformative journey,
+                                    where innovation and creativity converge to bring your musical dreams to reality.
+                                </Typography>
+                            </Paper>
+                        </Box>
+
+                        <Box sx={{ display: 'block', width: '100%', padding: '15px' }}>
                             {
-                                index !== services.length - 1 && <Divider />
-                            }
-                        </div>
-                    ))
-                }
+                                services.map((service, index) => (
+                                    <Paper id={service.id} key={service.id} sx={{ width: "100%", padding: '2em', margin: '10px 0 10px 0' }} >
+                                        <Box sx={{
+                                            display: {
+                                                xs: 'block',
+                                                sm: 'block',
+                                                md: 'flex',
+                                                lg: 'flex',
+                                                xl: 'flex',
+                                            },
+                                            padding: "2em 0 2em 0",
+                                            position: 'relative',
+                                        }}>
+                                            <Image src={service.imgSrc}
+                                                sizes="100vw"
+                                                style={{
+                                                    width: '100%',
+                                                    height: 'auto',
+                                                }}
+                                                width={600}
+                                                height={450} />
+                                            <Box sx={{ marginLeft: '2em' }}>
+                                                <Spacer height={15} />
 
-                <Spacer height={25} />
-            </Paper>
-            <Spacer height={75} />
+                                                <Typography variant="h4" component="h4" align='center'>
+                                                    {service.title}
+                                                </Typography>
+
+                                                <Spacer height={25} />
+
+                                                <Typography variant="p" component="p">
+                                                    {service.description}
+                                                </Typography>
+
+                                                <Spacer height={50} />
+
+                                                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                                    <Button href={'/?quote=' + service.id} variant='contained' >
+                                                        Request a quote
+                                                    </Button>
+                                                </div>
+                                            </Box>
+                                        </Box>
+                                    </Paper>
+                                ))
+                            }
+                        </Box>
+
+                        <Spacer height={25} />
+                    </Box>
+                </Box>
+            </Box>
+
         </>
     )
 }

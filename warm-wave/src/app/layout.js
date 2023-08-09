@@ -2,9 +2,12 @@ import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Typography, Box, Stack } from '@mui/material';
-import Footer from '@/components/footer';
+import Footer from '@/components/layout/footer';
 
-import NavBar from '@/components/navbar';
+import NavBar from '@/components/layout/navbar';
+import MobileLayout from '@/components/layout/mobileLayout';
+import MobileFooter from '@/components/layout/mobileFooter';
+import CopyRight from '@/components/layout/copyright';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,9 +21,48 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ThemeRegistry>
-          <NavBar />
-          <main>{children}</main>
+          <Box sx={{
+            display: {
+              xs: 'none',
+              sm: 'none',
+              md: 'block',
+              lg: 'block',
+              xl: 'block',
+            }
+          }}>
+
+            <NavBar />
+          </Box>
+          <main>
+            <Box sx={{
+              display: {
+                xs: 'block',
+                sm: 'block',
+                md: 'none',
+                lg: 'none',
+                xl: 'none',
+              }
+            }}>
+              <MobileLayout>
+                {children}
+              </MobileLayout>
+            </Box>
+
+            <Box sx={{
+              display: {
+                xs: 'none',
+                sm: 'none',
+                md: 'block',
+                lg: 'block',
+                xl: 'block',
+              }
+            }}>
+              {children}
+            </Box>
+          </main>
+          <MobileFooter />
           <Footer />
+          <CopyRight />
         </ThemeRegistry>
       </body>
     </html>

@@ -8,7 +8,7 @@ import React from 'react';
 
 const quoteConstants = [
     {
-        subject: 'Audio Engineering Quote',
+        subject: 'Audio Recording Quote',
         urlParams: 'audio-recording'
     },
     {

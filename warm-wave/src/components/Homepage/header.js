@@ -13,7 +13,7 @@ export default function Header() {
             <Spacer height={200} />
 
             <Typography variant="h3" component="h3" align="center">
-                Poopin, Scoopin, and Loopin
+                Mixing & Mastering with the Masters
             </Typography>
 
             <Spacer height={40} />
