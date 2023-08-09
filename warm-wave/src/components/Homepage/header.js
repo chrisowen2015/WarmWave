@@ -4,19 +4,19 @@ import Spacer from "../spacer";
 export default function Header() {
     return (
         <Box sx={{ width: "100%", backgroundImage: "url(/images/desk.jpg)", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover", minWidth:"1024px", width: "100%" }}>
-            <Spacer height={150} />
+            <Spacer height={200} />
 
             <Typography variant="h1" component="h1" align="center">
-                Warmer Wave Studios
+                Warm Wave Studio
             </Typography>
 
-            <Spacer height={200} />
+            <Spacer height={300} />
 
             <Typography variant="h3" component="h3" align="center">
                 Mixing & Mastering with the Masters
             </Typography>
 
-            <Spacer height={40} />
+            <Spacer height={100} />
 
             <Box display="flex" flexDirection={"row"} justifyContent={"center"} alignItems={"center"}>
                 <Button variant="contained" color="primary" href="#contact" sx={{ padding: "1em 2em 1em 2em" }}>
@@ -24,7 +24,7 @@ export default function Header() {
                 </Button>
             </Box>
 
-            <Spacer height={60} />
+            <Spacer height={120} />
         </Box>
     );
 }

@@ -7,8 +7,10 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
+    // Adding a comment for push and redeploy
     <>
       <Header />
+      <Spacer height={60} />
       <About />
       <Spacer height={60} />
       <Gallery />
