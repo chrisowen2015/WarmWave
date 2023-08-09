@@ -54,7 +54,7 @@ export default function TeamPanel(props) {
                 >
                     {
                         team.map((teamMember, index) => (
-                            <Tab key={index} label={teamMember.name} {...a11yProps(0)} />
+                            <Tab id={teamMember.name} key={index} label={teamMember.name} {...a11yProps(0)} />
                         ))
                     }
 

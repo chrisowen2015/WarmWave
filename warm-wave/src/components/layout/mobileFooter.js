@@ -21,111 +21,114 @@ export default function MobileFooter() {
     )
 
     return (
-        <Box sx={{
-            display: {
-                xs: 'block',
-                sm: 'block',
-                md: 'none',
-                lg: 'none',
-                xl: 'none',
-            },
-        }}>
+        <>
+            <Box sx={{
+                display: {
+                    xs: 'block',
+                    sm: 'block',
+                    md: 'none',
+                    lg: 'none',
+                    xl: 'none',
+                },
+            }}>
 
-            <Divider />
+                <Divider />
 
-            <Box sx={{ display: 'block', padding: '2em' }}>
-                <Box sx={{ marginBottom: '1em' }}>
-                    <Typography variant="h6" component="h6" fontWeight='bold' >
-                        <Link color="inherit" underline="hover" href="/" >
-                            Home
-                        </Link>
-                    </Typography>
-                </Box>
-
-                <Box sx={{ marginBottom: '2em' }}>
+                <Box sx={{ display: 'block', padding: '2em' }}>
                     <Box sx={{ marginBottom: '1em' }}>
                         <Typography variant="h6" component="h6" fontWeight='bold' >
-                            About
+                            <Link color="inherit" underline="hover" href="/" >
+                                Home
+                            </Link>
                         </Typography>
                     </Box>
 
-                    <Typography variant="p" component="p">
-                        <Link color="inherit" underline="hover" href="/#about" >
-                            About Us
-                        </Link>
-                    </Typography>
+                    <Box sx={{ marginBottom: '1em' }}>
+                        <Box sx={{ marginBottom: '.5em' }}>
+                            <Typography variant="h6" component="h6" fontWeight='bold' >
+                                About
+                            </Typography>
+                        </Box>
 
-                    <Typography variant="p" component="p">
-                        <Link color="inherit" underline="hover" href="/#gallery">
-                            Gallery
-                        </Link>
-                    </Typography>
+                        <Typography variant="p" component="p">
+                            <Link color="inherit" underline="hover" href="/#about" >
+                                About Us
+                            </Link>
+                        </Typography>
+
+                        <Typography variant="p" component="p">
+                            <Link color="inherit" underline="hover" href="/#gallery">
+                                Gallery
+                            </Link>
+                        </Typography>
 
 
-                    <Typography variant="p" component="p">
-                        <Link color="inherit" underline="hover" href="/#team">
-                            Our Team
-                        </Link>
-                    </Typography>
+                        <Typography variant="p" component="p">
+                            <Link color="inherit" underline="hover" href="/#team">
+                                Our Team
+                            </Link>
+                        </Typography>
 
-                    <Typography variant="p" component="p">
-                        <Link color="inherit" underline="hover" href="/services">
-                            Our Services
-                        </Link>
-                    </Typography>
+                        <Typography variant="p" component="p">
+                            <Link color="inherit" underline="hover" href="/services">
+                                Our Services
+                            </Link>
+                        </Typography>
+                    </Box>
                 </Box>
 
                 <Divider />
-                
-                <Spacer height={'2em'} />
 
-                <Box>
-                    <Box className={styles.contactRow}>
-                        <Typography variant="h6" component="h6" fontWeight='bold' >
-                            Contact
-                        </Typography>
-                    </Box>
+                <Box sx={{ display: 'block', padding: '2em' }}>
 
-                    <Spacer height={'1em'} />
+                    <Box>
+                        <Box className={styles.contactRow}>
+                            <Typography variant="h6" component="h6" fontWeight='bold' >
+                                Contact
+                            </Typography>
+                        </Box>
 
-                    <Box className={styles.contactRow}>
-                        <Phone fontSize="large" />
-                        <Typography variant="b" component="b" sx={{ marginLeft: '10px' }}>
-                            +1 666.666.6666
-                        </Typography>
-                    </Box>
+                        <Spacer height={'1em'} />
 
-                    <Spacer height={10} />
+                        <Box className={styles.contactRow}>
+                            <Phone fontSize="large" />
+                            <Typography variant="b" component="b" sx={{ marginLeft: '10px' }}>
+                                +1 666.666.6666
+                            </Typography>
+                        </Box>
 
-                    <Box className={styles.contactRow}>
-                        <Mail fontSize="large" />
-                        <Typography variant="b" component="b" sx={{ marginLeft: '10px' }}>
-                            andrew@realemailaddress.com
-                        </Typography>
-                    </Box>
+                        <Spacer height={10} />
 
-                    <Box className={styles.socials}>
-                        <IconButton>
-                            <YouTube fontSize="large" />
-                        </IconButton>
-                        <IconButton>
-                            <Instagram fontSize="large" />
-                        </IconButton>
-                        <IconButton>
-                            <Facebook fontSize="large" />
-                        </IconButton>
-                        <IconButton>
-                            <SpotifyIcon fontSize="large" />
-                        </IconButton>
+                        <Box className={styles.contactRow}>
+                            <Mail fontSize="large" />
+                            <Typography variant="b" component="b" sx={{ marginLeft: '10px' }}>
+                                andrew@realemailaddress.com
+                            </Typography>
+                        </Box>
+
+                        <Box className={styles.socials}>
+                            <IconButton>
+                                <YouTube fontSize="large" />
+                            </IconButton>
+                            <IconButton>
+                                <Instagram fontSize="large" />
+                            </IconButton>
+                            <IconButton>
+                                <Facebook fontSize="large" />
+                            </IconButton>
+                            <IconButton>
+                                <SpotifyIcon fontSize="large" />
+                            </IconButton>
+                        </Box>
                     </Box>
                 </Box>
-            </Box>
-            <Spacer height={25} />
-            <Box>
+                <Spacer height={'1em'} />
+                <Box>
+
+                </Box>
 
             </Box>
-
-        </Box>
+        </>
     )
 }
 
