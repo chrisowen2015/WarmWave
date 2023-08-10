@@ -34,8 +34,8 @@ const drawerItems = [
     {
         name: "Gallery",
         icon: <Collections />,
-        url: "/#gallery",
-
+        url: "/#gallery-mobile",
+        id: "gallery-mobile"
     },
     {
         name: "Gear",
@@ -58,14 +58,14 @@ const drawerItems = [
     {
         name: "About",
         icon: <Info />,
-        url: "/#about",
-
+        url: "/#about-mobile",
+        id: "about-mobile"
     },
     {
         name: "Contact Us",
         icon: <Email />,
-        url: "/#contact",
-
+        url: "/#contact-mobile",
+        id: "contact-mobile"
     },
 ];
 
@@ -95,10 +95,19 @@ export default function MobileLayout({ children }) {
         setOpen(open);
     };
 
-    const closeDrawerAndNavigate = (route) => {
-        //setOpen(false);
-        
-        router.replace(route);
+    const onNavClick = (event, id, url) => {
+        if (id) {
+            setOpen(false);
+            let element = document.getElementById(id)
+            event.preventDefault()
+            element.scrollIntoView()
+            window.history.pushState(id, id, url)
+            console.log("Drawer is: " + open);
+        } else {
+            setOpen(false);
+            router.push(url);
+        }
+
     }
 
     const Logo = ({ size }) => {
@@ -113,31 +122,6 @@ export default function MobileLayout({ children }) {
             />
         )
     }
-
-    const list = (anchor) => (
-        <Box
-            sx={{ width: 250 }}
-            onClick={toggleDrawer(anchor, false)}
-            onKeyDown={toggleDrawer(anchor, false)} >
-            <List>
-                {drawerItems.map((drawerItem, index) => (
-                    <Paper key={drawerItem.name} id={drawerItem.name}>
-                        <ListItem key={drawerItem.name} disablePadding>
-                            <ListItemButton href={drawerItem.url}>
-                                <ListItemIcon>
-                                    {drawerItem.icon}
-                                </ListItemIcon>
-                                <ListItemText primary={drawerItem.name} />
-                            </ListItemButton>
-                        </ListItem>
-                        {
-                            index === 3 && <Divider />
-                        }
-                    </Paper>
-                ))}
-            </List>
-        </Box>
-    );
 
     const DrawerHeader = styled('div')(({ theme }) => ({
         display: 'flex',
@@ -167,11 +151,15 @@ export default function MobileLayout({ children }) {
                     <MenuIcon />
                 </IconButton >
 
-                <Logo size={50} />
+                <IconButton href="/">
 
-                <Typography sx={{ flexGrow: 1, marginLeft: 1 }} component="h5" variant="h5">
-                    Warm Wave Studio
-                </Typography>
+                    <Logo size={50} />
+
+                    <Typography sx={{ flexGrow: 1, marginLeft: 1 }} component="h5" variant="h5">
+                        Warm Wave Studio
+                    </Typography>
+                </IconButton>
+
             </Box>
 
             {/* This is the side drawer which displays the navigation links */}
@@ -181,8 +169,10 @@ export default function MobileLayout({ children }) {
                 open={open}
                 onClose={toggleDrawer(false)}
                 onOpen={toggleDrawer(true)}
+                disableBackdropTransition={true}
+                disableDiscovery={true}
             >
-                <DrawerHeader sx={{ width: '100%' }}>
+                <DrawerHeader sx={{ width: '100%', height: '76px' }}>
                     <IconButton onClick={toggleDrawer(false)} sx={{ width: '100%' }} >
                         <Logo size={40} />
                         <Typography sx={{ flexGrow: 1 }} color="primary">
@@ -192,7 +182,29 @@ export default function MobileLayout({ children }) {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                {list('left')}
+
+                <Box sx={{ width: 250 }}
+                    onKeyDown={toggleDrawer(false)} >
+                    <List>
+                        {drawerItems.map((drawerItem, index) => (
+                            <Paper key={drawerItem.name} id={drawerItem.name}>
+                                <ListItem key={drawerItem.name} disablePadding>
+                                    <ListItemButton
+                                        onClick={(event) => onNavClick(event, drawerItem.id, drawerItem.url)}
+                                    >
+                                        <ListItemIcon>
+                                            {drawerItem.icon}
+                                        </ListItemIcon>
+                                        <ListItemText primary={drawerItem.name} />
+                                    </ListItemButton>
+                                </ListItem>
+                                {
+                                    index === 3 && <Divider />
+                                }
+                            </Paper>
+                        ))}
+                    </List>
+                </Box>
             </SwipeableDrawer>
             {children}
         </>

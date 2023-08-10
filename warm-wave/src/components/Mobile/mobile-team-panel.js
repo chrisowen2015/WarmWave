@@ -9,15 +9,9 @@ function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
     return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`vertical-tabpanel-${index}`}
-            aria-labelledby={`vertical-tab-${index}`}
-            {...other}
-        >
+        <div>
             {value === index && (
-                <Box sx={{ p: 3 }}>
+                <Box sx={{ p: 1 }}>
                     {children}
                 </Box>
             )}
@@ -32,7 +26,7 @@ function a11yProps(index) {
     };
   }
 
-export default function TeamPanel(props) {
+export default function MobileTeamPanel(props) {
     const [value, setValue] = useState(0);
     const team = props.team;
 
@@ -42,15 +36,12 @@ export default function TeamPanel(props) {
   };
 
     return (
-        <Paper sx={{ padding: '2em', margin: '2em' }}>
-            <Box sx={{ display: 'flex' }}>
+        <Paper sx={{ padding: '1em', margin: '1em' }}>
+            <Box sx={{ display: 'block' }}>
                 <Tabs
-                    orientation="vertical"
-                    variant="scrollable"
                     value={value}
                     onChange={handleChange}
                     aria-label="Vertical tabs example"
-                    sx={{ borderRight: 1, borderColor: 'divider' }}
                 >
                     {
                         team.map((teamMember, index) => (
@@ -60,14 +51,17 @@ export default function TeamPanel(props) {
 
                 </Tabs>
 
-                <Divider orientation="vertical" flexItem />
+                <Divider />
+
                 {
                     team.map((teamMember, index) => (
                         <TabPanel key={teamMember.name} value={value} index={index}>
-                            <div id={teamMember.name} key={teamMember.name}>
-                                <Box sx={{ display: 'flex', padding: "2em 0 2em 0" }}>
-                                    <Image src={teamMember.imgSrc} width={600} height={450} alt={teamMember.alt} />
-                                    <Box sx={{ marginLeft: '2em' }}>
+                            <div id={teamMember.name} >
+                                <Box sx={{ display: 'block', padding: "1em 0 1em 0" }}>
+                                    <Image src={teamMember.imgSrc} style={{width: '100%', height: 'auto'}} width={600} height={450} alt={teamMember.alt} />
+                                    <Box sx={{ }}>
+                                        <Spacer height={10} />
+
                                         <Typography variant="h4" component="h4">
                                             {teamMember.name}
                                         </Typography>
@@ -78,7 +72,7 @@ export default function TeamPanel(props) {
                                             {teamMember.title}
                                         </Typography>
 
-                                        <Spacer height={35} />
+                                        <Spacer height={25} />
 
                                         <Typography variant="p" component="p">
                                             {teamMember.description}
