@@ -15,7 +15,7 @@ const services = [
         title: "Audio Mixing & Mastering",
         description: "Our experienced engineers utilize state-of-the-art tools to blend individual tracks seamlessly, achieving a balanced, dynamic, and immersive sound. From there, we take your tracks to the next level with meticulous Audio Mastering, ensuring pristine clarity, optimal loudness, and commercial-grade quality. ",
         imgSrc: "/images/audio-mastering-cropped.jpg",
-        id: "audio-mixing-mastering",
+        id: "mixing-mastering",
         alt: "Audio Mixing & Mastering Image"
     },
     {
@@ -94,7 +94,7 @@ export default function Services() {
                                         <Spacer height={50} />
 
                                         <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                            <Button href={'/?quote=' + service.id} variant='contained' >
+                                            <Button href={'/?quote=' + service.id + '#contact'} variant='contained' >
                                                 Request a quote
                                             </Button>
                                         </div>
@@ -128,7 +128,7 @@ export default function Services() {
             }}}>
                 <Spacer height={100} />
                 <Box sx={{ width: "100%" }}>
-                    <Typography variant="h2" component="h2" sx={{ textAlign: "center" }}>
+                    <Typography variant="h1" component="h1" sx={{ textAlign: "center" }}>
                         Services
                     </Typography>
 
@@ -169,6 +169,7 @@ export default function Services() {
                                                     width: '100%',
                                                     height: 'auto',
                                                 }}
+                                                alt={service.alt}
                                                 width={600}
                                                 height={450} />
                                             <Box sx={{ marginLeft: '2em' }}>
@@ -187,7 +188,7 @@ export default function Services() {
                                                 <Spacer height={50} />
 
                                                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                                    <Button href={'/?quote=' + service.id} variant='contained' >
+                                                    <Button href={'/?quote=' + service.id + '#contact-mobile'} variant='contained' >
                                                         Request a quote
                                                     </Button>
                                                 </div>

@@ -1,6 +1,6 @@
 import { Box, Button, Stack, Typography, Paper } from "@mui/material";
 import Spacer from "@/components/spacer";
-import ContactForm from "@/components/Homepage/contact-form";
+import ContactForm from "@/components/contact-form";
 
 export default function MobileContact() {
     return (
