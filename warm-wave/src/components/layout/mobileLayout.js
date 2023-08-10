@@ -97,15 +97,11 @@ export default function MobileLayout({ children }) {
 
     const onNavClick = (event, id, url) => {
         if (id) {
+            router.replace(url);
             setOpen(false);
-            let element = document.getElementById(id)
-            event.preventDefault()
-            element.scrollIntoView()
-            window.history.pushState(id, id, url)
-            console.log("Drawer is: " + open);
         } else {
+            router.replace(url);
             setOpen(false);
-            router.push(url);
         }
 
     }
@@ -151,7 +147,7 @@ export default function MobileLayout({ children }) {
                     <MenuIcon />
                 </IconButton >
 
-                <IconButton href="/">
+                <IconButton href="/" disableRipple>
 
                     <Logo size={50} />
 

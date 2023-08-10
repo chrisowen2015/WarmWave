@@ -59,7 +59,7 @@ export default function MobileAbout() {
 
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                             <Typography variant="b" component="b" align="center" color="primary" sx={{ fontSize: 18 }}>
-                                <Link color="inherit" underline="hover" href="#contact">
+                                <Link color="inherit" underline="hover" href="#contact-mobile">
                                     Elevate your sound. Experience Warm Wave Studio.
                                 </Link>
                             </Typography>
