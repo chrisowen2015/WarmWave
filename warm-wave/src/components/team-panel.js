@@ -18,7 +18,7 @@ function TabPanel(props) {
         >
             {value === index && (
                 <Box sx={{ p: 3 }}>
-                    <Typography>{children}</Typography>
+                    {children}
                 </Box>
             )}
         </div>
@@ -63,7 +63,7 @@ export default function TeamPanel(props) {
                 <Divider orientation="vertical" flexItem />
                 {
                     team.map((teamMember, index) => (
-                        <TabPanel value={value} index={index}>
+                        <TabPanel key={teamMember.name} value={value} index={index}>
                             <div id={teamMember.name} key={teamMember.name}>
                                 <Box sx={{ display: 'flex', padding: "2em 0 2em 0" }}>
                                     <Image src={teamMember.imgSrc} width={600} height={450} alt={teamMember.alt} />

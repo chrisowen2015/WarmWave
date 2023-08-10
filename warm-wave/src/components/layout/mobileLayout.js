@@ -96,17 +96,16 @@ export default function MobileLayout({ children }) {
     };
 
     const onNavClick = (event, id, url) => {
-        toggleDrawer(false);
-
-        console.log("Drawer is: " + open);
-
         if (id) {
+            setOpen(false);
             let element = document.getElementById(id)
             event.preventDefault()
             element.scrollIntoView()
             window.history.pushState(id, id, url)
+            console.log("Drawer is: " + open);
         } else {
-
+            setOpen(false);
+            router.push(url);
         }
 
     }
@@ -170,6 +169,8 @@ export default function MobileLayout({ children }) {
                 open={open}
                 onClose={toggleDrawer(false)}
                 onOpen={toggleDrawer(true)}
+                disableBackdropTransition={true}
+                disableDiscovery={true}
             >
                 <DrawerHeader sx={{ width: '100%', height: '76px' }}>
                     <IconButton onClick={toggleDrawer(false)} sx={{ width: '100%' }} >
