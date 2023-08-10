@@ -28,7 +28,7 @@ export default function MobileHeader() {
             <Spacer height={50} />
 
             <Box display="flex" flexDirection={"row"} justifyContent={"center"} alignItems={"center"}>
-                <Button variant="contained" color="primary" href="#contact" sx={{ padding: "1em 2em 1em 2em" }}>
+                <Button variant="contained" color="primary" href="#contact-mobile" sx={{ padding: "1em 2em 1em 2em" }}>
                     Contact Us to Book a Session
                 </Button>
             </Box>

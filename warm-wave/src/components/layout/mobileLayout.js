@@ -23,7 +23,6 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
 import { useRouter } from 'next/navigation';
 
-
 const drawerItems = [
     {
         name: "Home",
@@ -90,17 +89,21 @@ export default function MobileLayout({ children }) {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+    
 
     const toggleDrawer = (open) => (event) => {
         setOpen(open);
     };
 
     const onNavClick = (event, id, url) => {
+        event.preventDefault();
+        
         if (id) {
             router.replace(url);
+            router.refresh();
             setOpen(false);
         } else {
-            router.replace(url);
+            router.push(url);
             setOpen(false);
         }
 

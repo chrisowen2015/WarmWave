@@ -14,8 +14,7 @@ function TabPanel(props) {
             hidden={value !== index}
             id={`vertical-tabpanel-${index}`}
             aria-labelledby={`vertical-tab-${index}`}
-            {...other}
-        >
+            {...other} >
             {value === index && (
                 <Box sx={{ p: 3 }}>
                     {children}
@@ -27,34 +26,32 @@ function TabPanel(props) {
 
 function a11yProps(index) {
     return {
-      id: `vertical-tab-${index}`,
-      'aria-controls': `vertical-tabpanel-${index}`,
+        id: `vertical-tab-${index}`,
+        'aria-controls': `vertical-tabpanel-${index}`,
     };
-  }
+}
 
 export default function TeamPanel(props) {
     const [value, setValue] = useState(0);
     const team = props.team;
 
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
 
     return (
         <Paper sx={{ padding: '2em', margin: '2em' }}>
             <Box sx={{ display: 'flex' }}>
                 <Tabs
                     orientation="vertical"
-                    variant="scrollable"
                     value={value}
                     onChange={handleChange}
                     aria-label="Vertical tabs example"
-                    sx={{ borderRight: 1, borderColor: 'divider' }}
-                >
+                    sx={{ borderRight: 1, borderColor: 'divider', }}>
                     {
                         team.map((teamMember, index) => (
-                            <Tab id={teamMember.name} key={index} label={teamMember.name} {...a11yProps(0)} />
+                            <Tab id={teamMember.name} key={index} label={teamMember.name} {...a11yProps(0)} sx={{ paddingRight: '2em' }} />
                         ))
                     }
 
@@ -63,7 +60,7 @@ export default function TeamPanel(props) {
                 <Divider orientation="vertical" flexItem />
                 {
                     team.map((teamMember, index) => (
-                        <TabPanel key={teamMember.name} value={value} index={index}>
+                        <TabPanel key={teamMember.name} value={value} index={index} >
                             <div id={teamMember.name} key={teamMember.name}>
                                 <Box sx={{ display: 'flex', padding: "2em 0 2em 0" }}>
                                     <Image src={teamMember.imgSrc} width={600} height={450} alt={teamMember.alt} />
