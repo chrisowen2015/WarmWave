@@ -52,7 +52,7 @@ export default function Services() {
                     xl: 'block',
                 }
             }}>
-                <Spacer height={100} />
+                <Spacer height={150} />
                 <Spacer height={50} />
                 <Box sx={{ width: "100%" }}>
                     <Typography variant="h1" component="h1" sx={{ textAlign: "center" }}>

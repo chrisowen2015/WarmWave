@@ -67,7 +67,7 @@ export default function ContactForm() {
         } else {
             setLoading(false);
         }
-    }, [formData])
+    }, [])
 
 
     function onChange(event) {
