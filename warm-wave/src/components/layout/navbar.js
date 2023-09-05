@@ -71,7 +71,7 @@ export default function NavBar() {
             title="Warm Wave"
           />
           <Typography>
-            <Link color="inherit" underline="hover" href="/#gear">
+            <Link color="inherit" underline="hover" href="/gear">
               Gear
             </Link>
           </Typography>

@@ -115,11 +115,13 @@ export default function Footer() {
                         </Typography>
                     </Box>
 
+                    <Spacer height={10} />
+
                     <Box sx={{ marginTop: '10px', display: 'flex', justifyContent: 'space-between' }}>
                         <IconButton>
                             <YouTube />
                         </IconButton>
-                        <IconButton>
+                        <IconButton href="https://www.instagram.com/warmwavestudio">
                             <Instagram />
                         </IconButton>
                         <IconButton>
