@@ -39,7 +39,7 @@ const drawerItems = [
     {
         name: "Gear",
         icon: <Piano />,
-        url: "/#gear",
+        url: "/gear",
 
     },
     {
