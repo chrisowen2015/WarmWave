@@ -5,20 +5,72 @@ import Spacer from "@/components/spacer";
 export default function Page() {
     return (
         <>
-            <Spacer height={150} />
-            <Spacer height={50} />
+            <Box sx={{
+                display: {
+                    xs: 'none',
+                    sm: 'none',
+                    md: 'block',
+                    lg: 'block',
+                }
+            }}>
+                <Spacer height={150} />
+                <Spacer height={50} />
+            </Box>
+
+            <Box sx={{
+                display: {
+                    xs: 'block',
+                    sm: 'block',
+                    md: 'none',
+                    lg: 'none',
+
+                }
+            }}>
+                <Spacer height={100} />
+            </Box>
 
             <Box sx={{ width: "100%" }}>
                 <Typography variant="h1" component="h1" sx={{ textAlign: "center" }}>
                     Gear
                 </Typography>
             </Box>
+            <Box sx={{
+                display: {
+                    xs: 'none',
+                    sm: 'none',
+                    md: 'block',
+                    lg: 'block',
+                }
+            }}>
+                <Spacer height={50} />
+            </Box>
 
-            <Spacer height={50} />
+            <Box sx={{
+                display: {
+                    xs: 'block',
+                    sm: 'block',
+                    md: 'none',
+                    lg: 'none',
+
+                }
+            }}>
+                <Spacer height={35} />
+            </Box>
 
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Paper sx={{ padding: '2em', margin: '2em', width: '80%' }}>
-                    <Spacer height={50} />
+                <Paper sx={{ padding: '2em', width: '80%' }}>
+                    <Box sx={{
+                        display: {
+                            xs: 'none',
+                            sm: 'none',
+                            md: 'block',
+                            lg: 'block',
+                            xl: 'block',
+                        }
+                    }}>
+                        <Spacer height={50} />
+                    </Box>
+
                     <Grid container spacing={2}>
                         <Grid item md={4}>
                             <Typography variant="h4" component="h4" sx={{ textAlign: "center" }}>
@@ -94,7 +146,7 @@ export default function Page() {
                                 Focal Solo 6 BE <br />
                                 Yamaha Hs8 <br />
                             </Typography>
-                            
+
                             <Spacer height={25} />
                         </Grid>
 
