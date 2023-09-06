@@ -6,9 +6,11 @@ export default function Header() {
         <Box sx={{ width: "100%", backgroundImage: "url(/images/Andrew-Desk-Better-2.jpeg)", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover", minWidth: "1024px", width: "100%" }}>
             <Spacer height={200} />
 
-            <Box sx={{  backgroundColor: "rgba(0, 0, 0, 0.6)", }}>
-                <Typography variant="h1" component="h1" align="center" color="primary" >
-                    Warm Wave Studio
+            <Box sx={{}}>
+                <Typography variant="h1" component="h1" align="center" color="primary">
+                    <span style={{backgroundColor: "rgba(0, 0, 0, 0.6)", padding: '10px'}}>
+                        Warm Wave Studio
+                    </span>
                 </Typography>
             </Box>
 

@@ -13,9 +13,11 @@ export default function MobileHeader() {
         }}>
             <Spacer height={150} />
 
-            <Box sx={{ display: 'block', justifyContent: 'center', backgroundColor: "rgba(0, 0, 0, 0.6)", zIndex: 1000 }}>
-                <Typography variant="h1" component="h1" align="center" sx={{fontWeight: 400,}} color="primary">
-                    Warm Wave Studio
+            <Box sx={{ display: 'block', justifyContent: 'center', }}>
+                <Typography variant="h1" component="h1" align="center" sx={{ fontWeight: 400, }} color="textPrimary">
+                    <span style={{ backgroundColor: "rgba(0, 0, 0, 0.6)", }}>
+                        Warm Wave Studio
+                    </span>
                 </Typography>
             </Box>
 
