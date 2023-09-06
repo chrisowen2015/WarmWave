@@ -91,10 +91,10 @@ export default function Services() {
                                             {service.description}
                                         </Typography>
 
-                                        <Spacer height={50} />
+                                        <Spacer height={100} />
 
                                         <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                            <Button href={'/?quote=' + service.id + '#contact'} variant='contained' >
+                                            <Button href={'/?quote=' + service.id + '#contact'} variant='contained' fullWidth >
                                                 Request a quote
                                             </Button>
                                         </div>
@@ -188,7 +188,7 @@ export default function Services() {
                                                 <Spacer height={50} />
 
                                                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                                    <Button href={'/?quote=' + service.id + '#contact-mobile'} variant='contained' >
+                                                    <Button href={'/?quote=' + service.id + '#contact-mobile'} variant='contained' fullWidth >
                                                         Request a quote
                                                     </Button>
                                                 </div>

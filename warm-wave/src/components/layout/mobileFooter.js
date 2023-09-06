@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Button, Divider, IconButton, Typography, Link, SvgIcon, useTheme, createSvgIcon } from "@mui/material";
+import { Box, Button, Divider, IconButton, Typography, Link, SvgIcon, useTheme, createSvgIcon, Tooltip } from "@mui/material";
 import Spacer from "@/components/spacer";
 import { Facebook, Instagram, Mail, Phone, Spa, YouTube } from "@mui/icons-material";
 import styles from '@/styles/mobileFooter.module.css'
@@ -93,7 +93,7 @@ export default function MobileFooter() {
                         <Box className={styles.contactRow}>
                             <Phone fontSize="large" />
                             <Typography variant="b" component="b" sx={{ marginLeft: '10px' }}>
-                                +1 666.666.6666
+                                +1 626.529.4604
                             </Typography>
                         </Box>
 
@@ -102,7 +102,7 @@ export default function MobileFooter() {
                         <Box className={styles.contactRow}>
                             <Mail fontSize="large" />
                             <Typography variant="b" component="b" sx={{ marginLeft: '10px' }}>
-                                andrew@realemailaddress.com
+                                andrew@warmwavestudio.com
                             </Typography>
                         </Box>
 
@@ -110,15 +110,16 @@ export default function MobileFooter() {
                             <IconButton>
                                 <YouTube fontSize="large" />
                             </IconButton>
-                            <IconButton>
-                                <Instagram fontSize="large" />
-                            </IconButton>
-                            <IconButton>
-                                <Facebook fontSize="large" />
-                            </IconButton>
-                            <IconButton>
-                                <SpotifyIcon fontSize="large" />
-                            </IconButton>
+                            <Tooltip title="Follow us on Instagram">
+                                <IconButton>
+                                    <Instagram fontSize="large" />
+                                </IconButton>
+                            </Tooltip>
+                            <Tooltip title="Listen on Spotify">
+                                <IconButton href="https://open.spotify.com/playlist/58keIOTiefU8JgKFLtKEcb?si=jCEk9WOIRXecZd3y9yYcmA">
+                                    <SpotifyIcon fontSize="large" />
+                                </IconButton>
+                            </Tooltip>
                         </Box>
                     </Box>
                 </Box>
