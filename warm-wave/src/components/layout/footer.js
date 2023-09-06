@@ -1,5 +1,5 @@
 "use client";
-import { Box, Button, Divider, IconButton, Typography, Link, SvgIcon, useTheme, createSvgIcon } from "@mui/material";
+import { Box, Button, Divider, IconButton, Typography, Link, SvgIcon, useTheme, createSvgIcon, Tooltip } from "@mui/material";
 import Spacer from "../spacer";
 import { Facebook, Instagram, Mail, Phone, YouTube } from "@mui/icons-material";
 
@@ -18,13 +18,15 @@ export default function Footer() {
     )
 
     return (
-        <Box sx={{ width: '100%', display: {
-            xs: 'none',
-            sm: 'none',
-            md: 'block',
-            lg: 'block',
-            xl: 'block',
-        } }}>
+        <Box sx={{
+            width: '100%', display: {
+                xs: 'none',
+                sm: 'none',
+                md: 'block',
+                lg: 'block',
+                xl: 'block',
+            }
+        }}>
             <Divider />
             <Spacer height={75} />
             <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>
@@ -102,7 +104,7 @@ export default function Footer() {
                     <Box sx={{ display: 'flex', alignItems: 'center', }}>
                         <Phone />
                         <Typography variant="b" component="b" sx={{ marginLeft: '10px' }}>
-                            +1 666.666.6666
+                            +1 626.529.4604
                         </Typography>
                     </Box>
 
@@ -111,25 +113,26 @@ export default function Footer() {
                     <Box sx={{ display: 'flex', alignItems: 'center', }}>
                         <Mail />
                         <Typography variant="b" component="b" sx={{ marginLeft: '10px' }}>
-                            andrew@realemailaddress.com
+                            andrew@warmwavestudio.com
                         </Typography>
                     </Box>
 
                     <Spacer height={10} />
 
-                    <Box sx={{ marginTop: '10px', display: 'flex', justifyContent: 'space-between' }}>
+                    <Box sx={{ marginTop: '10px', display: 'flex', justifyContent: 'space-evenly' }}>
                         <IconButton>
                             <YouTube />
                         </IconButton>
-                        <IconButton href="https://www.instagram.com/warmwavestudio">
-                            <Instagram />
-                        </IconButton>
-                        <IconButton>
-                            <Facebook />
-                        </IconButton>
-                        <IconButton>
-                            <SpotifyIcon />
-                        </IconButton>
+                        <Tooltip title="Follow us on Instagram">
+                            <IconButton href="https://www.instagram.com/warmwavestudio">
+                                <Instagram />
+                            </IconButton>
+                        </Tooltip>
+                        <Tooltip title="Listen on Spotify">
+                            <IconButton href="https://open.spotify.com/playlist/58keIOTiefU8JgKFLtKEcb?si=jCEk9WOIRXecZd3y9yYcmA">
+                                <SpotifyIcon />
+                            </IconButton>
+                        </Tooltip>
                     </Box>
                 </Box>
             </Box>

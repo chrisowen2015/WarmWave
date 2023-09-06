@@ -10,15 +10,15 @@ import Image from 'next/image';
 const images = [
     {
         label: "1",
-        src: "/images/drums-resized.jpg",
+        src: "/images/gallery/guitars.jpeg",
     },
     {
         label: "2",
-        src: "/images/foo-resized.jpg",
+        src: "/images/gallery/gallery-desk.jpeg",
     },
     {
         label: "3",
-        src: "/images/guitars-resized.jpg",
+        src: "/images/gallery/pianos.jpeg",
     },
 ];
 
@@ -47,7 +47,7 @@ export default function Gallery() {
                     {
                         images.map((image, index) => (
                             <Paper key={index} sx={{ display: 'flex', justifyContent: "center" }}>
-                                <Image src={image.src} alt={image.label} width={720} height={720} />
+                                <Image src={image.src} alt={image.label} width={1080} height={720} />
                             </Paper>
                         ))
                     }

@@ -3,12 +3,14 @@ import Spacer from "../spacer";
 
 export default function Header() {
     return (
-        <Box sx={{ width: "100%", backgroundImage: "url(/images/desk.jpg)", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover", minWidth:"1024px", width: "100%" }}>
+        <Box sx={{ width: "100%", backgroundImage: "url(/images/Andrew-Desk-Better-2.jpeg)", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover", minWidth: "1024px", width: "100%" }}>
             <Spacer height={200} />
 
-            <Typography variant="h1" component="h1" align="center">
-                Warm Wave Studio
-            </Typography>
+            <Box sx={{  backgroundColor: "rgba(0, 0, 0, 0.6)", }}>
+                <Typography variant="h1" component="h1" align="center" color="primary" >
+                    Warm Wave Studio
+                </Typography>
+            </Box>
 
             <Spacer height={300} />
 

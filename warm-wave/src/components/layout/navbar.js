@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import { Box, Typography, Link, Stack, IconButton, } from "@mui/material";
+import { Box, Typography, Link, Stack, IconButton, Button } from "@mui/material";
 import Image from 'next/image';
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -62,14 +62,17 @@ export default function NavBar() {
             </Link>
           </Typography>
 
-          <Image
-            priority
-            src="/images/WarmWaveRecords-logo.png"
-            height={80}
-            width={80}
-            alt="Warm Wave"
-            title="Warm Wave"
-          />
+          <Button href="/" sx={{ borderRadius: "50px" }}>
+            <Image
+              priority
+              src="/images/WarmWaveRecords-logo.png"
+              height={80}
+              width={80}
+              alt="Warm Wave"
+              title="Warm Wave"
+            />
+          </Button>
+
           <Typography>
             <Link color="inherit" underline="hover" href="/gear">
               Gear

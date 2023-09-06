@@ -1,3 +1,4 @@
+'use client';
 import { Box, Button, Stack, Typography, Paper } from "@mui/material";
 import Spacer from "../spacer";
 import ContactForm from "../contact-form";
@@ -24,7 +25,12 @@ export default function Contact() {
             <Spacer height={50} />
 
             <Box sx={{ width: "100%", display: 'flex', justifyContent: 'center' }}>
-                <Button variant="contained" sx={{ padding: "1em 2em 1em 2em" }} >
+                <Button variant="contained" sx={{ padding: "1em 2em 1em 2em" }}
+                    to='#'
+                    onClick={(e) => {
+                        window.location.href = "mailto:chrisowen2015@gmail.com"
+                        e.preventDefault();
+                    }} >
                     Submit
                 </Button>
             </Box>

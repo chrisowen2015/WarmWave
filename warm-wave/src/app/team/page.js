@@ -9,7 +9,7 @@ export default function Team() {
         {
             name: "Andrew Tyler",
             title: "Founder, Senior Mixing & Mastering Engineer",
-            imgSrc: "/images/andrew-tyler-cropped.jpg",
+            imgSrc: "/images/team/andrew-tyler-cropped-1.jpeg",
             alt: "Andrew Tyler Image",
             description: "Andrew Tyler embarked on his journey in the music world as a musician and songwriter, based in a modest Santa Barbara apartment back in 2015. Recognizing his growing affinity for the technical aspects of music, he delved into the realms of mixing and mastering. Over time, he has collaborated with artists spanning the globe, utilizing his expertise to aid them in reaching their musical aspirations."
         },
@@ -17,7 +17,7 @@ export default function Team() {
 
             name: "Chris Owen",
             title: "Website Developer, Brand Developer",
-            imgSrc: "/images/chris-owen.jpg",
+            imgSrc: "/images/team/chris-owen.jpg",
             alt: "Chris Owen Image",
             description: "Chris Owen is a web developer and brand developer based in Pasadena, California. He has worked with a variety of clients, from small businesses to large corporations, to help them achieve their goals. He is passionate about helping others and is always looking for new ways to do so."
         }

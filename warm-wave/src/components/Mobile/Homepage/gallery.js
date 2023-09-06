@@ -10,15 +10,15 @@ import Image from 'next/image';
 const images = [
     {
         label: "1",
-        src: "/images/drums-resized.jpg",
+        src: "/images/gallery/guitars.jpeg",
     },
     {
         label: "2",
-        src: "/images/foo-resized.jpg",
+        src: "/images/gallery/gallery-desk.jpeg",
     },
     {
         label: "3",
-        src: "/images/guitars-resized.jpg",
+        src: "/images/gallery/pianos.jpeg",
     },
 ];
 
