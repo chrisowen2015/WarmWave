@@ -5,7 +5,7 @@ export default function MobileHeader() {
     return (
         <Box sx={{
             width: "100%",
-            backgroundImage: "url(/images/desk.jpg)",
+            backgroundImage: "url(/images/Andrew-Desk-Better-2.jpeg)",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",
@@ -13,8 +13,8 @@ export default function MobileHeader() {
         }}>
             <Spacer height={150} />
 
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Typography variant="h1" component="h1" align="center" sx={{fontWeight: 400}}>
+            <Box sx={{ display: 'block', justifyContent: 'center', backgroundColor: "rgba(0, 0, 0, 0.6)", zIndex: 1000 }}>
+                <Typography variant="h1" component="h1" align="center" sx={{fontWeight: 400,}} color="primary">
                     Warm Wave Studio
                 </Typography>
             </Box>

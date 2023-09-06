@@ -127,7 +127,7 @@ export default function Footer() {
                         <IconButton>
                             <Facebook />
                         </IconButton>
-                        <IconButton>
+                        <IconButton href="https://open.spotify.com/playlist/58keIOTiefU8JgKFLtKEcb?si=jCEk9WOIRXecZd3y9yYcmA">
                             <SpotifyIcon />
                         </IconButton>
                     </Box>

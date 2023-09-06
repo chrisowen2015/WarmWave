@@ -48,7 +48,7 @@ export default function TeamPanel(props) {
                     value={value}
                     onChange={handleChange}
                     aria-label="Vertical tabs example"
-                    sx={{ borderRight: 1, borderColor: 'divider', }}>
+                    sx={{ borderRight: 1, borderColor: 'divider', minWidth: "100px" }}>
                     {
                         team.map((teamMember, index) => (
                             <Tab id={teamMember.name} key={index} label={teamMember.name} {...a11yProps(0)} sx={{ paddingRight: '2em' }} />
