@@ -111,7 +111,7 @@ export default function MobileFooter() {
                                 <YouTube fontSize="large" />
                             </IconButton>
                             <Tooltip title="Follow us on Instagram">
-                                <IconButton>
+                                <IconButton href="https://www.instagram.com/warmwavestudio/">
                                     <Instagram fontSize="large" />
                                 </IconButton>
                             </Tooltip>

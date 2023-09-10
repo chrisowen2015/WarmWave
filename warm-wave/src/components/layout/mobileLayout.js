@@ -33,7 +33,7 @@ const drawerItems = [
     {
         name: "Gallery",
         icon: <Collections />,
-        url: "/#gallery-mobile",
+        url: "/gallery",
         id: "gallery-mobile"
     },
     {
@@ -57,13 +57,13 @@ const drawerItems = [
     {
         name: "About",
         icon: <Info />,
-        url: "/#about-mobile",
+        url: "/about",
         id: "about-mobile"
     },
     {
         name: "Contact Us",
         icon: <Email />,
-        url: "/#contact-mobile",
+        url: "/contact",
         id: "contact-mobile"
     },
 ];
