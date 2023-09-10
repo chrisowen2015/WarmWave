@@ -91,7 +91,7 @@ export default function Services() {
                                             {service.description}
                                         </Typography>
 
-                                        <Spacer height={100} />
+                                        <Spacer height={150} />
 
                                         <div style={{ display: 'flex', justifyContent: 'center' }}>
                                             <Button href={'/?quote=' + service.id + '#contact'} variant='contained' fullWidth >
