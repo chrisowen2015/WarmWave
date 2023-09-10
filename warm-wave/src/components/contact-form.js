@@ -85,8 +85,8 @@ export default function ContactForm() {
         <>
             {
                 loading ?
-                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                        <CircularProgress />
+                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center',  minHeight: 387 }}>
+                        <CircularProgress size={75} />
                     </Box>
                     :
                     <Box>

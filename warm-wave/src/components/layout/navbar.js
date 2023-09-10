@@ -47,12 +47,12 @@ export default function NavBar() {
             </Link>
           </Typography>
           <Typography>
-            <Link color="inherit" underline="hover" href="/#about">
+            <Link color="inherit" underline="hover" href="/about">
               About
             </Link>
           </Typography>
           <Typography>
-            <Link color="inherit" underline="hover" href="/#gallery">
+            <Link color="inherit" underline="hover" href="/gallery">
               Gallery
             </Link>
           </Typography>
@@ -89,7 +89,7 @@ export default function NavBar() {
             </Link>
           </Typography>
           <Typography>
-            <Link color="inherit" underline="hover" href="/#contact">
+            <Link color="inherit" underline="hover" href="/contact">
               Contact
             </Link>
           </Typography>
