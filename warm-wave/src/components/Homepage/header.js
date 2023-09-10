@@ -7,7 +7,7 @@ export default function Header() {
             <Spacer height={200} />
 
             <Box sx={{}}>
-                <Typography variant="h1" component="h1" align="center" color="primary">
+                <Typography fontWeight={500} variant="h1" component="h1" align="center" color="primary">
                     <span style={{backgroundColor: "rgba(0, 0, 0, 0.6)", padding: '10px'}}>
                         Warm Wave Studio
                     </span>
@@ -16,7 +16,7 @@ export default function Header() {
 
             <Spacer height={300} />
 
-            <Typography variant="h3" component="h3" align="center">
+            <Typography fontWeight={500} variant="h3" component="h3" align="center">
                 Mixing & Mastering with the Masters
             </Typography>
 

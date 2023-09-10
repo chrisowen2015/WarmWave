@@ -14,7 +14,7 @@ export default function MobileHeader() {
             <Spacer height={150} />
 
             <Box sx={{ display: 'block', justifyContent: 'center', }}>
-                <Typography variant="h1" component="h1" align="center" sx={{ fontWeight: 400, }} color="textPrimary">
+                <Typography  variant="h1" component="h1" align="center" fontWeight={500} color="textPrimary">
                     <span style={{ backgroundColor: "rgba(0, 0, 0, 0.6)", }}>
                         Warm Wave Studio
                     </span>
@@ -23,7 +23,7 @@ export default function MobileHeader() {
 
             <Spacer height={100} />
 
-            <Typography variant="h3" component="h3" align="center">
+            <Typography variant="h3" component="h3" align="center" fontWeight={500}>
                 Mixing & Mastering with the Masters
             </Typography>
 

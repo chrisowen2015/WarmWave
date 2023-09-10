@@ -7,7 +7,7 @@ import Link from '@mui/material/Link';
 export default function About() {
     return (
         <div id="about">
-            <Typography variant="h1" component="h1" align="center">
+            <Typography fontWeight={400} variant="h1" component="h1" align="center">
                 About Us
             </Typography>
 

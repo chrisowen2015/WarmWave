@@ -26,7 +26,7 @@ export default function Gallery() {
     const theme = useTheme();
     return (
         <Box id="gallery">
-            <Typography variant="h1" component="h1" align="center">
+            <Typography fontWeight={400} variant="h1" component="h1" align="center">
                 Gallery
             </Typography>
             <Spacer height={60} />

@@ -38,19 +38,19 @@ export default function Footer() {
                     </Box>
 
                     <Typography variant="p" component="p">
-                        <Link color="inherit" underline="hover" href="/#about">
+                        <Link color="inherit" underline="hover" href="/about">
                             About Us
                         </Link>
                     </Typography>
 
                     <Typography variant="p" component="p">
-                        <Link color="inherit" underline="hover" href="/#gallery">
+                        <Link color="inherit" underline="hover" href="/gallery">
                             Gallery
                         </Link>
                     </Typography>
 
                     <Typography variant="p" component="p">
-                        <Link color="inherit" underline="hover" href="/#team">
+                        <Link color="inherit" underline="hover" href="/team">
                             Our Team
                         </Link>
                     </Typography>

@@ -84,8 +84,8 @@ export default function NavBar() {
             </Link>
           </Typography>
           <Typography>
-            <Link color="inherit" underline="hover" href="/news">
-              News
+            <Link color="inherit" underline="hover" target="_blank" href="https://open.spotify.com/playlist/58keIOTiefU8JgKFLtKEcb?si=jCEk9WOIRXecZd3y9yYcmA">
+              Listen
             </Link>
           </Typography>
           <Typography>
