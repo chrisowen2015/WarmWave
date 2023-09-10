@@ -63,9 +63,9 @@ export default function TeamPanel(props) {
                         <TabPanel key={teamMember.name} value={value} index={index} >
                             <div id={teamMember.name} key={teamMember.name}>
                                 <Box sx={{ display: 'flex', padding: "2em 0 2em 0" }}>
-                                    <Image src={teamMember.imgSrc} width={600} height={450} alt={teamMember.alt} />
+                                    <Image src={teamMember.imgSrc} width={600} height={450} alt={teamMember.alt} priority />
                                     <Box sx={{ marginLeft: '2em' }}>
-                                        <Typography variant="h4" component="h4">
+                                        <Typography variant="h4" component="h4" fontWeight={400}>
                                             {teamMember.name}
                                         </Typography>
 

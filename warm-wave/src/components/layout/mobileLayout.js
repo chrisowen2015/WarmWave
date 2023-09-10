@@ -20,6 +20,7 @@ import { useState, useEffect, Fragment } from 'react';
 import Image from 'next/image';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import Headphones from '@mui/icons-material/Headphones';
 
 import { useRouter } from 'next/navigation';
 
@@ -53,6 +54,11 @@ const drawerItems = [
         icon: <PeopleAlt />,
         url: "/team",
 
+    },
+    {
+        name: "Listen",
+        icon: <Headphones />,
+        url: "https://open.spotify.com/playlist/58keIOTiefU8JgKFLtKEcb?si=jCEk9WOIRXecZd3y9yYcmA",
     },
     {
         name: "About",
@@ -89,7 +95,7 @@ export default function MobileLayout({ children }) {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-    
+
 
     const toggleDrawer = (open) => (event) => {
         setOpen(open);
@@ -97,7 +103,7 @@ export default function MobileLayout({ children }) {
 
     const onNavClick = (event, id, url) => {
         event.preventDefault();
-        
+
         if (id) {
             router.replace(url);
             router.refresh();
@@ -154,7 +160,7 @@ export default function MobileLayout({ children }) {
 
                     <Logo size={50} />
 
-                    <Typography sx={{ flexGrow: 1, marginLeft: 1 }} component="h5" variant="h5">
+                    <Typography color="primary" fontWeight={600} component="h4" variant="h4" sx={{ flexGrow: 1, marginLeft: 2 }} >
                         Warm Wave Studio
                     </Typography>
                 </IconButton>
@@ -174,7 +180,7 @@ export default function MobileLayout({ children }) {
                 <DrawerHeader sx={{ width: '100%', height: '76px' }}>
                     <IconButton onClick={toggleDrawer(false)} sx={{ width: '100%' }} >
                         <Logo size={40} />
-                        <Typography sx={{ flexGrow: 1 }} color="primary">
+                        <Typography fontWeight={600} sx={{ flexGrow: 1 }} color="primary" >
                             Warm Wave Studio
                         </Typography>
                         <ChevronLeftIcon />
@@ -186,7 +192,7 @@ export default function MobileLayout({ children }) {
                     onKeyDown={toggleDrawer(false)} >
                     <List>
                         {drawerItems.map((drawerItem, index) => (
-                            <Paper key={drawerItem.name} id={drawerItem.name}>
+                            <Paper key={drawerItem.name} id={drawerItem.name} >
                                 <ListItem key={drawerItem.name} disablePadding>
                                     <ListItemButton
                                         onClick={(event) => onNavClick(event, drawerItem.id, drawerItem.url)}
@@ -194,7 +200,10 @@ export default function MobileLayout({ children }) {
                                         <ListItemIcon>
                                             {drawerItem.icon}
                                         </ListItemIcon>
-                                        <ListItemText primary={drawerItem.name} />
+                                        <ListItemText primary={drawerItem.name}
+                                            primaryTypographyProps={{
+                                                fontWeight: 600,
+                                            }} />
                                     </ListItemButton>
                                 </ListItem>
                                 {

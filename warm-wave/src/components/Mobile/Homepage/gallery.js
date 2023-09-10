@@ -26,7 +26,7 @@ export default function MobileGallery() {
     const theme = useTheme();
     return (
         <Box id="gallery-mobile">
-            <Typography variant="h1" component="h1" align="center">
+            <Typography variant="h1" component="h1" align="center" fontWeight={400}>
                 Gallery
             </Typography>
             <Spacer height={35} />

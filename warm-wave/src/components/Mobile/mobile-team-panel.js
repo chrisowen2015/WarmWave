@@ -62,17 +62,17 @@ export default function MobileTeamPanel(props) {
                                     <Box sx={{ }}>
                                         <Spacer height={10} />
 
-                                        <Typography variant="h4" component="h4">
+                                        <Typography color="primary" variant="h4" component="h4" fontWeight={600}>
                                             {teamMember.name}
                                         </Typography>
 
                                         <Spacer height={10} />
 
-                                        <Typography variant="h5" component="h5">
+                                        <Typography variant="h5" component="h5" fontWeight={500}>
                                             {teamMember.title}
                                         </Typography>
 
-                                        <Spacer height={25} />
+                                        <Spacer height={15} />
 
                                         <Typography variant="p" component="p">
                                             {teamMember.description}

@@ -7,7 +7,7 @@ export default function Contact() {
     return (
         <Box id="contact">
 
-            <Typography variant="h1" component="h1" align="center">
+            <Typography fontWeight={400} variant="h1" component="h1" align="center">
                 Contact Us
             </Typography>
 

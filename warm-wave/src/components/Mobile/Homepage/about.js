@@ -7,7 +7,7 @@ import Link from '@mui/material/Link';
 export default function MobileAbout() {
     return (
         <div id="about-mobile">
-            <Typography variant="h1" component="h1" align="center">
+            <Typography variant="h1" component="h1" align="center" fontWeight={400}>
                 About Us
             </Typography>
 

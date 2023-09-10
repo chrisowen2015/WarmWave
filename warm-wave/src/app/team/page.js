@@ -36,7 +36,7 @@ export default function Team() {
             }}>
                 <Spacer height={200} />
 
-                <Typography variant="h1" component="h1" sx={{ textAlign: "center" }}>
+                <Typography fontWeight={400} variant="h1" component="h1" sx={{ textAlign: "center" }}>
                     Our Team
                 </Typography>
 
@@ -57,7 +57,7 @@ export default function Team() {
             }}>
                 <Spacer height={100} />
 
-                <Typography variant="h1" component="h1" sx={{ textAlign: "center" }}>
+                <Typography variant="h1" component="h1" sx={{ textAlign: "center" }} fontWeight={400}>
                     Our Team
                 </Typography>
 

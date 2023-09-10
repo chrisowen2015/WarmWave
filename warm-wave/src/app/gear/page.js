@@ -30,7 +30,7 @@ export default function Page() {
             </Box>
 
             <Box sx={{ width: "100%" }}>
-                <Typography variant="h1" component="h1" sx={{ textAlign: "center" }}>
+                <Typography variant="h1" fontWeight={400} component="h1" sx={{ textAlign: "center" }}>
                     Gear
                 </Typography>
             </Box>
