@@ -41,22 +41,22 @@ export default function NavBar() {
         }
       }}>
         <Stack direction="row" spacing={4} style={{ justifyContent: "center", alignItems: "center" }}>
-          <Typography>
+          <Typography fontWeight={500} variant='h6'>
             <Link color="inherit" underline="hover" href="/" >
               Home
             </Link>
           </Typography>
-          <Typography>
+          <Typography fontWeight={500} variant='h6'>
             <Link color="inherit" underline="hover" href="/about">
               About
             </Link>
           </Typography>
-          <Typography>
+          <Typography fontWeight={500} variant='h6'>
             <Link color="inherit" underline="hover" href="/gallery">
               Gallery
             </Link>
           </Typography>
-          <Typography>
+          <Typography fontWeight={500} variant='h6'>
             <Link color="inherit" underline="hover" href="/team">
               Our Team
             </Link>
@@ -73,22 +73,22 @@ export default function NavBar() {
             />
           </Button>
 
-          <Typography>
+          <Typography fontWeight={500} variant='h6'>
             <Link color="inherit" underline="hover" href="/gear">
               Gear
             </Link>
           </Typography>
-          <Typography>
+          <Typography fontWeight={500} variant='h6'>
             <Link color="inherit" underline="hover" href="/services">
               Services
             </Link>
           </Typography>
-          <Typography>
+          <Typography fontWeight={500} variant='h6'>
             <Link color="inherit" underline="hover" target="_blank" href="https://open.spotify.com/playlist/58keIOTiefU8JgKFLtKEcb?si=jCEk9WOIRXecZd3y9yYcmA">
               Listen
             </Link>
           </Typography>
-          <Typography>
+          <Typography fontWeight={500} variant='h6'>
             <Link color="inherit" underline="hover" href="/contact">
               Contact
             </Link>
