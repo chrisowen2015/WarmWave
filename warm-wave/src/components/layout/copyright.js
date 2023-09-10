@@ -7,7 +7,7 @@ export default function CopyRight() {
             <Box sx={{ padding: '2em', }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <Typography variant="p" component="p">
-                        © 2021 Warm Wave Studio
+                        © 2023 Warm Wave Studio
                     </Typography>
                 </Box>
 

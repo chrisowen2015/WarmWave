@@ -94,7 +94,7 @@ export default function Services() {
                                         <Spacer height={100} />
 
                                         <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                            <Button href={'/?quote=' + service.id + '#contact'} variant='contained' fullWidth >
+                                            <Button href={'/contact?quote=' + service.id + '#contact'} variant='contained' fullWidth >
                                                 Request a quote
                                             </Button>
                                         </div>
