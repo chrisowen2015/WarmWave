@@ -1,5 +1,6 @@
 import { Roboto } from 'next/font/google';
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { darkScrollbar } from '@mui/material';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -18,6 +19,20 @@ export const lightTheme = responsiveFontSizes(createTheme({
       fontFamily: roboto.style.fontFamily,
     },
     components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          html: {
+            ...darkScrollbar(
+              {
+                track: '#202022',
+                thumb: '#585859',
+                active: '#838384'
+              }
+            ),
+            scrollbarWidth: "thin"
+          }
+        },
+      },
       MuiAlert: {
         styleOverrides: {
           root: ({ ownerState }) => ({
