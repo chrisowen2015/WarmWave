@@ -19,20 +19,6 @@ export const lightTheme = responsiveFontSizes(createTheme({
       fontFamily: roboto.style.fontFamily,
     },
     components: {
-      MuiCssBaseline: {
-        styleOverrides: {
-          html: {
-            ...darkScrollbar(
-              {
-                track: '#202022',
-                thumb: '#585859',
-                active: '#838384'
-              }
-            ),
-            scrollbarWidth: "thin"
-          }
-        },
-      },
       MuiAlert: {
         styleOverrides: {
           root: ({ ownerState }) => ({
@@ -56,6 +42,20 @@ export const lightTheme = responsiveFontSizes(createTheme({
       fontFamily: roboto.style.fontFamily,
     },
     components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          html: {
+            ...darkScrollbar(
+              {
+                track: '#202022',
+                thumb: '#585859',
+                active: '#838384'
+              }
+            ),
+            scrollbarWidth: "thin"
+          }
+        },
+      },
       MuiAlert: {
         styleOverrides: {
           root: ({ ownerState }) => ({
