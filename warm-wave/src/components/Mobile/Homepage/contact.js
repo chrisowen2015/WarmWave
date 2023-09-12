@@ -13,21 +13,12 @@ export default function MobileContact() {
             <Spacer height={50} />
 
             <Box sx={{ width: "100%", display: 'flex', justifyContent: 'center' }}>
-
                 <Box sx={{ width: "90%", }}>
-                    <Paper sx={{ padding: '1.5em' }}>
-                        <ContactForm />
-                    </Paper>
+                    <ContactForm />
                 </Box>
             </Box>
 
             <Spacer height={35} />
-
-            <Box sx={{ width: "100%", display: 'flex', justifyContent: 'center' }}>
-                <Button variant="contained" sx={{ padding: "1em 2em 1em 2em" }} >
-                    Submit
-                </Button>
-            </Box>
 
         </Box>
     );
