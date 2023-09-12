@@ -320,6 +320,8 @@ export default function ContactForm() {
                             open: true,
                         });
                         setFormData({
+                            firstName: '',
+                            lastName: '',
                             emailAddress: '',
                             subject: '',
                             message: '',
