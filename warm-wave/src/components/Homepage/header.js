@@ -49,7 +49,7 @@ export default function Header() {
         <Button
           variant="contained"
           color="primary"
-          href="#contact"
+          href="contact"
           sx={{ padding: "1em 2em 1em 2em" }}
         >
           Contact Us to Book a Session

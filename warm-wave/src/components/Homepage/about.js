@@ -97,7 +97,7 @@ export default function About() {
                 color="primary"
                 sx={{ fontSize: 18 }}
               >
-                <Link color="inherit" underline="hover" href="#contact">
+                <Link color="inherit" underline="hover" href="contact">
                   Elevate your sound. Experience Warm Wave Studio.
                 </Link>
               </Typography>
