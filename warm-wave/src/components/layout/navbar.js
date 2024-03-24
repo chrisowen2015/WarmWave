@@ -1,8 +1,15 @@
 "use client";
-import React from 'react'
-import { Box, Typography, Link, Stack, IconButton, Button } from "@mui/material";
-import Image from 'next/image';
-import MenuIcon from '@mui/icons-material/Menu';
+import React from "react";
+import {
+  Box,
+  Typography,
+  Link,
+  Stack,
+  IconButton,
+  Button,
+} from "@mui/material";
+import Image from "next/image";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function NavBar() {
   const [isSticky, setIsSticky] = React.useState(false);
@@ -17,46 +24,54 @@ export default function NavBar() {
   };
 
   React.useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <Box sx={{
-      position: isSticky ? "fixed" : "absolute",
-      width: "100%",
-      padding: "10px 10px 10px 10px",
-      backgroundColor: "rgba(0, 0, 0, 0.6)",
-      zIndex: 1000
-    }}>
-      <Box sx={{
-        display: {
-          xs: 'none',
-          sm: 'none',
-          md: 'block',
-          lg: 'block',
-          xl: 'block',
-        }
-      }}>
-        <Stack direction="row" spacing={4} style={{ justifyContent: "center", alignItems: "center" }}>
-          <Typography fontWeight={500} variant='h6'>
-            <Link color="inherit" underline="hover" href="/" >
+    <Box
+      sx={{
+        position: isSticky ? "fixed" : "absolute",
+        width: "100%",
+        padding: "10px 10px 10px 10px",
+        backgroundColor: "rgba(0, 0, 0, 0.6)",
+        zIndex: 1000,
+      }}
+    >
+      <Box
+        sx={{
+          display: {
+            xs: "none",
+            sm: "none",
+            md: "block",
+            lg: "block",
+            xl: "block",
+          },
+        }}
+      >
+        <Stack
+          direction="row"
+          spacing={4}
+          style={{ justifyContent: "center", alignItems: "center" }}
+        >
+          <Typography fontWeight={500} variant="h6">
+            <Link color="inherit" underline="hover" href="/">
               Home
             </Link>
           </Typography>
-          <Typography fontWeight={500} variant='h6'>
+          <Typography fontWeight={500} variant="h6">
             <Link color="inherit" underline="hover" href="/about">
               About
             </Link>
           </Typography>
-          <Typography fontWeight={500} variant='h6'>
+          <Typography fontWeight={500} variant="h6">
             <Link color="inherit" underline="hover" href="/gallery">
               Gallery
             </Link>
           </Typography>
-          <Typography fontWeight={500} variant='h6'>
+          <Typography fontWeight={500} variant="h6">
             <Link color="inherit" underline="hover" href="/team">
               Our Team
             </Link>
@@ -73,39 +88,44 @@ export default function NavBar() {
             />
           </Button>
 
-          <Typography fontWeight={500} variant='h6'>
+          <Typography fontWeight={500} variant="h6">
             <Link color="inherit" underline="hover" href="/gear">
               Gear
             </Link>
           </Typography>
-          <Typography fontWeight={500} variant='h6'>
+          <Typography fontWeight={500} variant="h6">
             <Link color="inherit" underline="hover" href="/services">
               Services
             </Link>
           </Typography>
-          <Typography fontWeight={500} variant='h6'>
-            <Link color="inherit" underline="hover" target="_blank" href="https://open.spotify.com/playlist/58keIOTiefU8JgKFLtKEcb?si=jCEk9WOIRXecZd3y9yYcmA">
+          <Typography fontWeight={500} variant="h6">
+            <Link
+              color="inherit"
+              underline="hover"
+              target="_blank"
+              href="https://open.spotify.com/playlist/58keIOTiefU8JgKFLtKEcb?si=jCEk9WOIRXecZd3y9yYcmA"
+            >
               Listen
             </Link>
           </Typography>
-          <Typography fontWeight={500} variant='h6'>
+          <Typography fontWeight={500} variant="h6">
             <Link color="inherit" underline="hover" href="/contact">
               Contact
             </Link>
           </Typography>
         </Stack>
       </Box>
-      <Box sx={{
-        display: {
-          xs: 'block',
-          sm: 'block',
-          md: 'none',
-          lg: 'none',
-          xl: 'none',
-        }
-      }}>
-
-      </Box>
+      <Box
+        sx={{
+          display: {
+            xs: "block",
+            sm: "block",
+            md: "none",
+            lg: "none",
+            xl: "none",
+          },
+        }}
+      ></Box>
     </Box>
-  )
+  );
 }

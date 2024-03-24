@@ -1,14 +1,13 @@
-import About from '@/components/Homepage/about'
-import Contact from '@/components/Homepage/contact'
-import Gallery from '@/components/Homepage/gallery'
-import Header from '@/components/Homepage/header'
-import Spacer from '@/components/spacer'
-import { Box } from '@mui/material'
-import MobileAbout from '@/components/Mobile/Homepage/about'
-import MobileContact from '@/components/Mobile/Homepage/contact'
-import MobileGallery from '@/components/Mobile/Homepage/gallery'
-import MobileHeader from '@/components/Mobile/Homepage/header'
-
+import About from "@/components/Homepage/about";
+import Contact from "@/components/Homepage/contact";
+import Gallery from "@/components/Homepage/gallery";
+import Header from "@/components/Homepage/header";
+import Spacer from "@/components/spacer";
+import { Box } from "@mui/material";
+import MobileAbout from "@/components/Mobile/Homepage/about";
+import MobileContact from "@/components/Mobile/Homepage/contact";
+import MobileGallery from "@/components/Mobile/Homepage/gallery";
+import MobileHeader from "@/components/Mobile/Homepage/header";
 
 export default function Home() {
   return (
@@ -18,15 +17,17 @@ export default function Home() {
       {
         // The Desktop version of the landing page
       }
-      <Box sx={{
-        display: {
-          xs: 'none',
-          sm: 'none',
-          md: 'block',
-          lg: 'block',
-          xl: 'block',
-        }
-      }}>
+      <Box
+        sx={{
+          display: {
+            xs: "none",
+            sm: "none",
+            md: "block",
+            lg: "block",
+            xl: "block",
+          },
+        }}
+      >
         <Header />
         <Spacer height={60} />
         <About />
@@ -41,15 +42,17 @@ export default function Home() {
         // The Mobile version of the landing page
       }
 
-      <Box sx={{
-        display: {
-          xs: 'block',
-          sm: 'block',
-          md: 'none',
-          lg: 'none',
-          xl: 'none',
-        }
-      }}>
+      <Box
+        sx={{
+          display: {
+            xs: "block",
+            sm: "block",
+            md: "none",
+            lg: "none",
+            xl: "none",
+          },
+        }}
+      >
         <MobileHeader />
         <Spacer height={35} />
         <MobileAbout />
@@ -60,5 +63,5 @@ export default function Home() {
         <Spacer height={35} />
       </Box>
     </>
-  )
+  );
 }

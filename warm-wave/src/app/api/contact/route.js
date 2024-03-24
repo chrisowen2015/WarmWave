@@ -1,16 +1,17 @@
-'use strict';
+"use strict";
 
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-import Mail from 'nodemailer/lib/mailer';
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+import Mail from "nodemailer/lib/mailer";
 
 export async function POST(req) {
-  const { firstName, lastName, emailAddress, subject, message } = await req.json();
+  const { firstName, lastName, emailAddress, subject, message } =
+    await req.json();
 
   const successMessage = "Email sent successfully!";
 
   const transport = nodemailer.createTransport({
-    service: 'gmail',
+    service: "gmail",
     /* 
         setting service as 'gmail' is same as providing these setings:
   
@@ -33,7 +34,15 @@ export async function POST(req) {
     to: process.env.TO_EMAIL,
     // cc: email, (uncomment this line if you want to send a copy to the sender)
     subject: subject,
-    text: 'Message sent from ' + firstName + ' ' + lastName + ', ' + emailAddress + " \n \n" + message,
+    text:
+      "Message sent from " +
+      firstName +
+      " " +
+      lastName +
+      ", " +
+      emailAddress +
+      " \n \n" +
+      message,
   };
 
   const sendMailPromise = async () =>
