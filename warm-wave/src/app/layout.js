@@ -9,6 +9,7 @@ import MobileLayout from "@/components/layout/mobileLayout";
 import MobileFooter from "@/components/layout/mobileFooter";
 import CopyRight from "@/components/layout/copyright";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -70,6 +71,7 @@ export default function RootLayout({ children }) {
           <MobileFooter />
           <Footer />
           <CopyRight />
+          <SpeedInsights />
           <Analytics />
         </ThemeRegistry>
       </body>
