@@ -31,7 +31,7 @@ export default function AboutPage() {
           },
         }}
       >
-        <Spacer height={200} />
+        <Spacer height={150} />
         <About />
       </Box>
     </>

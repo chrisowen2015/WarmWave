@@ -14,7 +14,7 @@ export default function Header() {
         width: "100%",
       }}
     >
-      <Spacer height={200} />
+      <Spacer height={150} />
 
       <Box sx={{}}>
         <Typography

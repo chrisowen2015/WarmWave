@@ -498,7 +498,6 @@ export default function ContactForm() {
                 onClick={async (event) => await handleSubmit(event)}
               >
                 <Typography variant="h6">SUBMIT &nbsp;</Typography>
-                <Send fontSize="large" />
               </Button>
             </Tooltip>
           </Box>

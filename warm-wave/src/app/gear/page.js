@@ -16,7 +16,6 @@ export default function Page() {
         }}
       >
         <Spacer height={150} />
-        <Spacer height={50} />
       </Box>
 
       <Box

@@ -56,7 +56,6 @@ export default function Services() {
         }}
       >
         <Spacer height={150} />
-        <Spacer height={50} />
         <Box sx={{ width: "100%" }}>
           <Typography
             variant="h1"
@@ -68,7 +67,7 @@ export default function Services() {
           </Typography>
         </Box>
 
-        <Spacer height={50} />
+        <Spacer height={25} />
 
         <Paper sx={{ padding: "2em", margin: "2em" }}>
           <Spacer height={25} />

@@ -36,7 +36,7 @@ export default function Team() {
           },
         }}
       >
-        <Spacer height={200} />
+        <Spacer height={150} />
 
         <Typography
           fontWeight={400}
@@ -47,7 +47,7 @@ export default function Team() {
           Our Team
         </Typography>
 
-        <Spacer height={50} />
+        <Spacer height={25} />
 
         <TeamPanel team={team} />
 
