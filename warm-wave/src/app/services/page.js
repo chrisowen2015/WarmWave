@@ -1,5 +1,18 @@
 import React from "react";
-import { Box, Divider, Paper, Typography, Button } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Paper,
+  Typography,
+  Button,
+  TableContainer,
+  Table,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableBody,
+  Grid,
+} from "@mui/material";
 import Spacer from "@/components/spacer";
 import Image from "next/image";
 
@@ -11,6 +24,8 @@ const services = [
     imgSrc: "/images/services/audio-recording-cropped.jpg",
     id: "audio-recording",
     alt: "Audio Recording Image",
+    hourlyCost: 79.0,
+    dailyCost: 600.0,
   },
   {
     title: "Audio Mixing & Mastering",
@@ -19,6 +34,8 @@ const services = [
     imgSrc: "/images/services/audio-mastering-cropped.jpg",
     id: "mixing-mastering",
     alt: "Audio Mixing & Mastering Image",
+    hourlyCost: 79.0,
+    dailyCost: 600.0,
   },
   {
     title: "Mixing & Mastering Lessons",
@@ -27,6 +44,8 @@ const services = [
     imgSrc: "/images/services/lessons-cropped.jpg",
     id: "mixing-mastering-lessons",
     alt: "Mixing & Mastering Lessons Image",
+    hourlyCost: 79.0,
+    dailyCost: 600.0,
   },
   {
     title: "Production Session Musicians",
@@ -35,6 +54,8 @@ const services = [
     imgSrc: "/images/services/session-andrew-cropped.jpg",
     id: "production-session-musicians",
     alt: "Production Session Musicians Image",
+    hourlyCost: 79.0,
+    dailyCost: 600.0,
   },
 ];
 
@@ -83,6 +104,55 @@ export default function Services() {
           </Typography>
 
           <Spacer height={50} />
+
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={6}>
+              <Typography variant="h4" component="h4" align="center">
+                Service Costs
+              </Typography>
+
+              <Spacer height={25} />
+
+              <Typography variant="p" component="p" align="center">
+                Our services are priced at $79 per hour and $600 per day.
+              </Typography>
+
+              <Spacer height={25} />
+            </Grid>
+
+            <Grid item xs={12} sm={12} md={12} lg={8} xl={6}>
+              <TableContainer component={Paper} elevation={4}>
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Service</TableCell>
+                      <TableCell align="right">Hourly Cost&nbsp;($)</TableCell>
+                      <TableCell align="right">Daily Cost&nbsp;($)</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {services.map((service) => (
+                      <TableRow
+                        key={service.id}
+                        sx={{
+                          "&:last-child td, &:last-child th": { border: 0 },
+                        }}
+                      >
+                        <TableCell component="th" scope="row">
+                          {service.title}
+                        </TableCell>
+                        <TableCell align="right">
+                          {service.hourlyCost}
+                        </TableCell>
+                        <TableCell align="right">{service.dailyCost}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </Grid>
+          </Grid>
+
           {services.map((service, index) => (
             <div id={service.id} key={service.id}>
               <Box sx={{ display: "flex", padding: "2em 0 2em 0" }}>
