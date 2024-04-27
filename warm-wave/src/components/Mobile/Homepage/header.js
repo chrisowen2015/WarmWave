@@ -51,7 +51,6 @@ export default function MobileHeader() {
                 "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5))",
               borderRadius: "15px",
               padding: "10px 0px",
-              backdropFilter: blur(5),
             }}
           >
             Warm Wave Studio

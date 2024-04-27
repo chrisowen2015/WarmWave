@@ -59,7 +59,6 @@ export default function About() {
                 "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5))",
               borderRadius: "15px",
               padding: "2em",
-              backdropFilter: blur(5),
             }}
           >
             <Typography

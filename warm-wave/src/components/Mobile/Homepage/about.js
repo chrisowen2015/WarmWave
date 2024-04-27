@@ -57,7 +57,6 @@ export default function MobileAbout() {
               background:
                 "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5))",
               borderRadius: "15px",
-              backdropFilter: blur(5),
               padding: "1em",
             }}
           >
