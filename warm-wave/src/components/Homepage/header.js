@@ -49,7 +49,13 @@ export default function Header() {
             color="primary"
           >
             <span
-              style={{ backgroundColor: "rgba(0, 0, 0, 0.6)", padding: "10px" }}
+              style={{
+                background:
+                  "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5))",
+                borderRadius: "15px",
+                padding: "20px",
+                backdropFilter: blur(10),
+              }}
             >
               Warm Wave Studio
             </span>

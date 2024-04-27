@@ -55,8 +55,11 @@ export default function About() {
           <Paper
             sx={{
               width: "60%",
-              backgroundColor: "rgba(0, 0, 0, 0.55)",
+              background:
+                "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5))",
+              borderRadius: "15px",
               padding: "2em",
+              backdropFilter: blur(5),
             }}
           >
             <Typography
