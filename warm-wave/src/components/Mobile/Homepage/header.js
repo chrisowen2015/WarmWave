@@ -46,10 +46,14 @@ export default function MobileHeader() {
             align="center"
             fontWeight={500}
             color="textPrimary"
+            style={{
+              background:
+                "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5))",
+              borderRadius: "15px",
+              padding: "10px 0px",
+            }}
           >
-            <span style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
-              Warm Wave Studio
-            </span>
+            Warm Wave Studio
           </Typography>
         </Box>
 

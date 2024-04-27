@@ -54,11 +54,18 @@ export default function MobileAbout() {
           <Paper
             sx={{
               width: "90%",
-              backgroundColor: "rgba(0, 0, 0, 0.55)",
-              padding: "2em",
+              background:
+                "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5))",
+              borderRadius: "15px",
+              padding: "1em",
             }}
           >
-            <Typography variant="p" component="p" align="center">
+            <Typography
+              variant="p"
+              component="p"
+              align="center"
+              sx={{ fontSize: 16.5 }}
+            >
               Welcome to Warm Wave Studio, founded by Andrew Tyler in 2016. We
               specialize in hi-fi recording, mixing, and mastering, catering to
               a diverse range of genres including indie rock, EDM, and rap.
@@ -66,7 +73,12 @@ export default function MobileAbout() {
 
             <Spacer height={20} />
 
-            <Typography variant="p" component="p" align="center">
+            <Typography
+              variant="p"
+              component="p"
+              align="center"
+              sx={{ fontSize: 16.5 }}
+            >
               Our dedicated team ensures meticulous execution of every aspect of
               the production process, driven by our passion for music and
               commitment to excellence. Join us on a journey of artistic growth
