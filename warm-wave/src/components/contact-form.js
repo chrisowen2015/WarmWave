@@ -69,8 +69,8 @@ export default function ContactForm() {
     severity: "",
   });
 
-  const searchParams = useSearchParams();
-  const quoteParam = searchParams.get("quote");
+  const searchParams = useSearchParams() || null;
+  const quoteParam = searchParams ? searchParams.get("quote") : null;
 
   useEffect(() => {
     if (quoteParam && quoteParam.length > 0) {
