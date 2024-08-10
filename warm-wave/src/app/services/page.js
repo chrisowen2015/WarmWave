@@ -157,7 +157,6 @@ export default function Services() {
           <Box>
             <Box sx={{ padding: "15px" }}>
               <Paper sx={{ width: "100%", padding: "2em" }}>
-                <Spacer height={25} />
                 <Typography variant="h6" component="h6">
                   Our services include hi-fi recording, precise mixing, and
                   masterful mastering. We provide comprehensive support to
@@ -206,7 +205,7 @@ export default function Services() {
                       width={600}
                       height={450}
                     />
-                    <Box sx={{ marginLeft: "2em" }}>
+                    <Box>
                       <Spacer height={15} />
 
                       <Typography variant="h4" component="h4" align="center">
