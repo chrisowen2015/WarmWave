@@ -69,10 +69,10 @@ export default function ContactForm() {
     severity: "",
   });
 
-  useEffect(() => {
-    const searchParams = useSearchParams() || null;
-    const quoteParam = searchParams ? searchParams.get("quote") : null;
+  const searchParams = useSearchParams() || null;
+  const quoteParam = searchParams ? searchParams.get("quote") : null;
 
+  useEffect(() => {
     if (quoteParam && quoteParam.length > 0) {
       var subject;
 
