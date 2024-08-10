@@ -1,7 +1,7 @@
 "use client";
 import { Box, Button, Stack, Typography, Paper } from "@mui/material";
 import Spacer from "../spacer";
-import ContactForm from "../contact-form";
+import ContactFormContainer from "../contact-form-container";
 
 export default function Contact() {
   return (
@@ -14,7 +14,7 @@ export default function Contact() {
 
       <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <Box sx={{ width: "50%", minWidth: "800px" }}>
-          <ContactForm />
+          <ContactFormContainer />
         </Box>
       </Box>
 

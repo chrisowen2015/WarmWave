@@ -1,6 +1,6 @@
 import { Box, Button, Stack, Typography, Paper } from "@mui/material";
 import Spacer from "@/components/spacer";
-import ContactForm from "@/components/contact-form";
+import ContactFormContainer from "@/components/contact-form-container";
 
 export default function MobileContact() {
   return (
@@ -13,7 +13,7 @@ export default function MobileContact() {
 
       <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <Box sx={{ width: "90%" }}>
-          <ContactForm />
+          <ContactFormContainer />
         </Box>
       </Box>
 
