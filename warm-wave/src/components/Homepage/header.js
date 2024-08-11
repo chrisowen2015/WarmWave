@@ -36,7 +36,7 @@ export default function Header() {
           </Typography>
         </Box>
 
-        <Spacer height={300} />
+        <Spacer height={240} />
 
         <Typography fontWeight={500} variant="h3" component="h3" align="center">
         <span className="text-opacity-overlay">

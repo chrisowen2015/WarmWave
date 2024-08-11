@@ -9,7 +9,7 @@ export default function MobileContact() {
         Contact Us
       </Typography>
 
-      <Spacer height={50} />
+      <Spacer height={20} />
 
       <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <Box sx={{ width: "90%" }}>

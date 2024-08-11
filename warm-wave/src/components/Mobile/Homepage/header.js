@@ -20,23 +20,22 @@ export default function MobileHeader() {
       >
         <Spacer height={150} />
 
-        <Box sx={{ display: "block", justifyContent: "center" }}>
-          <Typography
-            variant="h1"
-            component="h1"
-            align="center"
-            fontWeight={500}
-            color="textPrimary"
-            className="text-opacity-overlay"
-          >
-            Warm Wave Studio
-          </Typography>
-        </Box>
+        <Typography
+          variant="h1"
+          component="h1"
+          align="center"
+          fontWeight={500}
+          color="primary"
+          className="text-opacity-overlay-mobile-gpt"
+        >
+          Warm Wave Studio
+        </Typography>
 
         <Spacer height={100} />
 
-        <Typography variant="h3" component="h3" align="center" fontWeight={500} >
-        Your All-in-One Studio for Perfect Sound
+        <Typography variant="h3" component="h3" align="center" fontWeight={500}
+          className="text-opacity-overlay-mobile-gpt">
+          Your All-in-One Studio for Perfect Sound
         </Typography>
 
         <Spacer height={50} />

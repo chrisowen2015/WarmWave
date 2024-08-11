@@ -22,7 +22,7 @@ export default function MobileGallery() {
       <Typography variant="h1" component="h1" align="center" fontWeight={400}>
         Gallery
       </Typography>
-      <Spacer height={35} />
+      <Spacer height={20} />
       <Box>
         <Carousel
           navButtonsAlwaysVisible

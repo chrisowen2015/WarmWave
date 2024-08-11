@@ -13,7 +13,7 @@ export default function About() {
         About Us
       </Typography>
 
-      <Spacer height={60} />
+      <Spacer height={30} />
 
       <Box
         sx={{
@@ -33,12 +33,10 @@ export default function About() {
             justifyContent: "center",
           }}
         >
-          <Paper
+          <Box
+          className="text-opacity-overlay-mobile-gpt"
             sx={{
               width: "60%",
-              background:
-                "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5))",
-              borderRadius: "15px",
               padding: "2em",
             }}
           >
@@ -75,7 +73,7 @@ export default function About() {
                 </Link>
               </Typography>
             </Box>
-          </Paper>
+          </Box>
         </Box>
 
         <Spacer height={250} />

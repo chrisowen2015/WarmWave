@@ -23,7 +23,7 @@ export default function Gallery() {
       <Typography fontWeight={400} variant="h1" component="h1" align="center">
         Gallery
       </Typography>
-      <Spacer height={60} />
+      <Spacer height={30} />
       <Box sx={{ minHeight: 720 }}>
         <Carousel
           navButtonsAlwaysVisible

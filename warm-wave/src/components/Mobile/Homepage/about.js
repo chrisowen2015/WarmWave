@@ -6,7 +6,6 @@ import Link from "@mui/material/Link";
 import photoUrls from "@/utils/photo-urls";
 
 export default function MobileAbout() {
-
   return (
     <div id="about-mobile">
       <Typography variant="h1" component="h1" align="center" fontWeight={400}>
@@ -32,12 +31,10 @@ export default function MobileAbout() {
             justifyContent: "center",
           }}
         >
-          <Paper
+          <Box
+          className="text-opacity-overlay-mobile-gpt"
             sx={{
               width: "90%",
-              background:
-                "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5))",
-              borderRadius: "15px",
               padding: "1em",
             }}
           >
@@ -45,20 +42,20 @@ export default function MobileAbout() {
               variant="p"
               component="p"
               align="center"
-              sx={{ fontSize: 16.5 }}
+              sx={{ fontSize: 16.5, fontWeight: 500 }}
             >
               Welcome to Warm Wave Studio, founded by Andrew Tyler in 2016. We
               specialize in hi-fi recording, mixing, and mastering, catering to
               a diverse range of genres including indie rock, EDM, and rap.
             </Typography>
 
-            <Spacer height={20} />
+            <Spacer height={15} />
 
             <Typography
               variant="p"
               component="p"
               align="center"
-              sx={{ fontSize: 16.5 }}
+              sx={{ fontSize: 16.5, fontWeight: 500 }}
             >
               Our dedicated team ensures meticulous execution of every aspect of
               the production process, driven by our passion for music and
@@ -69,7 +66,7 @@ export default function MobileAbout() {
               dreams a reality.
             </Typography>
 
-            <Spacer height={20} />
+            <Spacer height={15} />
 
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Typography
@@ -84,7 +81,7 @@ export default function MobileAbout() {
                 </Link>
               </Typography>
             </Box>
-          </Paper>
+          </Box>
         </Box>
 
         <Spacer height={75} />
