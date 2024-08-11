@@ -14,20 +14,7 @@ import Spacer from "../spacer";
 import Carousel from "react-material-ui-carousel";
 import Image from "next/image";
 
-const images = [
-  {
-    label: "1",
-    src: "/images/gallery/guitars.jpeg",
-  },
-  {
-    label: "2",
-    src: "/images/gallery/gallery-desk.jpeg",
-  },
-  {
-    label: "3",
-    src: "/images/gallery/pianos.jpeg",
-  },
-];
+import photoUrls from "@/utils/photo-urls";
 
 export default function Gallery() {
   const theme = useTheme();
@@ -36,7 +23,7 @@ export default function Gallery() {
       <Typography fontWeight={400} variant="h1" component="h1" align="center">
         Gallery
       </Typography>
-      <Spacer height={60} />
+      <Spacer height={30} />
       <Box sx={{ minHeight: 720 }}>
         <Carousel
           navButtonsAlwaysVisible
@@ -54,7 +41,7 @@ export default function Gallery() {
             },
           }}
         >
-          {images.map((image, index) => (
+          {photoUrls.gallery.map((image, index) => (
             <Paper
               key={index}
               sx={{ display: "flex", justifyContent: "center" }}

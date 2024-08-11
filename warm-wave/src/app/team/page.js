@@ -1,27 +1,10 @@
 import Spacer from "@/components/spacer";
 import TeamPanel from "@/components/team-panel";
 import MobileTeamPanel from "@/components/Mobile/mobile-team-panel";
-import { Box, Paper, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import photoUrls from "@/utils/photo-urls";
 
 export default function Team() {
-  const team = [
-    {
-      name: "Andrew Tyler",
-      title: "Founder, Senior Mixing & Mastering Engineer",
-      imgSrc: "/images/team/andrew-tyler-cropped-1.jpeg",
-      alt: "Andrew Tyler Image",
-      description:
-        "Andrew Tyler embarked on his journey in the music world as a musician and songwriter, based in a modest Santa Barbara apartment back in 2015. Recognizing his growing affinity for the technical aspects of music, he delved into the realms of mixing and mastering. Over time, he has collaborated with artists spanning the globe, utilizing his expertise to aid them in reaching their musical aspirations.",
-    },
-    {
-      name: "Chris Owen",
-      title: "Website Developer, Brand Developer",
-      imgSrc: "/images/team/chris-owen.jpg",
-      alt: "Chris Owen Image",
-      description:
-        "Chris Owen is a web developer and brand developer based in Pasadena, California. He has worked with a variety of clients, from small businesses to large corporations, to help them achieve their goals. He is passionate about helping others and is always looking for new ways to do so.",
-    },
-  ];
 
   return (
     <>
@@ -36,7 +19,7 @@ export default function Team() {
           },
         }}
       >
-        <Spacer height={150} />
+        <Spacer height={130} />
 
         <Typography
           fontWeight={400}
@@ -47,9 +30,9 @@ export default function Team() {
           Our Team
         </Typography>
 
-        <Spacer height={25} />
+        <Spacer height={30} />
 
-        <TeamPanel team={team} />
+        <TeamPanel team={photoUrls.team} />
 
         <Spacer height={50} />
       </Box>
@@ -64,7 +47,7 @@ export default function Team() {
           },
         }}
       >
-        <Spacer height={100} />
+        <Spacer height={85} />
 
         <Typography
           variant="h1"
@@ -75,9 +58,9 @@ export default function Team() {
           Our Team
         </Typography>
 
-        <Spacer height={25} />
+        <Spacer height={20} />
 
-        <MobileTeamPanel team={team} />
+        <MobileTeamPanel team={photoUrls.team} />
 
         <Spacer height={50} />
       </Box>

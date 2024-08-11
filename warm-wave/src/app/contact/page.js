@@ -17,7 +17,7 @@ export default function AboutPage() {
           },
         }}
       >
-        <Spacer height={100} />
+        <Spacer height={85} />
         <MobileContact />
         <Spacer height={"2em"} />
       </Box>
@@ -32,7 +32,7 @@ export default function AboutPage() {
           },
         }}
       >
-        <Spacer height={150} />
+        <Spacer height={130} />
         <Contact />
       </Box>
     </>

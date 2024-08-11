@@ -11,7 +11,6 @@ import {
 } from "@mui/icons-material";
 import {
   Box,
-  Stack,
   List,
   ListItem,
   ListItemButton,
@@ -158,16 +157,15 @@ export default function MobileLayout({ children }) {
           color="inherit"
           aria-label="open drawer"
           onClick={toggleDrawer(!open)}
-          sx={{ marginRight: 1 }}
         >
-          <MenuIcon />
+          <MenuIcon sx={{fontSize: "32px"}}/>
         </IconButton>
 
         <IconButton href="/" disableRipple>
           <Logo size={50} />
 
           <Typography
-            color="primary"
+            color="textPrimary"
             fontWeight={600}
             component="h4"
             variant="h4"

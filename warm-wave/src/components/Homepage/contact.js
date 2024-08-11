@@ -10,7 +10,7 @@ export default function Contact() {
         Contact Us
       </Typography>
 
-      <Spacer height={50} />
+      <Spacer height={40} />
 
       <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <Box sx={{ width: "50%", minWidth: "800px" }}>
@@ -18,7 +18,7 @@ export default function Contact() {
         </Box>
       </Box>
 
-      <Spacer height={50} />
+      <Spacer height={30} />
     </Box>
   );
 }

@@ -2,41 +2,7 @@ import React from "react";
 import { Box, Divider, Paper, Typography, Button } from "@mui/material";
 import Spacer from "@/components/spacer";
 import Image from "next/image";
-
-const services = [
-  {
-    title: "Audio Recording",
-    description:
-      "We offer a wide range of recording services, from single-track vocals to full-band sessions. Our studio is equipped with top-of-the-line microphones, preamps, and converters, and our engineers are experts in capturing the perfect sound.",
-    imgSrc: "/images/services/audio-recording-cropped.jpg",
-    id: "audio-recording",
-    alt: "Audio Recording Image",
-  },
-  {
-    title: "Audio Mixing & Mastering",
-    description:
-      "Our experienced engineers utilize state-of-the-art tools to blend individual tracks seamlessly, achieving a balanced, dynamic, and immersive sound. From there, we take your tracks to the next level with meticulous Audio Mastering, ensuring pristine clarity, optimal loudness, and commercial-grade quality. ",
-    imgSrc: "/images/services/audio-mastering-cropped.jpg",
-    id: "mixing-mastering",
-    alt: "Audio Mixing & Mastering Image",
-  },
-  {
-    title: "Mixing & Mastering Lessons",
-    description:
-      "Our seasoned instructors provide comprehensive guidance on the intricacies of audio mixing and mastering techniques, using industry-standard tools and practices. Whether you're a budding producer or an experienced musician, our tailored lessons empower you to refine your skills, achieve professional-grade sound, and elevate your music to new heights. ",
-    imgSrc: "/images/services/lessons-cropped.jpg",
-    id: "mixing-mastering-lessons",
-    alt: "Mixing & Mastering Lessons Image",
-  },
-  {
-    title: "Production Session Musicians",
-    description:
-      "Whether you need captivating guitar riffs, soulful keyboard melodies, or dynamic drum grooves, our talented team adds a touch of brilliance to every recording. With their extensive experience across genres, they bring versatility and precision to your music, ensuring that every track becomes an extraordinary masterpiece.",
-    imgSrc: "/images/services/session-andrew-cropped.jpg",
-    id: "production-session-musicians",
-    alt: "Production Session Musicians Image",
-  },
-];
+import photoUrls from "@/utils/photo-urls";
 
 export default function Services() {
   return (
@@ -55,7 +21,7 @@ export default function Services() {
           },
         }}
       >
-        <Spacer height={150} />
+        <Spacer height={130} />
         <Box sx={{ width: "100%" }}>
           <Typography
             variant="h1"
@@ -67,9 +33,9 @@ export default function Services() {
           </Typography>
         </Box>
 
-        <Spacer height={25} />
+        <Spacer height={30} />
 
-        <Paper sx={{ padding: "2em", margin: "2em" }}>
+        <Paper sx={{ padding: "2em", margin: "0 2em" }}>
           <Spacer height={25} />
           <Typography variant="h6" component="h6">
             Our services include hi-fi recording, precise mixing, and masterful
@@ -83,7 +49,7 @@ export default function Services() {
           </Typography>
 
           <Spacer height={50} />
-          {services.map((service, index) => (
+          {photoUrls.services.map((service, index) => (
             <div id={service.id} key={service.id}>
               <Box sx={{ display: "flex", padding: "2em 0 2em 0" }}>
                 <Image
@@ -117,7 +83,7 @@ export default function Services() {
                 </Box>
               </Box>
 
-              {index !== services.length - 1 && <Divider />}
+              {index !== photoUrls.services.length - 1 && <Divider />}
             </div>
           ))}
 
@@ -141,7 +107,7 @@ export default function Services() {
           },
         }}
       >
-        <Spacer height={100} />
+        <Spacer height={85} />
         <Box sx={{ width: "100%" }}>
           <Typography
             variant="h1"
@@ -155,7 +121,7 @@ export default function Services() {
           <Spacer height={20} />
 
           <Box>
-            <Box sx={{ padding: "15px" }}>
+            <Box sx={{ padding: "0 15px" }}>
               <Paper sx={{ width: "100%", padding: "2em" }}>
                 <Typography variant="h6" component="h6">
                   Our services include hi-fi recording, precise mixing, and
@@ -171,7 +137,7 @@ export default function Services() {
             </Box>
 
             <Box sx={{ display: "block", width: "100%", padding: "15px" }}>
-              {services.map((service, index) => (
+              {photoUrls.services.map((service, index) => (
                 <Paper
                   id={service.id}
                   key={service.id}

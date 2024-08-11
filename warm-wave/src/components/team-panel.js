@@ -37,7 +37,7 @@ export default function TeamPanel(props) {
   };
 
   return (
-    <Paper sx={{ padding: "2em", margin: "2em" }}>
+    <Paper sx={{ padding: "2em", margin: "0 2em" }}>
       <Box sx={{ display: "flex" }}>
         <Tabs
           orientation="vertical"
