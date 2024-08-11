@@ -27,7 +27,7 @@ export default function MobileTeamPanel(props) {
   };
 
   return (
-    <Paper sx={{ padding: "1em", margin: "1em" }}>
+    <Paper sx={{ padding: "1em", margin: "0 1em" }}>
       <Box sx={{ display: "block" }}>
         <Tabs
           value={value}

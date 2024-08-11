@@ -1,6 +1,7 @@
 import { Box, Typography, Paper } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Spacer from "@/components/spacer";
+import photoUrls from "@/utils/photo-urls";
 
 export default function Page() {
   return (
@@ -15,7 +16,7 @@ export default function Page() {
           },
         }}
       >
-        <Spacer height={150} />
+        <Spacer height={130} />
       </Box>
 
       <Box
@@ -28,7 +29,7 @@ export default function Page() {
           },
         }}
       >
-        <Spacer height={100} />
+        <Spacer height={85} />
       </Box>
 
       <Box sx={{ width: "100%" }}>
@@ -36,7 +37,7 @@ export default function Page() {
           variant="h1"
           fontWeight={400}
           component="h1"
-          sx={{ textAlign: "center" }}
+          align="center"
         >
           Gear
         </Typography>
@@ -51,7 +52,7 @@ export default function Page() {
           },
         }}
       >
-        <Spacer height={50} />
+        <Spacer height={30} />
       </Box>
 
       <Box
@@ -64,17 +65,18 @@ export default function Page() {
           },
         }}
       >
-        <Spacer height={35} />
+      <Spacer height={10} />
       </Box>
 
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Box sx={{ display: "flex", justifyContent: "center", borderRadius: "30px" }}>
         <Paper
           sx={{
             width: "80%",
-            backgroundImage: "url(/images/gear.jpeg)",
+            backgroundImage: "url(" + photoUrls.gear[0] + ")",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",
+            borderRadius: "30px"
           }}
         >
           <Box
@@ -82,6 +84,8 @@ export default function Page() {
               padding: "2em",
               backgroundColor: "rgba(0, 0, 0, 0.6)",
               zIndex: 1000,
+              borderRadius: "30px",
+              margin: 0
             }}
           >
             <Box
@@ -98,7 +102,7 @@ export default function Page() {
               <Spacer height={50} />
             </Box>
 
-            <Grid container spacing={2}>
+            <Grid container spacing={2} sx={{marginTop: 0}}>
               <Grid item md={4}>
                 <Typography
                   variant="h4"
