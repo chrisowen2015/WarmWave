@@ -1,30 +1,11 @@
 "use client";
 
 import Spacer from "@/components/spacer";
-import { Box, Paper, Typography, Stack, IconButton } from "@mui/material";
+import { Box, Paper, Typography } from "@mui/material";
 import Link from "@mui/material/Link";
 import photoUrls from "@/utils/photo-urls";
-import { ArrowBack, ArrowForward } from "@mui/icons-material";
-import { useEffect, useState } from "react";
 
 export default function MobileAbout() {
-  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
-
-  function nextPhoto(forward) {
-    if (forward == true) {
-      if (currentPhotoIndex == photoUrls.aboutMobile.length - 1) {
-        setCurrentPhotoIndex(0);
-      } else {
-        setCurrentPhotoIndex(currentPhotoIndex + 1);
-      }
-    } else if (forward == false) {
-      if (currentPhotoIndex == 0) {
-        setCurrentPhotoIndex(photoUrls.aboutMobile.length - 1);
-      } else {
-        setCurrentPhotoIndex(currentPhotoIndex - 1);
-      }
-    }
-  }
 
   return (
     <div id="about-mobile">
@@ -32,12 +13,12 @@ export default function MobileAbout() {
         About Us
       </Typography>
 
-      <Spacer height={35} />
+      <Spacer height={20} />
 
       <Box
         sx={{
           width: "100%",
-          backgroundImage: "url(" + photoUrls.aboutMobile[currentPhotoIndex] + ")",
+          backgroundImage: "url(" + photoUrls.aboutMobile[0] + ")",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
@@ -107,20 +88,6 @@ export default function MobileAbout() {
         </Box>
 
         <Spacer height={75} />
-      </Box>
-
-      <Box sx={{ width: "100%", marginTop: "2em" }}>
-        <Stack direction={"row"} justifyContent={"center"}>
-          <IconButton onClick={() => nextPhoto(false)}>
-            <ArrowBack />
-          </IconButton>
-          <Typography component={"b"} variant={"b"}>
-            {currentPhotoIndex}
-          </Typography>
-          <IconButton onClick={() => nextPhoto(true)}>
-            <ArrowForward />
-          </IconButton>
-        </Stack>
       </Box>
     </div>
   );
