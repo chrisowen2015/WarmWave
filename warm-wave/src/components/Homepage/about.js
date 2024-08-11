@@ -12,14 +12,14 @@ export default function About() {
 
   function nextPhoto(forward) {
     if (forward == true) {
-      if (currentPhotoIndex == photoUrls.length - 1) {
+      if (currentPhotoIndex == photoUrls.aboutDesktop.length - 1) {
         setCurrentPhotoIndex(0);
       } else {
         setCurrentPhotoIndex(currentPhotoIndex + 1);
       }
     } else if (forward == false) {
       if (currentPhotoIndex == 0) {
-        setCurrentPhotoIndex(photoUrls.length - 1);
+        setCurrentPhotoIndex(photoUrls.aboutDesktop.length - 1);
       } else {
         setCurrentPhotoIndex(currentPhotoIndex - 1);
       }
@@ -37,7 +37,7 @@ export default function About() {
       <Box
         sx={{
           width: "100%",
-          backgroundImage: "url(" + photoUrls[currentPhotoIndex].url + ")",
+          backgroundImage: "url(" + photoUrls.aboutDesktop[currentPhotoIndex] + ")",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",

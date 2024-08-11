@@ -11,14 +11,14 @@ export default function Header() {
 
   function nextPhoto(forward) {
     if (forward == true) {
-      if (currentPhotoIndex == photoUrls.length - 1) {
+      if (currentPhotoIndex == photoUrls.headerDesktop.length - 1) {
         setCurrentPhotoIndex(0);
       } else {
         setCurrentPhotoIndex(currentPhotoIndex + 1);
       }
     } else if (forward == false) {
       if (currentPhotoIndex == 0) {
-        setCurrentPhotoIndex(photoUrls.length - 1);
+        setCurrentPhotoIndex(photoUrls.headerDesktop.length - 1);
       } else {
         setCurrentPhotoIndex(currentPhotoIndex - 1);
       }
@@ -30,7 +30,7 @@ export default function Header() {
       <Box
         sx={{
           width: "100%",
-          backgroundImage: "url(" + photoUrls[currentPhotoIndex].url + ")",
+          backgroundImage: "url(" + photoUrls.headerDesktop[currentPhotoIndex] + ")",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
@@ -64,7 +64,7 @@ export default function Header() {
         <Spacer height={300} />
 
         <Typography fontWeight={500} variant="h3" component="h3" align="center">
-          Mixing & Mastering with the Masters
+          TYour All-in-One Studio for Perfect Sound
         </Typography>
 
         <Spacer height={100} />

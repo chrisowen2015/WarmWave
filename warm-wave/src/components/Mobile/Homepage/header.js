@@ -11,14 +11,14 @@ export default function MobileHeader() {
 
   function nextPhoto(forward) {
     if (forward == true) {
-      if (currentPhotoIndex == photoUrls.length - 1) {
+      if (currentPhotoIndex == photoUrls.headerMobile.length - 1) {
         setCurrentPhotoIndex(0);
       } else {
         setCurrentPhotoIndex(currentPhotoIndex + 1);
       }
     } else if (forward == false) {
       if (currentPhotoIndex == 0) {
-        setCurrentPhotoIndex(photoUrls.length - 1);
+        setCurrentPhotoIndex(photoUrls.headerMobile.length - 1);
       } else {
         setCurrentPhotoIndex(currentPhotoIndex - 1);
       }
@@ -30,7 +30,7 @@ export default function MobileHeader() {
       <Box
         sx={{
           width: "100%",
-          backgroundImage: "url(" + photoUrls[currentPhotoIndex].url + ")",
+          backgroundImage: "url(" + photoUrls.headerMobile[currentPhotoIndex] + ")",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
@@ -60,7 +60,7 @@ export default function MobileHeader() {
         <Spacer height={100} />
 
         <Typography variant="h3" component="h3" align="center" fontWeight={500}>
-          Mixing & Mastering with the Masters
+        Your All-in-One Studio for Perfect Sound
         </Typography>
 
         <Spacer height={50} />

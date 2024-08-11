@@ -13,21 +13,7 @@ import Spacer from "@/components/spacer";
 
 import Carousel from "react-material-ui-carousel";
 import Image from "next/image";
-
-const images = [
-  {
-    label: "1",
-    src: "/images/gallery/guitars.jpeg",
-  },
-  {
-    label: "2",
-    src: "/images/gallery/gallery-desk.jpeg",
-  },
-  {
-    label: "3",
-    src: "/images/gallery/pianos.jpeg",
-  },
-];
+import photoUrls from "@/utils/photo-urls";
 
 export default function MobileGallery() {
   const theme = useTheme();
@@ -54,7 +40,7 @@ export default function MobileGallery() {
             },
           }}
         >
-          {images.map((image, index) => (
+          {photoUrls.gallery.map((image, index) => (
             <Paper
               key={index}
               sx={{ display: "flex", justifyContent: "center" }}
