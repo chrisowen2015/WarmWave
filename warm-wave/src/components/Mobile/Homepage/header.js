@@ -5,7 +5,6 @@ import Spacer from "@/components/spacer";
 import photoUrls from "@/utils/photo-urls";
 
 export default function MobileHeader() {
-
   return (
     <>
       <Box
@@ -33,8 +32,13 @@ export default function MobileHeader() {
 
         <Spacer height={100} />
 
-        <Typography variant="h3" component="h3" align="center" fontWeight={500}
-          className="text-opacity-overlay-mobile-gpt">
+        <Typography
+          variant="h3"
+          component="h3"
+          align="center"
+          fontWeight={500}
+          className="text-opacity-overlay-mobile-gpt"
+        >
           Your All-in-One Studio for Perfect Sound
         </Typography>
 

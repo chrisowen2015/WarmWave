@@ -32,7 +32,7 @@ export default function MobileAbout() {
           }}
         >
           <Box
-          className="text-opacity-overlay-mobile-gpt"
+            className="text-opacity-overlay-mobile-gpt"
             sx={{
               width: "90%",
               padding: "1em",

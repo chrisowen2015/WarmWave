@@ -6,7 +6,6 @@ import Link from "@mui/material/Link";
 import photoUrls from "@/utils/photo-urls";
 
 export default function About() {
-
   return (
     <div id="about">
       <Typography fontWeight={400} variant="h1" component="h1" align="center">
@@ -34,7 +33,7 @@ export default function About() {
           }}
         >
           <Box
-          className="text-opacity-overlay-mobile-gpt"
+            className="text-opacity-overlay-mobile-gpt"
             sx={{
               width: "60%",
               padding: "2em",

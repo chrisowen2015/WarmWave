@@ -158,7 +158,7 @@ export default function MobileLayout({ children }) {
           aria-label="open drawer"
           onClick={toggleDrawer(!open)}
         >
-          <MenuIcon sx={{fontSize: "32px"}}/>
+          <MenuIcon sx={{ fontSize: "32px" }} />
         </IconButton>
 
         <IconButton href="/" disableRipple>

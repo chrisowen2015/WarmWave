@@ -6,7 +6,6 @@ import photoUrls from "@/utils/photo-urls";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
 export default function Header() {
-
   return (
     <>
       <Box
@@ -30,17 +29,15 @@ export default function Header() {
             align="center"
             color="primary"
           >
-            <span className="text-opacity-overlay">
-              Warm Wave Studio
-            </span>
+            <span className="text-opacity-overlay">Warm Wave Studio</span>
           </Typography>
         </Box>
 
         <Spacer height={240} />
 
         <Typography fontWeight={500} variant="h3" component="h3" align="center">
-        <span className="text-opacity-overlay">
-          Your All-in-One Studio for Perfect Sound
+          <span className="text-opacity-overlay">
+            Your All-in-One Studio for Perfect Sound
           </span>
         </Typography>
 
