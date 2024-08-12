@@ -16,7 +16,15 @@
     border-radius: 15px;
     padding: 15px 20px;
     backdrop-filter: blur(5px);
-    color: #fff; /* Ensure text color contrasts well with the background */
+    display: inline-block; /* Adjusts to the size of the text */
+    margin: 0 auto; /* Centers the element if needed */
+}
+
+.text-opacity-overlay-mobile {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5));
+    border-radius: 40%;
+    padding: 15px 20px;
+    backdrop-filter: blur(5px);
     display: inline-block; /* Adjusts to the size of the text */
     margin: 0 auto; /* Centers the element if needed */
 }

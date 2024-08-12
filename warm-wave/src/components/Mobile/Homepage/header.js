@@ -25,7 +25,7 @@ export default function MobileHeader() {
           align="center"
           fontWeight={500}
           color="primary"
-          className="text-opacity-overlay-mobile-gpt"
+          className="text-opacity-overlay-mobile"
         >
           Warm Wave Studio
         </Typography>
@@ -37,7 +37,7 @@ export default function MobileHeader() {
           component="h3"
           align="center"
           fontWeight={500}
-          className="text-opacity-overlay-mobile-gpt"
+          className="text-opacity-overlay-mobile"
         >
           Your All-in-One Studio for Perfect Sound
         </Typography>
