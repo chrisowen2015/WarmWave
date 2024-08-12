@@ -35,7 +35,6 @@ export default function Home() {
         <Gallery />
         <Spacer height={30} />
         <Contact />
-        <Spacer height={30} />
       </Box>
 
       {
@@ -60,7 +59,6 @@ export default function Home() {
         <MobileGallery />
         <Spacer height={20} />
         <MobileContact />
-        <Spacer height={20} />
       </Box>
     </>
   );

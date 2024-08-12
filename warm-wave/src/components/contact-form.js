@@ -487,14 +487,14 @@ export default function ContactForm() {
             </div>
           </Paper>
 
-          <Spacer height={50} />
+          <Spacer height={30} />
 
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Tooltip title="Send Message" placement="top">
               <Button
                 variant="contained"
                 color="primary"
-                sx={{ p: "1em 1em 1em 1.5em" }}
+                sx={{ p: ".5em 1em .5em 1.5em" }}
                 onClick={async (event) => await handleSubmit(event)}
               >
                 <Typography variant="h6">SUBMIT &nbsp;</Typography>

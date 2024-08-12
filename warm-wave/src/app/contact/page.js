@@ -19,7 +19,6 @@ export default function AboutPage() {
       >
         <Spacer height={85} />
         <MobileContact />
-        <Spacer height={"2em"} />
       </Box>
       <Box
         sx={{

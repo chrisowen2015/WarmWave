@@ -55,7 +55,7 @@ export default function MobileFooter() {
       >
         <Divider />
 
-        <Box sx={{ display: "block", padding: "2em" }}>
+        <Box sx={{ display: "block", padding: "1em 2em" }}>
           <Box sx={{ marginBottom: "1em" }}>
             <Typography variant="h6" component="h6" fontWeight="bold">
               <Link color="inherit" underline="hover" href="/">
@@ -64,7 +64,7 @@ export default function MobileFooter() {
             </Typography>
           </Box>
 
-          <Box sx={{ marginBottom: "1em" }}>
+          <Box>
             <Box sx={{ marginBottom: ".5em" }}>
               <Typography variant="h6" component="h6" fontWeight="bold">
                 About

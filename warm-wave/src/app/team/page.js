@@ -5,7 +5,6 @@ import { Box, Typography } from "@mui/material";
 import photoUrls from "@/utils/photo-urls";
 
 export default function Team() {
-
   return (
     <>
       <Box
@@ -34,7 +33,7 @@ export default function Team() {
 
         <TeamPanel team={photoUrls.team} />
 
-        <Spacer height={50} />
+        <Spacer height={30} />
       </Box>
       <Box
         sx={{
@@ -62,7 +61,7 @@ export default function Team() {
 
         <MobileTeamPanel team={photoUrls.team} />
 
-        <Spacer height={50} />
+        <Spacer height={20} />
       </Box>
     </>
   );

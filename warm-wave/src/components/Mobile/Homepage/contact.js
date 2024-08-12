@@ -16,8 +16,7 @@ export default function MobileContact() {
           <ContactFormContainer />
         </Box>
       </Box>
-
-      <Spacer height={35} />
+      <Spacer height={30} />
     </Box>
   );
 }

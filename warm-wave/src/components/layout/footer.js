@@ -9,6 +9,7 @@ import {
   SvgIcon,
   useTheme,
   createSvgIcon,
+  Stack,
   Tooltip,
 } from "@mui/material";
 import Spacer from "../spacer";
@@ -45,7 +46,7 @@ export default function Footer() {
       }}
     >
       <Divider />
-      <Spacer height={75} />
+      <Spacer height={30} />
       <Box sx={{ display: "flex", justifyContent: "space-around" }}>
         <Box>
           <Box sx={{ marginBottom: "1em" }}>
@@ -146,13 +147,7 @@ export default function Footer() {
 
           <Spacer height={10} />
 
-          <Box
-            sx={{
-              marginTop: "10px",
-              display: "flex",
-              justifyContent: "space-evenly",
-            }}
-          >
+          <Stack direction="row" spacing={1}>
             <IconButton>
               <YouTube />
             </IconButton>
@@ -166,10 +161,10 @@ export default function Footer() {
                 <SpotifyIcon />
               </IconButton>
             </Tooltip>
-          </Box>
+          </Stack>
         </Box>
       </Box>
-      <Spacer height={75} />
+      <Spacer height={30} />
     </Box>
   );
 }

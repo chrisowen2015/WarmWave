@@ -27,6 +27,11 @@ export default function MobileGallery() {
         <Carousel
           navButtonsAlwaysVisible
           animation="fade"
+          indicatorContainerProps={{
+            style: {
+              marginTop: "20px",
+            },
+          }}
           activeIndicatorIconButtonProps={{
             style: {
               color: theme.palette.primary.main,

@@ -36,16 +36,15 @@ export default function Services() {
         <Spacer height={30} />
 
         <Paper sx={{ padding: "2em", margin: "0 2em" }}>
-          <Spacer height={25} />
+          <Spacer height={10} />
           <Typography variant="h6" component="h6">
-            Our services include hi-fi recording, precise mixing, and masterful
-            mastering. We provide comprehensive support to artists, from
-            songcrafting to sound refinement across genres like indie rock, EDM,
-            and rap. With a dedicated team, top-tier equipment, and an
-            unwavering commitment to excellence, we elevate your artistic vision
-            to new heights. Join us on this transformative journey, where
-            innovation and creativity converge to bring your musical dreams to
-            reality.
+            Our services include high fidelity recording, mixing, and mastering.
+            We provide comprehensive support to artists, from songcrafting to
+            sound refinement across genres like indie rock, EDM, and rap. With a
+            dedicated team, top-tier equipment, and an unwavering commitment to
+            excellence, we strive to elevate your artistic vision to new
+            heights. Explore our services below, and connect with us to bring
+            your musical vision to life with our expertise and creativity.
           </Typography>
 
           <Spacer height={50} />
@@ -86,10 +85,8 @@ export default function Services() {
               {index !== photoUrls.services.length - 1 && <Divider />}
             </div>
           ))}
-
-          <Spacer height={25} />
         </Paper>
-        <Spacer height={75} />
+        <Spacer height={30} />
       </Box>
 
       {/*
@@ -124,27 +121,33 @@ export default function Services() {
             <Box sx={{ padding: "0 15px" }}>
               <Paper sx={{ width: "100%", padding: "2em" }}>
                 <Typography variant="h6" component="h6">
-                  Our services include hi-fi recording, precise mixing, and
-                  masterful mastering. We provide comprehensive support to
-                  artists, from songcrafting to sound refinement across genres
-                  like indie rock, EDM, and rap. With a dedicated team, top-tier
-                  equipment, and an unwavering commitment to excellence, we
-                  elevate your artistic vision to new heights. Join us on this
-                  transformative journey, where innovation and creativity
-                  converge to bring your musical dreams to reality.
+                  Our services include high fidelity recording, mixing, and
+                  mastering. We provide comprehensive support to artists, from
+                  songcrafting to sound refinement across genres like indie
+                  rock, EDM, and rap. With a dedicated team, top-tier equipment,
+                  and an unwavering commitment to excellence, we strive to
+                  elevate your artistic vision to new heights. Explore our
+                  services below, and connect with us to bring your musical
+                  vision to life with our expertise and creativity.
                 </Typography>
               </Paper>
             </Box>
 
-            <Box sx={{ display: "block", width: "100%", padding: "15px" }}>
+            <Box
+              sx={{
+                display: "block",
+                width: "100%",
+                padding: "10px 15px 0px 15px",
+              }}
+            >
               {photoUrls.services.map((service, index) => (
                 <Paper
                   id={service.id}
                   key={service.id}
                   sx={{
                     width: "100%",
-                    padding: "2em",
-                    margin: "10px 0 10px 0",
+                    padding: "0 2em",
+                    marginTop: "10px",
                   }}
                 >
                   <Box
@@ -184,7 +187,7 @@ export default function Services() {
                         {service.description}
                       </Typography>
 
-                      <Spacer height={50} />
+                      <Spacer height={25} />
 
                       <div
                         style={{ display: "flex", justifyContent: "center" }}
@@ -203,7 +206,7 @@ export default function Services() {
               ))}
             </Box>
 
-            <Spacer height={25} />
+            <Spacer height={20} />
           </Box>
         </Box>
       </Box>
