@@ -4,7 +4,7 @@ export default function CopyRight() {
   return (
     <div>
       <Divider />
-      <Box sx={{ padding: "2em" }}>
+      <Box sx={{ padding: "1em", marginBottom: ".5rem" }}>
         <Box
           sx={{
             display: "flex",

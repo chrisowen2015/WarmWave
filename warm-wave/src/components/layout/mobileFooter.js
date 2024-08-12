@@ -55,7 +55,7 @@ export default function MobileFooter() {
       >
         <Divider />
 
-        <Box sx={{ display: "block", padding: "2em" }}>
+        <Box sx={{ display: "block", padding: "1em 2em" }}>
           <Box sx={{ marginBottom: "1em" }}>
             <Typography variant="h6" component="h6" fontWeight="bold">
               <Link color="inherit" underline="hover" href="/">
@@ -64,7 +64,7 @@ export default function MobileFooter() {
             </Typography>
           </Box>
 
-          <Box sx={{ marginBottom: "1em" }}>
+          <Box>
             <Box sx={{ marginBottom: ".5em" }}>
               <Typography variant="h6" component="h6" fontWeight="bold">
                 About
@@ -99,7 +99,7 @@ export default function MobileFooter() {
 
         <Divider />
 
-        <Box sx={{ display: "block", padding: "2em" }}>
+        <Box sx={{ display: "block", padding: "1em" }}>
           <Box>
             <Box className={styles.contactRow}>
               <Typography variant="h6" component="h6" fontWeight="bold">
@@ -107,7 +107,7 @@ export default function MobileFooter() {
               </Typography>
             </Box>
 
-            <Spacer height={"1em"} />
+            <Spacer height={10} />
 
             <Box className={styles.contactRow}>
               <Phone fontSize="large" />
@@ -142,8 +142,6 @@ export default function MobileFooter() {
             </Box>
           </Box>
         </Box>
-        <Spacer height={"1em"} />
-        <Box></Box>
       </Box>
     </>
   );

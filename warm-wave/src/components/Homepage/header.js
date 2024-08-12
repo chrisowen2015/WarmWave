@@ -1,62 +1,66 @@
-import { Box, Button, Typography } from "@mui/material";
+"use client";
+
+import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
 import Spacer from "../spacer";
+import photoUrls from "@/utils/photo-urls";
+import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
 export default function Header() {
   return (
-    <Box
-      sx={{
-        width: "100%",
-        backgroundImage: "url(/images/Andrew-Desk-Better-2.jpeg)",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        minWidth: "1024px",
-        width: "100%",
-      }}
-    >
-      <Spacer height={150} />
+    <>
+      <Box
+        sx={{
+          width: "100%",
+          backgroundImage: "url(" + photoUrls.headerDesktop[0] + ")",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          minWidth: "1024px",
+          width: "100%",
+        }}
+      >
+        <Spacer height={150} />
 
-      <Box sx={{}}>
-        <Typography
-          fontWeight={500}
-          variant="h1"
-          component="h1"
-          align="center"
-          color="primary"
-        >
-          <span
-            style={{ backgroundColor: "rgba(0, 0, 0, 0.6)", padding: "10px" }}
+        <Box sx={{}}>
+          <Typography
+            fontWeight={500}
+            variant="h1"
+            component="h1"
+            align="center"
+            color="primary"
           >
-            Warm Wave Studio
+            <span className="text-opacity-overlay">Warm Wave Studio</span>
+          </Typography>
+        </Box>
+
+        <Spacer height={240} />
+
+        <Typography fontWeight={500} variant="h3" component="h3" align="center">
+          <span className="text-opacity-overlay">
+            Your All-in-One Studio for Perfect Sound
           </span>
         </Typography>
-      </Box>
 
-      <Spacer height={300} />
+        <Spacer height={100} />
 
-      <Typography fontWeight={500} variant="h3" component="h3" align="center">
-        Mixing & Mastering with the Masters
-      </Typography>
-
-      <Spacer height={100} />
-
-      <Box
-        display="flex"
-        flexDirection={"row"}
-        justifyContent={"center"}
-        alignItems={"center"}
-      >
-        <Button
-          variant="contained"
-          color="primary"
-          href="contact"
-          sx={{ padding: "1em 2em 1em 2em" }}
+        <Box
+          display="flex"
+          flexDirection={"row"}
+          justifyContent={"center"}
+          alignItems={"center"}
         >
-          Contact Us to Book a Session
-        </Button>
-      </Box>
+          <Button
+            variant="contained"
+            color="primary"
+            href="contact"
+            sx={{ padding: "1em 2em 1em 2em" }}
+          >
+            Contact Us to Book a Session
+          </Button>
+        </Box>
 
-      <Spacer height={120} />
-    </Box>
+        <Spacer height={120} />
+      </Box>
+    </>
   );
 }

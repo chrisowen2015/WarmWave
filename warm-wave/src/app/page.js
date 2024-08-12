@@ -29,13 +29,12 @@ export default function Home() {
         }}
       >
         <Header />
-        <Spacer height={60} />
+        <Spacer height={30} />
         <About />
-        <Spacer height={60} />
+        <Spacer height={30} />
         <Gallery />
-        <Spacer height={100} />
+        <Spacer height={30} />
         <Contact />
-        <Spacer height={50} />
       </Box>
 
       {
@@ -54,13 +53,12 @@ export default function Home() {
         }}
       >
         <MobileHeader />
-        <Spacer height={35} />
+        <Spacer height={20} />
         <MobileAbout />
-        <Spacer height={35} />
+        <Spacer height={20} />
         <MobileGallery />
-        <Spacer height={35} />
+        <Spacer height={20} />
         <MobileContact />
-        <Spacer height={35} />
       </Box>
     </>
   );

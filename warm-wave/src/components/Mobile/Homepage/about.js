@@ -3,6 +3,7 @@
 import Spacer from "@/components/spacer";
 import { Box, Paper, Typography } from "@mui/material";
 import Link from "@mui/material/Link";
+import photoUrls from "@/utils/photo-urls";
 
 export default function MobileAbout() {
   return (
@@ -11,12 +12,12 @@ export default function MobileAbout() {
         About Us
       </Typography>
 
-      <Spacer height={35} />
+      <Spacer height={20} />
 
       <Box
         sx={{
           width: "100%",
-          backgroundImage: "url(/images/Andrew-Beach-Guitar-2.jpeg)",
+          backgroundImage: "url(" + photoUrls.aboutMobile[0] + ")",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
@@ -30,63 +31,42 @@ export default function MobileAbout() {
             justifyContent: "center",
           }}
         >
-          <Paper
+          <Box
+            className="text-opacity-overlay-mobile-gpt"
             sx={{
               width: "90%",
-              backgroundColor: "rgba(0, 0, 0, 0.55)",
-              padding: "2em",
+              padding: "1em",
             }}
           >
             <Typography
               variant="p"
               component="p"
               align="center"
-              sx={{ fontSize: 18 }}
+              sx={{ fontSize: 16.5, fontWeight: 500 }}
             >
-              Welcome to Warm Wave Studio, a leading hi-fi recording, mixing,
-              and mastering studio, founded by the visionary Andrew Tyler in
-              2016. With a rich history of nurturing hundreds of songs, we are
-              dedicated to providing artists with comprehensive support, ranging
-              from songwriting and production to recording, mixing, and
-              mastering. Our expertise spans across an eclectic range of genres,
-              including indie rock, EDM, and rap, as we tirelessly pursue the
-              goal of delivering the most refined and distinctive sound for our
-              artists.
+              Welcome to Warm Wave Studio, founded by Andrew Tyler in 2016. We
+              specialize in hi-fi recording, mixing, and mastering, catering to
+              a diverse range of genres including indie rock, EDM, and rap.
             </Typography>
 
-            <Spacer height={10} />
+            <Spacer height={15} />
 
             <Typography
               variant="p"
               component="p"
               align="center"
-              sx={{ fontSize: 18 }}
+              sx={{ fontSize: 16.5, fontWeight: 500 }}
             >
-              At Warm Wave Studio, we are driven by our passion for music and
-              our commitment to excellence. Our team of skilled professionals is
-              dedicated to honing the artistic vision of our clients and
-              elevating their creations to new heights. With state-of-the-art
-              equipment and a creative environment, we ensure that every aspect
-              of the production process is meticulously executed.
+              Our dedicated team ensures meticulous execution of every aspect of
+              the production process, driven by our passion for music and
+              commitment to excellence. Join us on a journey of artistic growth
+              and musical transcendence, where innovation and creativity bring
+              your vision to life with precision and artistry. Your music
+              deserves the warmth of our studio, and we're here to make your
+              dreams a reality.
             </Typography>
 
-            <Spacer height={10} />
-
-            <Typography
-              variant="p"
-              component="p"
-              align="center"
-              sx={{ fontSize: 18 }}
-            >
-              Join us at Warm Wave Studio and embark on a journey of artistic
-              growth and musical transcendence. Experience the power of
-              innovation and creativity as we collaborate to bring your vision
-              to life with precision and artistry. Your music deserves the
-              warmth of our studio, and we are here to make your dreams a
-              reality.
-            </Typography>
-
-            <Spacer height={20} />
+            <Spacer height={15} />
 
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Typography
@@ -101,7 +81,7 @@ export default function MobileAbout() {
                 </Link>
               </Typography>
             </Box>
-          </Paper>
+          </Box>
         </Box>
 
         <Spacer height={75} />

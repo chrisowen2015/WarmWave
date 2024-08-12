@@ -17,8 +17,9 @@ export default function AboutPage() {
           },
         }}
       >
-        <Spacer height={100} />
+        <Spacer height={85} />
         <MobileAbout />
+        <Spacer height={20} />
       </Box>
       <Box
         sx={{
@@ -31,8 +32,9 @@ export default function AboutPage() {
           },
         }}
       >
-        <Spacer height={150} />
+        <Spacer height={130} />
         <About />
+        <Spacer height={30} />
       </Box>
     </>
   );

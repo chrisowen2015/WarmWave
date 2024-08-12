@@ -16,48 +16,7 @@ import {
 import Spacer from "@/components/spacer";
 import Image from "next/image";
 
-const services = [
-  {
-    title: "Audio Recording",
-    description:
-      "We offer a wide range of recording services, from single-track vocals to full-band sessions. Our studio is equipped with top-of-the-line microphones, preamps, and converters, and our engineers are experts in capturing the perfect sound.",
-    imgSrc: "/images/services/audio-recording-cropped.jpg",
-    id: "audio-recording",
-    alt: "Audio Recording Image",
-    hourlyCost: 79.0,
-    dailyCost: 600.0,
-  },
-  {
-    title: "Audio Mixing & Mastering",
-    description:
-      "Our experienced engineers utilize state-of-the-art tools to blend individual tracks seamlessly, achieving a balanced, dynamic, and immersive sound. From there, we take your tracks to the next level with meticulous Audio Mastering, ensuring pristine clarity, optimal loudness, and commercial-grade quality. ",
-    imgSrc: "/images/services/audio-mastering-cropped.jpg",
-    id: "mixing-mastering",
-    alt: "Audio Mixing & Mastering Image",
-    hourlyCost: 79.0,
-    dailyCost: 600.0,
-  },
-  {
-    title: "Mixing & Mastering Lessons",
-    description:
-      "Our seasoned instructors provide comprehensive guidance on the intricacies of audio mixing and mastering techniques, using industry-standard tools and practices. Whether you're a budding producer or an experienced musician, our tailored lessons empower you to refine your skills, achieve professional-grade sound, and elevate your music to new heights. ",
-    imgSrc: "/images/services/lessons-cropped.jpg",
-    id: "mixing-mastering-lessons",
-    alt: "Mixing & Mastering Lessons Image",
-    hourlyCost: 79.0,
-    dailyCost: 600.0,
-  },
-  {
-    title: "Production Session Musicians",
-    description:
-      "Whether you need captivating guitar riffs, soulful keyboard melodies, or dynamic drum grooves, our talented team adds a touch of brilliance to every recording. With their extensive experience across genres, they bring versatility and precision to your music, ensuring that every track becomes an extraordinary masterpiece.",
-    imgSrc: "/images/services/session-andrew-cropped.jpg",
-    id: "production-session-musicians",
-    alt: "Production Session Musicians Image",
-    hourlyCost: 79.0,
-    dailyCost: 600.0,
-  },
-];
+import photoUrls from "@/utils/photo-urls";
 
 export default function Services() {
   return (
@@ -76,7 +35,7 @@ export default function Services() {
           },
         }}
       >
-        <Spacer height={150} />
+        <Spacer height={130} />
         <Box sx={{ width: "100%" }}>
           <Typography
             variant="h1"
@@ -88,19 +47,18 @@ export default function Services() {
           </Typography>
         </Box>
 
-        <Spacer height={25} />
+        <Spacer height={30} />
 
-        <Paper sx={{ padding: "2em", margin: "2em" }}>
-          <Spacer height={25} />
+        <Paper sx={{ padding: "2em", margin: "0 2em" }}>
+          <Spacer height={10} />
           <Typography variant="h6" component="h6">
-            Our services include hi-fi recording, precise mixing, and masterful
-            mastering. We provide comprehensive support to artists, from
-            songcrafting to sound refinement across genres like indie rock, EDM,
-            and rap. With a dedicated team, top-tier equipment, and an
-            unwavering commitment to excellence, we elevate your artistic vision
-            to new heights. Join us on this transformative journey, where
-            innovation and creativity converge to bring your musical dreams to
-            reality.
+            Our services include high fidelity recording, mixing, and mastering.
+            We provide comprehensive support to artists, from songcrafting to
+            sound refinement across genres like indie rock, EDM, and rap. With a
+            dedicated team, top-tier equipment, and an unwavering commitment to
+            excellence, we strive to elevate your artistic vision to new
+            heights. Explore our services below, and connect with us to bring
+            your musical vision to life with our expertise and creativity.
           </Typography>
 
           <Spacer height={50} />
@@ -131,7 +89,7 @@ export default function Services() {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {services.map((service) => (
+                    {photoUrls.services.map((service) => (
                       <TableRow
                         key={service.id}
                         sx={{
@@ -152,8 +110,7 @@ export default function Services() {
               </TableContainer>
             </Grid>
           </Grid>
-
-          {services.map((service, index) => (
+          {photoUrls.services.map((service, index) => (
             <div id={service.id} key={service.id}>
               <Box sx={{ display: "flex", padding: "2em 0 2em 0" }}>
                 <Image
@@ -187,13 +144,11 @@ export default function Services() {
                 </Box>
               </Box>
 
-              {index !== services.length - 1 && <Divider />}
+              {index !== photoUrls.services.length - 1 && <Divider />}
             </div>
           ))}
-
-          <Spacer height={25} />
         </Paper>
-        <Spacer height={75} />
+        <Spacer height={30} />
       </Box>
 
       {/*
@@ -211,7 +166,7 @@ export default function Services() {
           },
         }}
       >
-        <Spacer height={100} />
+        <Spacer height={85} />
         <Box sx={{ width: "100%" }}>
           <Typography
             variant="h1"
@@ -225,31 +180,36 @@ export default function Services() {
           <Spacer height={20} />
 
           <Box>
-            <Box sx={{ padding: "15px" }}>
+            <Box sx={{ padding: "0 15px" }}>
               <Paper sx={{ width: "100%", padding: "2em" }}>
-                <Spacer height={25} />
                 <Typography variant="h6" component="h6">
-                  Our services include hi-fi recording, precise mixing, and
-                  masterful mastering. We provide comprehensive support to
-                  artists, from songcrafting to sound refinement across genres
-                  like indie rock, EDM, and rap. With a dedicated team, top-tier
-                  equipment, and an unwavering commitment to excellence, we
-                  elevate your artistic vision to new heights. Join us on this
-                  transformative journey, where innovation and creativity
-                  converge to bring your musical dreams to reality.
+                  Our services include high fidelity recording, mixing, and
+                  mastering. We provide comprehensive support to artists, from
+                  songcrafting to sound refinement across genres like indie
+                  rock, EDM, and rap. With a dedicated team, top-tier equipment,
+                  and an unwavering commitment to excellence, we strive to
+                  elevate your artistic vision to new heights. Explore our
+                  services below, and connect with us to bring your musical
+                  vision to life with our expertise and creativity.
                 </Typography>
               </Paper>
             </Box>
 
-            <Box sx={{ display: "block", width: "100%", padding: "15px" }}>
-              {services.map((service, index) => (
+            <Box
+              sx={{
+                display: "block",
+                width: "100%",
+                padding: "10px 15px 0px 15px",
+              }}
+            >
+              {photoUrls.services.map((service, index) => (
                 <Paper
                   id={service.id}
                   key={service.id}
                   sx={{
                     width: "100%",
-                    padding: "2em",
-                    margin: "10px 0 10px 0",
+                    padding: "0 2em",
+                    marginTop: "10px",
                   }}
                 >
                   <Box
@@ -276,7 +236,7 @@ export default function Services() {
                       width={600}
                       height={450}
                     />
-                    <Box sx={{ marginLeft: "2em" }}>
+                    <Box>
                       <Spacer height={15} />
 
                       <Typography variant="h4" component="h4" align="center">
@@ -289,7 +249,7 @@ export default function Services() {
                         {service.description}
                       </Typography>
 
-                      <Spacer height={50} />
+                      <Spacer height={25} />
 
                       <div
                         style={{ display: "flex", justifyContent: "center" }}
@@ -308,7 +268,7 @@ export default function Services() {
               ))}
             </Box>
 
-            <Spacer height={25} />
+            <Spacer height={20} />
           </Box>
         </Box>
       </Box>
