@@ -34,6 +34,8 @@ const photoUrls = {
       imgSrc: "/images/services/audio-recording-cropped.jpg",
       id: "audio-recording",
       alt: "Audio Recording Image",
+      hourlyCost: 79.0,
+      dailyCost: 600.0,
     },
     {
       title: "Audio Mixing & Mastering",
@@ -42,6 +44,8 @@ const photoUrls = {
       imgSrc: "/images/services/audio-mastering-cropped.jpg",
       id: "mixing-mastering",
       alt: "Audio Mixing & Mastering Image",
+      hourlyCost: 79.0,
+      dailyCost: 600.0,
     },
     {
       title: "Mixing & Mastering Lessons",
@@ -50,6 +54,8 @@ const photoUrls = {
       imgSrc: "/images/services/lessons-cropped.jpg",
       id: "mixing-mastering-lessons",
       alt: "Mixing & Mastering Lessons Image",
+      hourlyCost: 79.0,
+      dailyCost: 600.0,
     },
     {
       title: "Production Session Musicians",
@@ -58,6 +64,8 @@ const photoUrls = {
       imgSrc: "/images/services/session-andrew-cropped.jpg",
       id: "production-session-musicians",
       alt: "Production Session Musicians Image",
+      hourlyCost: 79.0,
+      dailyCost: 600.0,
     },
   ],
   team: [
