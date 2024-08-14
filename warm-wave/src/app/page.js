@@ -9,7 +9,17 @@ import MobileContact from "@/components/Mobile/Homepage/contact";
 import MobileGallery from "@/components/Mobile/Homepage/gallery";
 import MobileHeader from "@/components/Mobile/Homepage/header";
 
+import { client } from "@/utils/sanity/client";
+
+async function getContent() {
+  const CONTENT_QUERY = `*[_type == "page" && title == "Home"][0] `;
+  const content = await client.fetch(CONTENT_QUERY);
+  return content;
+}
+
 export default function Home() {
+  getContent().then((content) => console.log(content));
+
   return (
     // The landing page of the website, allows for different spacing between the elements depending on the screen size
 
