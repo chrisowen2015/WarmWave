@@ -12,7 +12,7 @@ import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 
 export default function NavBar() {
-  const [isSticky, setIsSticky] = React.useState(false);
+  const [isSticky, setIsSticky] = React.useState<boolean>(false);
   var prevScrollPos = 0;
 
   const handleScroll = async () => {
