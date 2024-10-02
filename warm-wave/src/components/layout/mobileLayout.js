@@ -140,97 +140,89 @@ export default function MobileLayout({ children }) {
 
   return (
     <>
-      {!window.location.pathname.toLowerCase().includes("sanity") ? (
-        <>
-          {/* This is the Mobile AppBar which displays the Menu button to control the side drawer state, logo, & site title */}
-          <Box
-            sx={{
-              position: isSticky ? "fixed" : "absolute",
-              display: "flex",
-              justifyContent: "flex-start",
-              alignItems: "center",
-              width: "100%",
-              padding: "10px 10px 10px 10px",
-              backgroundColor: "rgba(0, 0, 0, 0.6)",
-              zIndex: 1000,
-            }}
+      {/* This is the Mobile AppBar which displays the Menu button to control the side drawer state, logo, & site title */}
+      <Box
+        sx={{
+          position: isSticky ? "fixed" : "absolute",
+          display: "flex",
+          justifyContent: "flex-start",
+          alignItems: "center",
+          width: "100%",
+          padding: "10px 10px 10px 10px",
+          backgroundColor: "rgba(0, 0, 0, 0.6)",
+          zIndex: 1000,
+        }}
+      >
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          onClick={toggleDrawer(!open)}
+        >
+          <MenuIcon sx={{ fontSize: "32px" }} />
+        </IconButton>
+
+        <IconButton href="/" disableRipple>
+          <Logo size={50} />
+
+          <Typography
+            color="textPrimary"
+            fontWeight={600}
+            component="h4"
+            variant="h4"
+            sx={{ flexGrow: 1, marginLeft: 2 }}
           >
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={toggleDrawer(!open)}
-            >
-              <MenuIcon sx={{ fontSize: "32px" }} />
-            </IconButton>
+            Warm Wave Studio
+          </Typography>
+        </IconButton>
+      </Box>
 
-            <IconButton href="/" disableRipple>
-              <Logo size={50} />
+      {/* This is the side drawer which displays the navigation links */}
 
-              <Typography
-                color="textPrimary"
-                fontWeight={600}
-                component="h4"
-                variant="h4"
-                sx={{ flexGrow: 1, marginLeft: 2 }}
-              >
-                Warm Wave Studio
-              </Typography>
-            </IconButton>
-          </Box>
-          {/* This is the side drawer which displays the navigation links */}
-          <SwipeableDrawer
-            anchor={"left"}
-            open={open}
-            onClose={toggleDrawer(false)}
-            onOpen={toggleDrawer(true)}
-            disableBackdropTransition={true}
-            disableDiscovery={true}
-          >
-            <DrawerHeader sx={{ width: "100%", height: "76px" }}>
-              <IconButton onClick={toggleDrawer(false)} sx={{ width: "100%" }}>
-                <Logo size={40} />
-                <Typography
-                  fontWeight={600}
-                  sx={{ flexGrow: 1 }}
-                  color="primary"
-                >
-                  Warm Wave Studio
-                </Typography>
-                <ChevronLeftIcon />
-              </IconButton>
-            </DrawerHeader>
-            <Divider />
+      <SwipeableDrawer
+        anchor={"left"}
+        open={open}
+        onClose={toggleDrawer(false)}
+        onOpen={toggleDrawer(true)}
+        disableBackdropTransition={true}
+        disableDiscovery={true}
+      >
+        <DrawerHeader sx={{ width: "100%", height: "76px" }}>
+          <IconButton onClick={toggleDrawer(false)} sx={{ width: "100%" }}>
+            <Logo size={40} />
+            <Typography fontWeight={600} sx={{ flexGrow: 1 }} color="primary">
+              Warm Wave Studio
+            </Typography>
+            <ChevronLeftIcon />
+          </IconButton>
+        </DrawerHeader>
+        <Divider />
 
-            <Box sx={{ width: 250 }} onKeyDown={toggleDrawer(false)}>
-              <List>
-                {drawerItems.map((drawerItem, index) => (
-                  <Paper key={drawerItem.name} id={drawerItem.name}>
-                    <ListItem key={drawerItem.name} disablePadding>
-                      <ListItemButton
-                        onClick={(event) =>
-                          onNavClick(event, drawerItem.id, drawerItem.url)
-                        }
-                      >
-                        <ListItemIcon>{drawerItem.icon}</ListItemIcon>
-                        <ListItemText
-                          primary={drawerItem.name}
-                          primaryTypographyProps={{
-                            fontWeight: 600,
-                          }}
-                        />
-                      </ListItemButton>
-                    </ListItem>
-                    {index === 3 && <Divider />}
-                  </Paper>
-                ))}
-              </List>
-            </Box>
-          </SwipeableDrawer>{" "}
-          {children}
-        </>
-      ) : (
-        <>{children} </>
-      )}
+        <Box sx={{ width: 250 }} onKeyDown={toggleDrawer(false)}>
+          <List>
+            {drawerItems.map((drawerItem, index) => (
+              <Paper key={drawerItem.name} id={drawerItem.name}>
+                <ListItem key={drawerItem.name} disablePadding>
+                  <ListItemButton
+                    onClick={(event) =>
+                      onNavClick(event, drawerItem.id, drawerItem.url)
+                    }
+                  >
+                    <ListItemIcon>{drawerItem.icon}</ListItemIcon>
+                    <ListItemText
+                      primary={drawerItem.name}
+                      primaryTypographyProps={{
+                        fontWeight: 600,
+                      }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+                {index === 3 && <Divider />}
+              </Paper>
+            ))}
+          </List>
+        </Box>
+      </SwipeableDrawer>
+      {children}
     </>
   );
 }

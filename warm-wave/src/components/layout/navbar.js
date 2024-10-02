@@ -31,96 +31,101 @@ export default function NavBar() {
   }, []);
 
   return (
-    <>
-      {!window.location.pathname.toLowerCase().includes("sanity") ? (
-        <Box
-          sx={{
-            position: isSticky ? "fixed" : "absolute",
-            width: "100%",
-            padding: "10px 10px 10px 10px",
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
-            zIndex: 1000,
-          }}
+    <Box
+      sx={{
+        position: isSticky ? "fixed" : "absolute",
+        width: "100%",
+        padding: "10px 10px 10px 10px",
+        backgroundColor: "rgba(0, 0, 0, 0.6)",
+        zIndex: 1000,
+      }}
+    >
+      <Box
+        sx={{
+          display: {
+            xs: "none",
+            sm: "none",
+            md: "block",
+            lg: "block",
+            xl: "block",
+          },
+        }}
+      >
+        <Stack
+          direction="row"
+          spacing={4}
+          style={{ justifyContent: "center", alignItems: "center" }}
         >
-          <Box
-            sx={{
-              display: {
-                xs: "none",
-                sm: "none",
-                md: "block",
-                lg: "block",
-                xl: "block",
-              },
-            }}
-          >
-            <Stack
-              direction="row"
-              spacing={4}
-              style={{ justifyContent: "center", alignItems: "center" }}
+          <Typography fontWeight={500} variant="h6">
+            <Link color="inherit" underline="hover" href="/">
+              Home
+            </Link>
+          </Typography>
+          <Typography fontWeight={500} variant="h6">
+            <Link color="inherit" underline="hover" href="/about">
+              About
+            </Link>
+          </Typography>
+          <Typography fontWeight={500} variant="h6">
+            <Link color="inherit" underline="hover" href="/gallery">
+              Gallery
+            </Link>
+          </Typography>
+          <Typography fontWeight={500} variant="h6">
+            <Link color="inherit" underline="hover" href="/team">
+              Our Team
+            </Link>
+          </Typography>
+
+          <Button href="/" sx={{ borderRadius: "50px" }}>
+            <Image
+              priority
+              src="/images/WarmWaveRecords-logo.png"
+              height={80}
+              width={80}
+              alt="Warm Wave"
+              title="Warm Wave"
+            />
+          </Button>
+
+          <Typography fontWeight={500} variant="h6">
+            <Link color="inherit" underline="hover" href="/gear">
+              Gear
+            </Link>
+          </Typography>
+          <Typography fontWeight={500} variant="h6">
+            <Link color="inherit" underline="hover" href="/services">
+              Services
+            </Link>
+          </Typography>
+          <Typography fontWeight={500} variant="h6">
+            <Link
+              color="inherit"
+              underline="hover"
+              target="_blank"
+              href="https://open.spotify.com/playlist/58keIOTiefU8JgKFLtKEcb?si=jCEk9WOIRXecZd3y9yYcmA"
             >
-              <Typography fontWeight={500} variant="h6">
-                <Link color="inherit" underline="hover" href="/">
-                  Home
-                </Link>
-              </Typography>
-              <Typography fontWeight={500} variant="h6">
-                <Link color="inherit" underline="hover" href="/about">
-                  About
-                </Link>
-              </Typography>
-              <Typography fontWeight={500} variant="h6">
-                <Link color="inherit" underline="hover" href="/gallery">
-                  Gallery
-                </Link>
-              </Typography>
-              <Typography fontWeight={500} variant="h6">
-                <Link color="inherit" underline="hover" href="/team">
-                  Our Team
-                </Link>
-              </Typography>
-
-              <Button href="/" sx={{ borderRadius: "50px" }}>
-                <Image
-                  priority
-                  src="/images/WarmWaveRecords-logo.png"
-                  height={80}
-                  width={80}
-                  alt="Warm Wave"
-                  title="Warm Wave"
-                />
-              </Button>
-
-              <Typography fontWeight={500} variant="h6">
-                <Link color="inherit" underline="hover" href="/gear">
-                  Gear
-                </Link>
-              </Typography>
-              <Typography fontWeight={500} variant="h6">
-                <Link color="inherit" underline="hover" href="/services">
-                  Services
-                </Link>
-              </Typography>
-              <Typography fontWeight={500} variant="h6">
-                <Link
-                  color="inherit"
-                  underline="hover"
-                  target="_blank"
-                  href="https://open.spotify.com/playlist/58keIOTiefU8JgKFLtKEcb?si=jCEk9WOIRXecZd3y9yYcmA"
-                >
-                  Listen
-                </Link>
-              </Typography>
-              <Typography fontWeight={500} variant="h6">
-                <Link color="inherit" underline="hover" href="/contact">
-                  Contact
-                </Link>
-              </Typography>
-            </Stack>
-          </Box>
-        </Box>
-      ) : (
-        <> </>
-      )}
-    </>
+              Listen
+            </Link>
+          </Typography>
+          <Typography fontWeight={500} variant="h6">
+            <Link color="inherit" underline="hover" href="/contact">
+              Contact
+            </Link>
+          </Typography>
+        </Stack>
+      </Box>
+      <Box
+        sx={{
+          display: {
+            xs: "block",
+            sm: "block",
+            md: "none",
+            lg: "none",
+            xl: "none",
+          },
+        }}
+      ></Box>
+    </Box>
   );
 }
