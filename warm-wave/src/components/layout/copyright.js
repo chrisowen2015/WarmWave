@@ -1,4 +1,4 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Divider, Typography, Link } from "@mui/material";
 
 export default function CopyRight() {
   return (
@@ -13,7 +13,12 @@ export default function CopyRight() {
           }}
         >
           <Typography variant="p" component="p">
-            © 2023 Warm Wave Studio
+            <Link color="inherit" underline="hover" href="/sanity">
+              ©&nbsp;
+            </Link>
+          </Typography>
+          <Typography variant="p" component="p">
+            2023 Warm Wave Records
           </Typography>
         </Box>
 

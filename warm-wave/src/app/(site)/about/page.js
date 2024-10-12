@@ -3,7 +3,21 @@ import About from "@/components/Homepage/about";
 import MobileAbout from "@/components/Mobile/Homepage/about";
 import Spacer from "@/components/spacer";
 
-export default function AboutPage() {
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
+
+const options = { next: { revalidate: 60 } };
+
+const ABOUT_QUERY = groq`*[_type == "page" && name == "About Us"]{
+  name,
+  "imageUrl": image.asset->url,
+  "mobileImageUrl": mobileImage.asset->url,
+  text,
+  tagline
+}[0]`;
+
+export default async function AboutPage() {
+  const about = await client.fetch(ABOUT_QUERY, {}, options);
   return (
     <>
       <Box
@@ -18,7 +32,12 @@ export default function AboutPage() {
         }}
       >
         <Spacer height={85} />
-        <MobileAbout />
+        <MobileAbout
+          name={about.name}
+          imageUrl={about.mobileImageUrl}
+          text={about.text}
+          tagline={about.tagline}
+        />
         <Spacer height={20} />
       </Box>
       <Box
@@ -33,7 +52,12 @@ export default function AboutPage() {
         }}
       >
         <Spacer height={130} />
-        <About />
+        <About
+          name={about.name}
+          imageUrl={about.imageUrl}
+          text={about.text}
+          tagline={about.tagline}
+        />
         <Spacer height={30} />
       </Box>
     </>

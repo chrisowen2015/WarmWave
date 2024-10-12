@@ -1,15 +1,29 @@
-"use client";
-
+import MuiPortableText from "@/components/mui-portable-text";
 import Spacer from "@/components/spacer";
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Link from "@mui/material/Link";
-import photoUrls from "@/utils/photo-urls";
+import { PortableText } from "next-sanity";
 
-export default function MobileAbout() {
+const dramaticOverrideComponents = {
+  block: {
+    normal: ({ children }) => (
+      <Typography
+        variant="p"
+        component="p"
+        align="center"
+        sx={{ fontSize: 16.5, fontWeight: 500 }}
+      >
+        {children}
+      </Typography>
+    ),
+  },
+};
+
+export default function MobileAbout({ name, imageUrl, text, tagline }) {
   return (
     <div id="about-mobile">
       <Typography variant="h1" component="h1" align="center" fontWeight={400}>
-        About Us
+        {name}
       </Typography>
 
       <Spacer height={20} />
@@ -17,7 +31,7 @@ export default function MobileAbout() {
       <Box
         sx={{
           width: "100%",
-          backgroundImage: "url(" + photoUrls.aboutMobile[0] + ")",
+          backgroundImage: "url(" + imageUrl + ")",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
@@ -38,36 +52,12 @@ export default function MobileAbout() {
               padding: "1em",
             }}
           >
-            <Typography
-              variant="p"
-              component="p"
-              align="center"
-              sx={{ fontSize: 16.5, fontWeight: 500 }}
-            >
-              Welcome to Warm Wave Studio, founded by Andrew Tyler in 2016. We
-              specialize in hi-fi recording, mixing, and mastering, catering to
-              a diverse range of genres including indie rock, EDM, and rap.
-            </Typography>
-
-            <Spacer height={15} />
-
-            <Typography
-              variant="p"
-              component="p"
-              align="center"
-              sx={{ fontSize: 16.5, fontWeight: 500 }}
-            >
-              Our dedicated team ensures meticulous execution of every aspect of
-              the production process, driven by our passion for music and
-              commitment to excellence. Join us on a journey of artistic growth
-              and musical transcendence, where innovation and creativity bring
-              your vision to life with precision and artistry. Your music
-              deserves the warmth of our studio, and we're here to make your
-              dreams a reality.
-            </Typography>
-
-            <Spacer height={15} />
-
+            {/* <MuiPortableText text={text} /> */}
+            <PortableText
+              value={text}
+              components={dramaticOverrideComponents}
+            />
+            <Spacer height={20} />
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Typography
                 variant="b"
@@ -77,7 +67,7 @@ export default function MobileAbout() {
                 sx={{ fontSize: 18 }}
               >
                 <Link color="inherit" underline="hover" href="#contact-mobile">
-                  Elevate your sound. Experience Warm Wave Studio.
+                  {tagline}
                 </Link>
               </Typography>
             </Box>

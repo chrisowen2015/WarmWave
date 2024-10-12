@@ -2,16 +2,14 @@
 
 import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
 import Spacer from "../spacer";
-import photoUrls from "@/utils/photo-urls";
-import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
-export default function Header() {
+export default async function Header({ header }) {
   return (
     <>
       <Box
         sx={{
           width: "100%",
-          backgroundImage: "url(" + photoUrls.headerDesktop[0] + ")",
+          backgroundImage: "url(" + header.imageUrl + ")",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
@@ -29,16 +27,14 @@ export default function Header() {
             align="center"
             color="primary"
           >
-            <span className="text-opacity-overlay">Warm Wave Studio</span>
+            <span className="text-opacity-overlay">Warm Wave Records</span>
           </Typography>
         </Box>
 
         <Spacer height={240} />
 
         <Typography fontWeight={500} variant="h3" component="h3" align="center">
-          <span className="text-opacity-overlay">
-            Your All-in-One Studio for Perfect Sound
-          </span>
+          <span className="text-opacity-overlay">{header.tagline}</span>
         </Typography>
 
         <Spacer height={100} />

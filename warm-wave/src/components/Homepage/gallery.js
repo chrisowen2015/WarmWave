@@ -14,14 +14,12 @@ import Spacer from "../spacer";
 import Carousel from "react-material-ui-carousel";
 import Image from "next/image";
 
-import photoUrls from "@/utils/photo-urls";
-
-export default function Gallery() {
+export default function Gallery({ name, images }) {
   const theme = useTheme();
   return (
     <Box id="gallery">
       <Typography fontWeight={400} variant="h1" component="h1" align="center">
-        Gallery
+        {name}
       </Typography>
       <Spacer height={30} />
       <Box sx={{ minHeight: 720 }}>
@@ -46,19 +44,22 @@ export default function Gallery() {
             },
           }}
         >
-          {photoUrls.gallery.map((image, index) => (
-            <Paper
-              key={index}
-              sx={{ display: "flex", justifyContent: "center" }}
-            >
-              <Image
-                src={image.src}
-                alt={image.label}
-                width={1080}
-                height={720}
-              />
-            </Paper>
-          ))}
+          {images &&
+            images
+              .sort((a, b) => a.order - b.order)
+              .map((image, index) => (
+                <Paper
+                  key={index}
+                  sx={{ display: "flex", justifyContent: "center" }}
+                >
+                  <Image
+                    src={image.imageUrl}
+                    alt={image.alt}
+                    width={1080}
+                    height={720}
+                  />
+                </Paper>
+              ))}
         </Carousel>
       </Box>
     </Box>

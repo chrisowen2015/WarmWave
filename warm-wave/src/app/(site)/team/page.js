@@ -3,8 +3,25 @@ import TeamPanel from "@/components/team-panel";
 import MobileTeamPanel from "@/components/Mobile/mobile-team-panel";
 import { Box, Typography } from "@mui/material";
 import photoUrls from "@/utils/photo-urls";
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
 
-export default function Team() {
+const options = { next: { revalidate: 60 } };
+
+const TEAM_QUERY = groq`*[_type == "page" && name == "Our Team"]{
+  name,
+  team[] -> {
+    name,
+    text,
+    role,
+    "image": image.asset -> url,
+    order
+  }
+}[0]`;
+
+export default async function Team() {
+  const team = await client.fetch(TEAM_QUERY, {}, options);
+
   return (
     <>
       <Box
@@ -26,12 +43,12 @@ export default function Team() {
           component="h1"
           sx={{ textAlign: "center" }}
         >
-          Our Team
+          {team.name}
         </Typography>
 
         <Spacer height={30} />
 
-        <TeamPanel team={photoUrls.team} />
+        <TeamPanel team={team.team} />
 
         <Spacer height={30} />
       </Box>
@@ -54,12 +71,12 @@ export default function Team() {
           sx={{ textAlign: "center" }}
           fontWeight={400}
         >
-          Our Team
+          {team.name}
         </Typography>
 
         <Spacer height={20} />
 
-        <MobileTeamPanel team={photoUrls.team} />
+        <MobileTeamPanel team={team.team} />
 
         <Spacer height={20} />
       </Box>
