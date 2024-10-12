@@ -20,7 +20,7 @@ const GEAR_QUERY = groq`*[_type == "page" && name == "Gear"]{
 }[0]`;
 
 export default async function Page() {
-  console.log(gear);
+  const gear = await client.fetch(GEAR_QUERY, {}, options);
   return (
     <Box sx={{ width: "100%" }}>
       <Box
