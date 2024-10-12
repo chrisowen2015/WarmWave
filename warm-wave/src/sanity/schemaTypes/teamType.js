@@ -33,7 +33,7 @@ export const teamType = defineType({
       title: "Order",
       type: "number",
       description:
-        "A short description of the image for accessibility and SEO.",
+        "A number to determine the order team members are shown. Lower numbers come first.",
     }),
   ],
   orderings: [

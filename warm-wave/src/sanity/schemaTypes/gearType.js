@@ -23,7 +23,7 @@ export const gearType = defineType({
       title: "Order",
       type: "number",
       description:
-        "A short description of the image for accessibility and SEO.",
+        "A number to determine the order of the gear group. Lower numbers come first.",
     }),
   ],
   orderings: [

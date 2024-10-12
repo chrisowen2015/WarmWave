@@ -32,13 +32,15 @@ export const serviceType = defineType({
       name: "price",
       title: "Price",
       type: "number",
+      description:
+        "A number to be shown in the pricing table. Use 0 for free services. (Need to to)",
     }),
     defineField({
       name: "order",
       title: "Order",
       type: "number",
       description:
-        "A short description of the image for accessibility and SEO.",
+        "A number to determine the order of the services. Lower numbers come first.",
     }),
   ],
   orderings: [
