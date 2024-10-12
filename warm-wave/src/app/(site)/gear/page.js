@@ -3,9 +3,26 @@ import Grid from "@mui/material/Grid";
 import Spacer from "@/components/spacer";
 import photoUrls from "@/utils/photo-urls";
 
-export default function Page() {
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
+
+const options = { next: { revalidate: 60 } };
+
+const GEAR_QUERY = groq`*[_type == "page" && name == "Gear"]{
+  name,
+  "imageUrl": image.asset->url,
+  "mobileImageUrl": mobileImage.asset->url,
+  gear[] -> {
+    groupName,
+    list,
+    order
+  }
+}[0]`;
+
+export default async function Page() {
+  console.log(gear);
   return (
-    <>
+    <Box sx={{ width: "100%" }}>
       <Box
         sx={{
           display: {
@@ -32,11 +49,10 @@ export default function Page() {
         <Spacer height={85} />
       </Box>
 
-      <Box sx={{ width: "100%" }}>
-        <Typography variant="h1" fontWeight={400} component="h1" align="center">
-          Gear
-        </Typography>
-      </Box>
+      <Typography variant="h1" fontWeight={400} component="h1" align="center">
+        {gear.name}
+      </Typography>
+
       <Box
         sx={{
           display: {
@@ -98,179 +114,33 @@ export default function Page() {
             >
               <Spacer height={50} />
             </Box>
-
             <Grid container spacing={2} sx={{ marginTop: 0 }}>
-              <Grid item md={4}>
-                <Typography
-                  variant="h4"
-                  component="h4"
-                  sx={{ textAlign: "center" }}
-                >
-                  AD/DA CONVERTERS
-                </Typography>
-
-                <Spacer height={25} />
-
-                <Typography
-                  variant="p"
-                  component="p"
-                  sx={{ textAlign: "center" }}
-                >
-                  Lynx aurora(n) 16 <br />
-                  Lynx Aurora 8 <br />
-                  Universal Audio Apollo Duo <br />
-                  (26 channels of AD/DA conversion)
-                </Typography>
-
-                <Spacer height={25} />
-
-                <Typography
-                  variant="h4"
-                  component="h4"
-                  sx={{ textAlign: "center" }}
-                >
-                  COMPRESSION
-                </Typography>
-
-                <Spacer height={25} />
-
-                <Typography
-                  variant="p"
-                  component="p"
-                  sx={{ textAlign: "center" }}
-                >
-                  Universal Audio 1176 FET Compressor <br />
-                  Neve 33609 Diode Bridge Compressor <br />
-                  DBX 160 vu (vintage) Compressor <br />
-                  Empirical Labs Distressor VCA Compressor <br />
-                  Neve Master Bus Processor VCA Compressor <br />
-                  BetterMaker Darthlimiter <br />
-                  Fab Filter Pro C <br />
-                </Typography>
-
-                <Spacer height={25} />
-              </Grid>
-
-              <Grid item md={4}>
-                <Typography
-                  variant="h4"
-                  component="h4"
-                  sx={{ textAlign: "center" }}
-                >
-                  SOFTWARE
-                </Typography>
-
-                <Spacer height={25} />
-
-                <Typography
-                  variant="p"
-                  component="p"
-                  sx={{ textAlign: "center" }}
-                >
-                  Logic X <br />
-                  Ableton 10 Suite <br />
-                  Waves, Slate Digital, Soundtoys, Fab Filter, Ozone, Celemony,
-                  and more <br />
-                </Typography>
-
-                <Spacer height={25} />
-
-                <Typography
-                  variant="h4"
-                  component="h4"
-                  sx={{ textAlign: "center" }}
-                >
-                  EQUALIZATION
-                </Typography>
-
-                <Spacer height={25} />
-
-                <Typography
-                  variant="p"
-                  component="p"
-                  sx={{ textAlign: "center" }}
-                >
-                  Tonelux Equalux <br />
-                  Gyraf G13s <br />
-                  FabFilter Pro Q <br />
-                </Typography>
-
-                <Spacer height={25} />
-
-                <Typography
-                  variant="h4"
-                  component="h4"
-                  sx={{ textAlign: "center" }}
-                >
-                  MONITORING
-                </Typography>
-
-                <Spacer height={25} />
-
-                <Typography
-                  variant="p"
-                  component="p"
-                  sx={{ textAlign: "center" }}
-                >
-                  Focal Solo 6 BE <br />
-                  Yamaha Hs8 <br />
-                </Typography>
-
-                <Spacer height={25} />
-              </Grid>
-
-              <Grid item md={4}>
-                <Typography
-                  variant="h4"
-                  component="h4"
-                  sx={{ textAlign: "center" }}
-                >
-                  PREAMPS
-                </Typography>
-
-                <Spacer height={25} />
-
-                <Typography
-                  variant="p"
-                  component="p"
-                  sx={{ textAlign: "center" }}
-                >
-                  Neve 1073 (2 pres) <br />
-                  Sebatron VMP 4000e (4 pres) <br />
-                  API 3124+ (4 pres) <br />
-                  Daking Stereo (2 pres) <br />
-                  UA Apollo Duo (2 pres) <br />
-                  (14 pres) <br />
-                </Typography>
-
-                <Spacer height={25} />
-
-                <Typography
-                  variant="h4"
-                  component="h4"
-                  sx={{ textAlign: "center" }}
-                >
-                  EFFECTS/MISC
-                </Typography>
-
-                <Spacer height={25} />
-
-                <Typography
-                  variant="p"
-                  component="p"
-                  sx={{ textAlign: "center" }}
-                >
-                  All Soundtoys <br />
-                  All Waves <br />
-                  All Slate Digital <br />
-                  Klark Teknik Stereo analog Chorus <br />
-                  Roland Effects Unit (Delay/Reverb/Flanger/Chorus) <br />
-                </Typography>
-
-                <Spacer height={25} />
-              </Grid>
+              {gear.gear
+                .sort((a, b) => a.order - b.order)
+                .map((group, index) => (
+                  <Grid item md={4} xs={12} key={index}>
+                    <Typography
+                      variant="h4"
+                      component="h4"
+                      sx={{ textAlign: "center" }}
+                    >
+                      {group.groupName}
+                    </Typography>
+                    <Spacer height={25} />
+                    {group.list.map((item, index) => (
+                      <Typography
+                        variant="p"
+                        component="p"
+                        key={index}
+                        sx={{ textAlign: "center" }}
+                      >
+                        {item}
+                      </Typography>
+                    ))}
+                  </Grid>
+                ))}
+              <Grid item md={4} xs={12}></Grid>
             </Grid>
-
             <Box
               sx={{
                 display: {
@@ -311,6 +181,6 @@ export default function Page() {
       >
         <Spacer height={20} />
       </Box>
-    </>
+    </Box>
   );
 }

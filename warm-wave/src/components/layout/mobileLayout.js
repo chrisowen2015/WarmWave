@@ -171,7 +171,7 @@ export default function MobileLayout({ children }) {
             variant="h4"
             sx={{ flexGrow: 1, marginLeft: 2 }}
           >
-            Warm Wave Studio
+            Warm Wave Records
           </Typography>
         </IconButton>
       </Box>
@@ -190,7 +190,7 @@ export default function MobileLayout({ children }) {
           <IconButton onClick={toggleDrawer(false)} sx={{ width: "100%" }}>
             <Logo size={40} />
             <Typography fontWeight={600} sx={{ flexGrow: 1 }} color="primary">
-              Warm Wave Studio
+              Warm Wave Records
             </Typography>
             <ChevronLeftIcon />
           </IconButton>

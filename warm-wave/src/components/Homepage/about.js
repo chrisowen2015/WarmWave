@@ -1,82 +1,68 @@
 "use client";
-
 import Spacer from "../spacer";
 import { Box, Paper, Typography } from "@mui/material";
 import Link from "@mui/material/Link";
-import photoUrls from "@/utils/photo-urls";
+import MuiPortableText from "../mui-portable-text";
+import { PortableText } from "next-sanity";
 
-export default function About() {
+export default function About({ name, imageUrl, text, tagline }) {
   return (
     <div id="about">
       <Typography fontWeight={400} variant="h1" component="h1" align="center">
-        About Us
+        {name}
       </Typography>
 
       <Spacer height={30} />
-
-      <Box
-        sx={{
-          width: "100%",
-          backgroundImage: "url(" + photoUrls.aboutDesktop[0] + ")",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          minWidth: "1024px",
-        }}
-      >
-        <Spacer height={250} />
-
+      {imageUrl && (
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "center",
+            width: "100%",
+            backgroundImage: "url(" + imageUrl + ")",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            minWidth: "1024px",
           }}
         >
+          <Spacer height={250} />
+
           <Box
-            className="text-opacity-overlay-mobile-gpt"
             sx={{
-              width: "60%",
-              padding: "2em",
+              display: "flex",
+              justifyContent: "center",
             }}
           >
-            <Typography
-              variant="p"
-              component="p"
-              align="center"
-              sx={{ fontSize: 18, fontWeight: 500 }}
+            <Box
+              className="text-opacity-overlay-mobile-gpt"
+              sx={{
+                width: "60%",
+                padding: "2em",
+              }}
             >
-              Welcome to Warm Wave Studio, founded by Andrew Tyler in 2016. We
-              specialize in hi-fi recording, mixing, and mastering, catering to
-              a diverse range of genres including indie rock, EDM, and rap. Our
-              dedicated team ensures meticulous execution of every aspect of the
-              production process, driven by our passion for music and commitment
-              to excellence. Join us on a journey of artistic growth and musical
-              transcendence, where innovation and creativity bring your vision
-              to life with precision and artistry. Your music deserves the
-              warmth of our studio, and we're here to make your dreams a
-              reality.
-            </Typography>
+              {/* <PortableText value={text} /> */}
+              <MuiPortableText text={text} isBold={true} />
 
-            <Spacer height={20} />
+              <Spacer height={20} />
 
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
-              <Typography
-                variant="b"
-                component="b"
-                align="center"
-                color="primary"
-                sx={{ fontSize: 18 }}
-              >
-                <Link color="inherit" underline="hover" href="contact">
-                  Elevate your sound. Experience Warm Wave Studio.
-                </Link>
-              </Typography>
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <Typography
+                  variant="b"
+                  component="b"
+                  align="center"
+                  color="primary"
+                  sx={{ fontSize: 18 }}
+                >
+                  <Link color="inherit" underline="hover" href="contact">
+                    {tagline}
+                  </Link>
+                </Typography>
+              </Box>
             </Box>
           </Box>
-        </Box>
 
-        <Spacer height={250} />
-      </Box>
+          <Spacer height={250} />
+        </Box>
+      )}
     </div>
   );
 }

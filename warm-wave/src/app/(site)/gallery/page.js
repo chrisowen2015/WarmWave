@@ -3,7 +3,21 @@ import Spacer from "@/components/spacer";
 import MobileGallery from "@/components/Mobile/Homepage/gallery";
 import Gallery from "@/components/Homepage/gallery";
 
-export default function AboutPage() {
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
+
+const options = { next: { revalidate: 60 } };
+
+const GALLERY_QUERY = groq`*[_type == "page" && name == "Gallery"]{
+  name,
+  "galleryImages": gallery[]{
+    "imageUrl": image.asset->url,
+    alt
+  }
+}[0]`;
+
+export default async function GalleryPage() {
+  const gallery = await client.fetch(GALLERY_QUERY, {}, options);
   return (
     <>
       <Box
@@ -18,7 +32,7 @@ export default function AboutPage() {
         }}
       >
         <Spacer height={85} />
-        <MobileGallery />
+        <MobileGallery name={gallery.name} images={gallery.galleryImages} />
         <Spacer height={20} />
       </Box>
       <Box
@@ -33,7 +47,7 @@ export default function AboutPage() {
         }}
       >
         <Spacer height={130} />
-        <Gallery />
+        <Gallery name={gallery.name} images={gallery.galleryImages} />
         <Spacer height={30} />
       </Box>
     </>

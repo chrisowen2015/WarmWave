@@ -9,7 +9,41 @@ import MobileContact from "@/components/Mobile/Homepage/contact";
 import MobileGallery from "@/components/Mobile/Homepage/gallery";
 import MobileHeader from "@/components/Mobile/Homepage/header";
 
-export default function Home() {
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
+
+const options = { next: { revalidate: 60 } };
+
+const ABOUT_QUERY = groq`*[_type == "page" && name == "About Us"]{
+  name,
+  "imageUrl": image.asset->url,
+  "mobileImageUrl": mobileImage.asset->url,
+  text,
+  tagline
+}[0]`;
+
+const GALLERY_QUERY = groq`*[_type == "page" && name == "Gallery"]{
+  name,
+  "galleryImages": gallery[]{
+    "imageUrl": image.asset->url,
+    alt
+  }
+}[0]`;
+
+const HEADER_QUERY = groq`*[_type == "page" && name == "Home"]{
+  name,
+  "imageUrl": image.asset->url,
+  "mobileImageUrl": mobileImage.asset->url,
+  tagline
+}[0]`;
+
+export default async function Home() {
+  const [about, gallery, header] = await Promise.all([
+    client.fetch(ABOUT_QUERY, {}, options),
+    client.fetch(GALLERY_QUERY, {}, options),
+    client.fetch(HEADER_QUERY, {}, options),
+  ]);
+
   return (
     // The landing page of the website, allows for different spacing between the elements depending on the screen size
 
@@ -28,11 +62,16 @@ export default function Home() {
           },
         }}
       >
-        <Header />
+        <Header header={header} />
         <Spacer height={30} />
-        <About />
+        <About
+          name={about.name}
+          imageUrl={about.imageUrl}
+          text={about.text}
+          tagline={about.tagline}
+        />
         <Spacer height={30} />
-        <Gallery />
+        <Gallery name={gallery.name} images={gallery.galleryImages} />
         <Spacer height={30} />
         <Contact />
       </Box>
@@ -52,11 +91,16 @@ export default function Home() {
           },
         }}
       >
-        <MobileHeader />
+        <MobileHeader header={header} />
         <Spacer height={20} />
-        <MobileAbout />
+        <MobileAbout
+          name={about.name}
+          imageUrl={about.mobileImageUrl}
+          text={about.text}
+          tagline={about.tagline}
+        />
         <Spacer height={20} />
-        <MobileGallery />
+        <MobileGallery name={gallery.name} images={gallery.galleryImages} />
         <Spacer height={20} />
         <MobileContact />
       </Box>

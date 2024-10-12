@@ -4,7 +4,28 @@ import Spacer from "@/components/spacer";
 import Image from "next/image";
 import photoUrls from "@/utils/photo-urls";
 
-export default function Services() {
+import MuiPortableText from "@/components/mui-portable-text";
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
+
+const options = { next: { revalidate: 60 } };
+
+const SERVICES_QUERY = groq`*[_type == "page" && name == "Services"]{
+  name,
+    text,
+  services[] -> {
+    name,
+    description,
+    "image": image.asset -> url,
+    "mobileImage": mobileImage.asset -> url,
+    price,
+    order
+  }
+}[0]`;
+
+export default async function Services() {
+  const services = await client.fetch(SERVICES_QUERY, {}, options);
+
   return (
     <>
       {/*
@@ -29,7 +50,7 @@ export default function Services() {
             fontWeight={400}
             sx={{ textAlign: "center" }}
           >
-            Services
+            {services.name}
           </Typography>
         </Box>
 
@@ -37,54 +58,45 @@ export default function Services() {
 
         <Paper sx={{ padding: "2em", margin: "0 2em" }}>
           <Spacer height={10} />
-          <Typography variant="h6" component="h6">
-            Our services include high fidelity recording, mixing, and mastering.
-            We provide comprehensive support to artists, from songcrafting to
-            sound refinement across genres like indie rock, EDM, and rap. With a
-            dedicated team, top-tier equipment, and an unwavering commitment to
-            excellence, we strive to elevate your artistic vision to new
-            heights. Explore our services below, and connect with us to bring
-            your musical vision to life with our expertise and creativity.
-          </Typography>
-
+          <MuiPortableText text={services.text} />
           <Spacer height={50} />
-          {photoUrls.services.map((service, index) => (
-            <div id={service.id} key={service.id}>
-              <Box sx={{ display: "flex", padding: "2em 0 2em 0" }}>
-                <Image
-                  src={service.imgSrc}
-                  width={600}
-                  height={450}
-                  alt={service.alt}
-                />
-                <Box sx={{ marginLeft: "2em" }}>
-                  <Typography variant="h4" component="h4">
-                    {service.title}
-                  </Typography>
+          {services.services
+            .sort((a, b) => a.order - b.order)
+            .map((service, index) => (
+              <div id={service.id} key={service.id}>
+                <Box sx={{ display: "flex", padding: "2em 0 2em 0" }}>
+                  <Image
+                    src={service.image}
+                    width={600}
+                    height={450}
+                    alt={service.name + " image"}
+                  />
+                  <Box sx={{ marginLeft: "2em" }}>
+                    <Typography variant="h4" component="h4">
+                      {service.name}
+                    </Typography>
 
-                  <Spacer height={25} />
+                    <Spacer height={25} />
 
-                  <Typography variant="p" component="p">
-                    {service.description}
-                  </Typography>
+                    <MuiPortableText text={service.description} />
 
-                  <Spacer height={150} />
+                    <Spacer height={150} />
 
-                  <div style={{ display: "flex", justifyContent: "center" }}>
-                    <Button
-                      href={"/contact?quote=" + service.id + "#contact"}
-                      variant="contained"
-                      fullWidth
-                    >
-                      Request a quote
-                    </Button>
-                  </div>
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                      <Button
+                        href={"/contact?quote=" + service.id + "#contact"}
+                        variant="contained"
+                        fullWidth
+                      >
+                        Request a quote
+                      </Button>
+                    </div>
+                  </Box>
                 </Box>
-              </Box>
 
-              {index !== photoUrls.services.length - 1 && <Divider />}
-            </div>
-          ))}
+                {index !== services.services.length - 1 && <Divider />}
+              </div>
+            ))}
         </Paper>
         <Spacer height={30} />
       </Box>
@@ -112,7 +124,7 @@ export default function Services() {
             fontWeight={400}
             sx={{ textAlign: "center" }}
           >
-            Services
+            {services.name}
           </Typography>
 
           <Spacer height={20} />
@@ -120,16 +132,7 @@ export default function Services() {
           <Box>
             <Box sx={{ padding: "0 15px" }}>
               <Paper sx={{ width: "100%", padding: "2em" }}>
-                <Typography variant="h6" component="h6">
-                  Our services include high fidelity recording, mixing, and
-                  mastering. We provide comprehensive support to artists, from
-                  songcrafting to sound refinement across genres like indie
-                  rock, EDM, and rap. With a dedicated team, top-tier equipment,
-                  and an unwavering commitment to excellence, we strive to
-                  elevate your artistic vision to new heights. Explore our
-                  services below, and connect with us to bring your musical
-                  vision to life with our expertise and creativity.
-                </Typography>
+                <MuiPortableText text={services.text} />
               </Paper>
             </Box>
 
@@ -140,70 +143,70 @@ export default function Services() {
                 padding: "10px 15px 0px 15px",
               }}
             >
-              {photoUrls.services.map((service, index) => (
-                <Paper
-                  id={service.id}
-                  key={service.id}
-                  sx={{
-                    width: "100%",
-                    padding: "0 2em",
-                    marginTop: "10px",
-                  }}
-                >
-                  <Box
+              {services.services
+                .sort((a, b) => a.order - b.order)
+                .map((service, index) => (
+                  <Paper
+                    id={index}
+                    key={index}
                     sx={{
-                      display: {
-                        xs: "block",
-                        sm: "block",
-                        md: "flex",
-                        lg: "flex",
-                        xl: "flex",
-                      },
-                      padding: "2em 0 2em 0",
-                      position: "relative",
+                      width: "100%",
+                      padding: "0 2em",
+                      marginTop: "10px",
                     }}
                   >
-                    <Image
-                      src={service.imgSrc}
-                      sizes="100vw"
-                      style={{
-                        width: "100%",
-                        height: "auto",
+                    <Box
+                      sx={{
+                        display: {
+                          xs: "block",
+                          sm: "block",
+                          md: "flex",
+                          lg: "flex",
+                          xl: "flex",
+                        },
+                        padding: "2em 0 2em 0",
+                        position: "relative",
                       }}
-                      alt={service.alt}
-                      width={600}
-                      height={450}
-                    />
-                    <Box>
-                      <Spacer height={15} />
+                    >
+                      <Image
+                        src={service.mobileImage}
+                        sizes="100vw"
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                        }}
+                        alt={service.name + " image"}
+                        width={600}
+                        height={450}
+                      />
+                      <Box>
+                        <Spacer height={15} />
 
-                      <Typography variant="h4" component="h4" align="center">
-                        {service.title}
-                      </Typography>
+                        <Typography variant="h4" component="h4" align="center">
+                          {service.name}
+                        </Typography>
 
-                      <Spacer height={25} />
+                        <Spacer height={25} />
 
-                      <Typography variant="p" component="p">
-                        {service.description}
-                      </Typography>
+                        <MuiPortableText text={service.description} />
 
-                      <Spacer height={25} />
+                        <Spacer height={25} />
 
-                      <div
-                        style={{ display: "flex", justifyContent: "center" }}
-                      >
-                        <Button
-                          href={"/?quote=" + service.id + "#contact-mobile"}
-                          variant="contained"
-                          fullWidth
+                        <div
+                          style={{ display: "flex", justifyContent: "center" }}
                         >
-                          Request a quote
-                        </Button>
-                      </div>
+                          <Button
+                            href={"/?quote=" + service.id + "#contact-mobile"}
+                            variant="contained"
+                            fullWidth
+                          >
+                            Request a quote
+                          </Button>
+                        </div>
+                      </Box>
                     </Box>
-                  </Box>
-                </Paper>
-              ))}
+                  </Paper>
+                ))}
             </Box>
 
             <Spacer height={20} />

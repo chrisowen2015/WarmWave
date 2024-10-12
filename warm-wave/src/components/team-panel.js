@@ -4,6 +4,7 @@ import Spacer from "@/components/spacer";
 import { Box, Divider, Paper, Tab, Tabs, Typography } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
+import MuiPortableText from "@/components/mui-portable-text";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -46,50 +47,52 @@ export default function TeamPanel(props) {
           aria-label="Vertical tabs example"
           sx={{ borderRight: 1, borderColor: "divider", minWidth: "100px" }}
         >
-          {team.map((teamMember, index) => (
-            <Tab
-              id={teamMember.name}
-              key={index}
-              label={teamMember.name}
-              {...a11yProps(0)}
-              sx={{ paddingRight: "2em" }}
-            />
-          ))}
+          {team
+            .sort((a, b) => a.order - b.order)
+            .map((teamMember, index) => (
+              <Tab
+                id={teamMember.name}
+                key={index}
+                label={teamMember.name}
+                {...a11yProps(0)}
+                sx={{ paddingRight: "2em" }}
+              />
+            ))}
         </Tabs>
 
         <Divider orientation="vertical" flexItem />
-        {team.map((teamMember, index) => (
-          <TabPanel key={teamMember.name} value={value} index={index}>
-            <div id={teamMember.name} key={teamMember.name}>
-              <Box sx={{ display: "flex", padding: "2em 0 2em 0" }}>
-                <Image
-                  src={teamMember.imgSrc}
-                  width={600}
-                  height={450}
-                  alt={teamMember.alt}
-                  priority
-                />
-                <Box sx={{ marginLeft: "2em" }}>
-                  <Typography variant="h4" component="h4" fontWeight={400}>
-                    {teamMember.name}
-                  </Typography>
+        {team
+          .sort((a, b) => a.order - b.order)
+          .map((teamMember, index) => (
+            <TabPanel key={teamMember.name} value={value} index={index}>
+              <div id={teamMember.name} key={teamMember.name}>
+                <Box sx={{ display: "flex", padding: "2em 0 2em 0" }}>
+                  <Image
+                    src={teamMember.image}
+                    width={600}
+                    height={450}
+                    alt={teamMember.name + " image"}
+                    priority
+                  />
+                  <Box sx={{ marginLeft: "2em" }}>
+                    <Typography variant="h4" component="h4" fontWeight={400}>
+                      {teamMember.name}
+                    </Typography>
 
-                  <Spacer height={10} />
+                    <Spacer height={10} />
 
-                  <Typography variant="h5" component="h5">
-                    {teamMember.title}
-                  </Typography>
+                    <Typography variant="h5" component="h5">
+                      {teamMember.role}
+                    </Typography>
 
-                  <Spacer height={35} />
+                    <Spacer height={35} />
 
-                  <Typography variant="p" component="p">
-                    {teamMember.description}
-                  </Typography>
+                    <MuiPortableText text={teamMember.text} />
+                  </Box>
                 </Box>
-              </Box>
-            </div>
-          </TabPanel>
-        ))}
+              </div>
+            </TabPanel>
+          ))}
       </Box>
     </Paper>
   );

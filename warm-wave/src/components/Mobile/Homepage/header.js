@@ -2,15 +2,14 @@
 
 import { Box, Button, Typography } from "@mui/material";
 import Spacer from "@/components/spacer";
-import photoUrls from "@/utils/photo-urls";
 
-export default function MobileHeader() {
+export default async function MobileHeader({ header }) {
   return (
     <>
       <Box
         sx={{
           width: "100%",
-          backgroundImage: "url(" + photoUrls.headerMobile[0] + ")",
+          backgroundImage: "url(" + header.mobileImageUrl + ")",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
@@ -27,7 +26,7 @@ export default function MobileHeader() {
           color="primary"
           className="text-opacity-overlay-mobile-gpt"
         >
-          Warm Wave Studio
+          Warm Wave Records
         </Typography>
 
         <Spacer height={100} />
@@ -39,7 +38,7 @@ export default function MobileHeader() {
           fontWeight={500}
           className="text-opacity-overlay-mobile-gpt"
         >
-          Your All-in-One Studio for Perfect Sound
+          {header.tagline}
         </Typography>
 
         <Spacer height={50} />

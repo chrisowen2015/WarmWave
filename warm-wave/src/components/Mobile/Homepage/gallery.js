@@ -15,12 +15,12 @@ import Carousel from "react-material-ui-carousel";
 import Image from "next/image";
 import photoUrls from "@/utils/photo-urls";
 
-export default function MobileGallery() {
+export default function MobileGallery({ name, images }) {
   const theme = useTheme();
   return (
     <Box id="gallery-mobile">
       <Typography variant="h1" component="h1" align="center" fontWeight={400}>
-        Gallery
+        {name}
       </Typography>
       <Spacer height={20} />
       <Box>
@@ -45,23 +45,26 @@ export default function MobileGallery() {
             },
           }}
         >
-          {photoUrls.gallery.map((image, index) => (
-            <Paper
-              key={index}
-              sx={{ display: "flex", justifyContent: "center" }}
-            >
-              <Image
-                src={image.src}
-                alt={image.label}
-                style={{
-                  width: "100%",
-                  height: "auto",
-                }}
-                width={720}
-                height={720}
-              />
-            </Paper>
-          ))}
+          {images &&
+            images
+              .sort((a, b) => a.order - b.order)
+              .map((image, index) => (
+                <Paper
+                  key={index}
+                  sx={{ display: "flex", justifyContent: "center" }}
+                >
+                  <Image
+                    src={image.imageUrl}
+                    alt={image.alt}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                    }}
+                    width={720}
+                    height={720}
+                  />
+                </Paper>
+              ))}
         </Carousel>
       </Box>
     </Box>

@@ -72,6 +72,12 @@ export default function Footer() {
               Our Team
             </Link>
           </Typography>
+
+          <Typography variant="p" component="p" sx={{ marginTop: "1em" }}>
+            <Link color="inherit" underline="hover" href="/sanity">
+              Log In
+            </Link>
+          </Typography>
         </Box>
 
         <Box>

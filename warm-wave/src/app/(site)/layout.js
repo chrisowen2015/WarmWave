@@ -14,7 +14,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Warm Wave Studio",
+  title: "Warm Wave Records",
   description: "Mixing and Mastering Studio in Los Angeles, CA",
 };
 
